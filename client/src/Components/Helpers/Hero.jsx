@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import HeroVid from '../../assets/videos/heroVideo.mp4'
 import { useState } from 'react'
 
 function Hero() {
