@@ -16,6 +16,7 @@ function FeatureProducts({data, setCatState}) {
             <div className="flex flex-col mb-10" key={idx}>
               <FilerComponent
                 title={item?.name}
+                img={item?.img}
                 desc={item?.desc}
                 linkText={item?.cta}
                 setCatState={setCatState}
@@ -42,10 +43,10 @@ export const FilerComponent = ({ img, title, desc, linkText, setCatState, slug }
         setCatState(item)
     }
     return (
-      <div className="relative flex flex-col overflow-hidden p-8 h-[180px] bg-gradient-to-r from-black/90 to-transparent">
-        <img alt={title} src={img} className="absolute w-full h-full left-0 top-0 object-cover object-center" />
+      <div className="relative flex flex-col overflow-hidden h-[180px] bg-gradient-to-r from-black/90 to-transparent">
+        <img alt={title} src={`${img}`} className="absolute w-full h-full left-0 top-0 object-cover object-center" />
 
-        <div  className="flex flex-col">
+        <div  className="flex flex-col z-20 absolute w-full h-full left-0 top-0  bg-gradient-to-r from-black/90 to-transparent p-8">
             <h3 className="text-white text-[32px] phone:text-[26px] font-semibold">{title}</h3>
             <p className="text-white mt-[-4px] text-[18px] phone:text-[15px]">{desc}</p>
 

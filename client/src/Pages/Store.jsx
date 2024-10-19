@@ -13,7 +13,10 @@ function Store({ setSelectedCard }) {
         </div>
 
         <div className="mt-[30px]">
-            <Banner video={'https://videos.pexels.com/video-files/3772777/3772777-sd_640_360_24fps.mp4'} />
+            <Banner 
+              video={'https://videos.pexels.com/video-files/3772777/3772777-sd_640_360_24fps.mp4'} 
+              text={'Store'}
+            />
         </div>
         <StoreCategory />
 

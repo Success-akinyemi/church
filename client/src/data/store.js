@@ -3,32 +3,40 @@ export const category = [
         name: 'Books',
         slug: 'books',
         desc: 'See the lastest books from Church Ministry',
-        cta: 'View all Books'
-    },
+        cta: 'View all Books',
+        img: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+    ,
     {
         name: 'Music',
         slug: 'music',
         desc: 'Check out great worship music from Church Ministry!',
-        cta: 'View all Music'
-    },
+        cta: 'View all Music',
+        img: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+    ,
     {
         name: 'Series',
         slug: 'series',
         desc: "Church Ministries newest series `The Abundant Life` is available now!",
-        cta: 'View all Series'
-    },
+        cta: 'View all Series',
+        img: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600'
+    }
+    ,
     {
         name: 'Gift',
         slug: 'gift',
         desc: 'Give a gidt from Church Ministry',
-        cta: 'View all Gifts'
+        cta: 'View all Gifts',
+        img: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600'
+
     }
 ]
 
 export const product = [
     {
         name: 'Book 1',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
         authour: 'Book Author 1',
         type: 'Hardcover',
@@ -39,7 +47,7 @@ export const product = [
     },
     {
         name: 'Book 2',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 10,
         authour: 'Book Authur 2',
         type: 'Hardcover',
@@ -50,7 +58,7 @@ export const product = [
     },
     {
         name: 'Book 3',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 20,
         authour: 'Book Authur 3',
         type: 'soft copy',
@@ -61,7 +69,7 @@ export const product = [
     },
     {
         name: 'Book 4',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 24,
         authour: 'Book Authir 4',
         type: 'soft copy',
@@ -72,7 +80,7 @@ export const product = [
     },
     {
         name: 'Book 5',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
         authour: 'Book Authur 5',
         type: 'Hardcover',
@@ -83,7 +91,7 @@ export const product = [
     },
     {
         name: 'Music 1',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 12,
         authour: 'Music Authur 1',
         type: 'music',
@@ -94,7 +102,7 @@ export const product = [
     },
     {
         name: 'Music 2',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 16,
         authour: 'Music Authur 2',
         type: 'music',
@@ -105,7 +113,7 @@ export const product = [
     },
     {
         name: 'Music 3',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
         authour: 'Music Authur 3',
         type: 'music',
@@ -116,7 +124,7 @@ export const product = [
     },
     {
         name: 'Music 4',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 24,
         authour: 'Music Authur 4',
         type: 'music',
@@ -127,7 +135,7 @@ export const product = [
     },
     {
         name: 'Music 5',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
         authour: 'Music Authur 5',
         type: 'music',
@@ -138,7 +146,7 @@ export const product = [
     },
     {
         name: 'Series 1',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
         authour: 'Series Authur 1',
         type: 'series',
@@ -149,7 +157,7 @@ export const product = [
     },
     {
         name: 'Series 2',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
         authour: 'Series Authur 2',
         type: 'CD series',
@@ -160,7 +168,7 @@ export const product = [
     },
     {
         name: 'Series 3',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 10,
         authour: 'Series Authur 3',
         type: 'Book series',
@@ -171,7 +179,7 @@ export const product = [
     },
     {
         name: 'Series 4',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
         authour: 'Series Authur 4',
         type: 'series',
@@ -182,7 +190,7 @@ export const product = [
     },
     {
         name: 'Series 5',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
         authour: 'Series Authur 5',
         type: 'series',
@@ -193,7 +201,7 @@ export const product = [
     },
     {
         name: 'Gift 1',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 25,
         authour: 'Gift Authur 1',
         type: 'Book',
@@ -204,7 +212,7 @@ export const product = [
     },
     {
         name: 'Gift 2',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 25,
         authour: 'Gift Authur 2',
         type: 'CD',
@@ -215,7 +223,7 @@ export const product = [
     },
     {
         name: 'Gift 3',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
         authour: 'Gift Authur 3',
         type: 'CD',
@@ -226,7 +234,7 @@ export const product = [
     },
     {
         name: 'Gift 4',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
         authour: 'Gift Authur 4',
         type: 'Book',
@@ -237,7 +245,7 @@ export const product = [
     },
     {
         name: 'Gift 5',
-        img: '',
+        img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
         authour: 'Gift Authur 5',
         type: 'CD',
