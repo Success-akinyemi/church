@@ -30,7 +30,7 @@ function Product({data}) {
   return (
     <div className="w-[450px] phone:w-[94%] overflow-hidden shadow-xl rounded-[8px]">
         <div className="w-full relative overflow-hidden">
-            <img alt={data?.name} src={`${data?.img}`} className={`absolute w-full top-0 left-0`} />
+            <img alt={data?.name} src={`${data.img}`} className={`absolute w-full top-0 left-0`} />
         </div>
 
         <div className="flex w-full flex-col p-6">

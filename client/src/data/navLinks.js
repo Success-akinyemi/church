@@ -1,22 +1,27 @@
 export const navlinks = [
     {
+        name: 'Home',
+        link: 'home',
+        style: ''
+    },
+    {
         name: 'About',
-        link: 'about',
+        link: 'about-us',
         style: ''
     },
     {
-        name: 'Message',
-        link: 'message',
+        name: 'Programs & Events',
+        link: 'programs-and-events',
         style: ''
     },
     {
-        name: 'Inspiration',
-        link: 'inspiration',
+        name: 'Resources',
+        link: 'resources',
         style: ''
     },
-    {
-        name: 'Community',
-        link: 'community',
+        {
+        name: 'Store',
+        link: 'store',
         style: ''
     },
     {

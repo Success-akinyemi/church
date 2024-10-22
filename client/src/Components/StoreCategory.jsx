@@ -1,6 +1,7 @@
 import { useState } from "react"
-import { category } from "../data/store"
+import { category, product } from "../data/store"
 import FeatureProducts from "./FeatureProducts"
+import Products from "./Helpers/Products"
 
 function StoreCategory() {
     const productsCategory = category
@@ -9,6 +10,11 @@ function StoreCategory() {
     const changeCategory = (item) => {
         setCatState(item)
     }
+
+    const allProducts = product
+    const sortedProducts = allProducts.filter((productItem) => productItem.slug === catState);
+
+    let catProduct = []
 
   return (
     <div className="w-full">
@@ -33,16 +39,22 @@ function StoreCategory() {
             }
             {
                 catState === 'books' && (
-                    <div>
-                        books
-                    </div>
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }
             {
                 catState === 'music' && (
-                    <div>
-                        music
-                    </div>
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+            {
+                catState === 'series' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+                        {
+                catState === 'gift' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }
         </div>

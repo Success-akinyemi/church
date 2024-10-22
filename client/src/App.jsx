@@ -67,7 +67,7 @@ function App() {
           <>
             <div className={`popup-overlay z-[9999] fixed flex items-center justify-center top-0 left-0 w-[100vw] h-[100vh] bg-transparent-bg-2 transition-transform duration-500 ease-in-out transform translate-y-0`}
             >
-              <div className={`z-50 min-w-[550px] phone:w-[94%] h-auto m-auto rounded-[12px] border-[1px] px-[24px] py-4 flex flex-col gap-6 bg-white shadow-xl`}>
+              <div className={`z-50 min-w-[550px] phone:max-w-[94%] h-auto m-auto rounded-[12px] border-[1px] px-[24px] py-4 flex flex-col gap-6 bg-white shadow-xl`}>
                 <div className='w-full flex flex-col'>
                   <div onClick={closePopup} className='ml-auto p-1 cursor-pointer'>
                     <CgCloseO className='text-[32px] phone:text-[28px]' />
