@@ -8,6 +8,8 @@ import ShoppingCart from './Components/Modals/ShoppingCart';
 import ForgotPassword from './Components/Helpers/ForgotPassword';
 import Donations from './Components/Modals/Donations';
 import Store from './Pages/Store';
+import Fada from './Pages/About/Fada';
+import AboutUs from './Pages/About/AboutUs';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -61,7 +63,7 @@ function App() {
   };
 
   return (
-    <div className='app'>
+    <div className='app overflow-hidden'>
       {
         selectedCard && (
           <>
@@ -85,6 +87,8 @@ function App() {
         <Routes>
           <Route path='/' element={<LandingPage setSelectedCard={setSelectedCard} />} />
           <Route path='/store' element={<Store setSelectedCard={setSelectedCard} />} />
+          <Route path='/about-fada' element={<Fada />} />
+          <Route path='/about-us' element={<AboutUs />} />
 
         </Routes>
       </BrowserRouter>
