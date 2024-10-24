@@ -13,7 +13,7 @@ function Hero() {
             <div className='flex items-center gap-3 mt-8'>
                 <Link 
                     to='' 
-                    className={`flex items-center justify-center text-center py-2 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${hoverState ? 'bg-white' : 'bg-transparent'}`}
+                    className={`flex items-center justify-center text-white text-center py-2 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${hoverState ? 'bg-white' : 'bg-transparent'}`}
                     onMouseEnter={() => setHoverState(false)}
                     onMouseLeave={() => setHoverState(true)}
                 >
