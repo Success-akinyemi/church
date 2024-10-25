@@ -80,7 +80,7 @@ function Donations({setSelectedCard}) {
     }
 
   return (
-    <div className='w-full'>
+    <div className=''>
         {
             state === 'getUser' && (
                 <div>

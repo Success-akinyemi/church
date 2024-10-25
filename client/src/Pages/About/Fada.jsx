@@ -6,6 +6,7 @@ const Fada = () => {
     <div>
 
         <AboutFada />
+        <Minstry />
     </div>
   )
 }
