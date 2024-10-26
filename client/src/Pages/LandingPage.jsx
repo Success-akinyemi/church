@@ -14,8 +14,12 @@ function LandingPage({setSelectedCard}) {
     const upcomingEventData = ''
   return (
     <div className="page">
-        <Menue />
-        {/* <Navbar setSelectedCard={setSelectedCard} /> */}
+        {/**
+        <Navbar setSelectedCard={setSelectedCard} /> 
+        * 
+        */}
+        <Menue setSelectedCard={setSelectedCard} />
+
         <div className="mt-[70px]">
             <QuickNav setSelectedCard={setSelectedCard} />
         </div>

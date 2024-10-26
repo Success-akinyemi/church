@@ -3,11 +3,12 @@ import QuickNav from '../Components/Helpers/QuickNav'
 import Banner from '../Components/Helpers/Banner'
 import Footer from '../Components/Helpers/Footer'
 import StoreCategory from '../Components/StoreCategory'
+import Menu from '../Components/Helpers/Menu'
 
 function Store({ setSelectedCard }) {
   return (
     <div className='page'>
-        <Navbar setSelectedCard={setSelectedCard} />
+        <Menu setSelectedCard={setSelectedCard} />
         <div className="mt-[70px]">
             <QuickNav setSelectedCard={setSelectedCard} />
         </div>
