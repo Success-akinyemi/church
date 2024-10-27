@@ -4,7 +4,7 @@ import { useState } from 'react'
 function Hero() {
     const [ hoverState, setHoverState ] = useState(false)
   return (
-    <div className='w-full h-[60vh] relative'>
+    <div className='w-full h-[90vh] relative'>
         <div className='absolute pad1 w-full h-full z-20 bg-transparent-bg left-0 top-0 flex flex-col justify-center'>
             <h1 className='text-[48px] small-pc:text-[36px] tablet:text-[32px] phone:text-[24px] text-white '>    
                 Live inspired. Reach your dreams. <br /> Become all God created you to be.
@@ -13,7 +13,7 @@ function Hero() {
             <div className='flex items-center gap-3 mt-8'>
                 <Link 
                     to='' 
-                    className={`flex items-center justify-center text-white text-center py-2 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${hoverState ? 'bg-white' : 'bg-transparent'}`}
+                    className={`flex items-center justify-center text-center py-2 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${hoverState ? 'bg-white' : 'bg-transparent'}`}
                     onMouseEnter={() => setHoverState(false)}
                     onMouseLeave={() => setHoverState(true)}
                 >

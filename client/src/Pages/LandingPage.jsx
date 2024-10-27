@@ -6,6 +6,8 @@ import Menue from "../Components/Helpers/Menu"
 import Navbar from "../Components/Helpers/Navbar"
 import OurCampaign from "../Components/Helpers/OurCampaign"
 import QuickNav from "../Components/Helpers/QuickNav"
+import SignupBanner from "../Components/Helpers/SignupBanner"
+import SociailMedia from "../Components/Helpers/SociailMedia"
 import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
 import TestimonialsSection from "../Components/Helpers/TestimonalSection"
 import UpcomingEvents from "../Components/UpcomingEvents"
@@ -27,17 +29,24 @@ function LandingPage({setSelectedCard}) {
         <div className="mt-[30px]">
             <Hero />
         </div>
+        <SignupBanner />
 
         <div className='mt-[30px]' >
             <UpcomingEvents data={upcomingEventData} />
         </div>
         <StatementOfFaith />
-     
+        
+        {/**
+         * 
+         */}
         <OurCampaign />
 
         <TestimonialsSection />
 
 <BlogSection />
+
+{/**SECTION FOR SOCILA MEDIA POSTS OR ACCOUNTS */}
+<SociailMedia />
 
         <div className="mt-auto">
             <Footer />

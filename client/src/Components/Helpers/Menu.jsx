@@ -32,12 +32,12 @@ const Menu = ({setSelectedCard}) => {
           </button>
 
           {/* Desktop Menu */}
-          <ul className="hidden lg:flex items-center justify-center space-x-6">
+          <ul className="hidden lg:flex items-center justify-center space-x-8">
             {menuItems.map((item, index) => (
               <li key={index} className="relative group">
                 <Link
                   to={item.link || '#'}
-                  className={`${item?.style ? item?.style : `text-slate-100 hover:text-color-1 font-medium  text-[14px]  flex items-center` }`}
+                  className={`${item?.style ? item?.style : `text-slate-100 hover:text-color-1 font-medium  text-[14px]  flex items-center uppercase` } uppercase`}
                 >
                   {item.name}
                 </Link>
@@ -62,7 +62,7 @@ const Menu = ({setSelectedCard}) => {
                 >
                   <Link
                     href={item.link || '#'}
-                    className={`${item?.style ? item?.style : 'text-slate-100 hover:text-color-1 font-medium text-[14px]' }`}
+                    className={`${item?.style ? item?.style : 'text-slate-100 hover:text-color-1 font-medium text-[14px]' } uppercase`}
                   >
                     {item.name}
                   </Link>

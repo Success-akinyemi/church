@@ -36,3 +36,6 @@
   text-decoration: none;
 }
 
+.linear-gradient{
+  background: linear-gradient(to, right, #9B111E, #fff);
+}

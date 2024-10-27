@@ -62,12 +62,12 @@ function Product({data}) {
             <hr className="w-full border-[1px] rounded-[10px] border-text-color-3 my-4" />
             
             <div className="flex gap-3">
-                <div className="w-full p-2 rounded-[12px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
+                <div className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
                     <MdAddShoppingCart />
                     Add To Cart
                 </div>
 
-                <div className="w-full p-2 rounded-[12px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
+                <div className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
                     <MdOutlineViewTimeline />
                     Quick View
                 </div>
