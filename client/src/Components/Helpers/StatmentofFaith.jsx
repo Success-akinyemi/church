@@ -77,6 +77,8 @@ const StatementOfFaith = () => {
               </motion.div>
 
               {/* Feature Grid */}
+              {/**
+               * 
               <div className="grid grid-cols-2 gap-4 mt-12">
                 {features.map((feature, index) => (
                   <motion.div
@@ -93,6 +95,7 @@ const StatementOfFaith = () => {
                   </motion.div>
                 ))}
               </div>
+               */}
             </motion.div>
 
             {/* Right Column - Image */}
@@ -139,8 +142,10 @@ const StatementOfFaith = () => {
           </div>
         </div>
       </section>
-
+      {/**
+       * 
       <ChurchValues />
+       */}
     </>
   );
 };

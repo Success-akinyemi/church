@@ -11,14 +11,14 @@ const BlogCard = ({ image, title, description }) => (
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
     </div>
     <div className="p-6">
-      <h3 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-yellow-600 transition-colors">
+      <h3 className="text-2xl font-bold mb-3 text-gray-800 group-hover:text-main-color transition-colors">
         {title}
       </h3>
       <p className="text-gray-600 line-clamp-3 mb-4">
         {description}
       </p>
       <div className="flex items-center justify-between">
-        <button className="text-yellow-600 font-semibold hover:text-yellow-700 transition-colors flex items-center gap-2">
+        <button className="text-main-color-dark font-semibold hover:text-main-color transition-colors flex items-center gap-2">
           READ MORE 
           <svg 
             className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
@@ -73,7 +73,7 @@ const BlogSection = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-yellow-500 text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-600 transition-colors">
+          <button className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors">
             View All Blogs
           </button>
         </div>

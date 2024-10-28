@@ -205,11 +205,13 @@ const ChurchWebsite = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      className="min-h-screen bg-[#FFFDF9]"
+      className="min-h-screen bg-[#FFFDF9] bg-gradient-to-b from-#9B111E to-white"
     >
       {/* Campaigns Section */}
-      <section className="py-24 px-3 lg:px-[5rem]">
+      <section className="py-24 px-3 lg:px-[5rem] bg-gradient-to-b from-[#d05864] to-white">
         <div className="container mx-auto px-6">
+          {/**
+           * 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -221,6 +223,7 @@ const ChurchWebsite = () => {
               Join us in our mission to spread love, faith, and community through these transformative events
             </p>
           </motion.div>
+           */}
 
           <motion.div 
             initial="initial"

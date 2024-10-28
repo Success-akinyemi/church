@@ -40,11 +40,11 @@ export const navlinks = [
 export const menuLinks = [
     { 
       name: 'Home', 
-      link: '',
+      link: '/',
       style: '',
     },
     {
-      name: 'About Us',
+      name: 'Ministry',
       link: '/about-us',
       style: '',
       /**
@@ -63,6 +63,7 @@ export const menuLinks = [
        submenu: [
          { name: 'Upcoming Events', link: '/programs/upcoming' },
          { name: 'Past Events', link: '/programs/past' },
+         { name: 'Testimoines', link: '/programs/past' },
        ],
        * 
        */
@@ -87,7 +88,7 @@ export const menuLinks = [
       link: '/shop' 
     },
     {
-      name: 'Join Us',
+      name: 'Children Coner',
       link: '',
       onclick: true,
       /**
@@ -98,12 +99,17 @@ export const menuLinks = [
       ],
        */
     },
+    { 
+      name: 'Consultations', 
+      link: '/consultations' 
+    },
+    
     {
       name: 'Donation',
       link:'',
       onclick: true,
       clickValue: 'donations',
-      style: 'bg-[#FFD700] border-[1px] border-[#FFD700] hover:bg-transparent text-[#FFD700] px-2 py-1 rounded-[8px] hover:text-[#FFD700] border-b-[#FFD700] text-main-color'
+      style: 'bg-[#800000] hover:bg-transparent text-white px-2 py-1 hover:text-[#FFD700] border-b-[#FFD700] text-main-color'
       /**
        * 
       submenu: [

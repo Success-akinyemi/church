@@ -20,12 +20,14 @@ function Products({ data, quantityToDisplay, slug, pagination, noPerPage }) {
   };
 
   return (
-    <div className="flex items-center justify-center gap-3 small-pc:mb-4 flex-wrap w-full">
+    <div className="flex flex-col items-center justify-center gap-3 small-pc:mb-4 flex-wrap w-full">
+       <div className="flex items-center justify-center gap-3 small-pc:mb-4 flex-wrap w-full">
         {
             productsToDisplay?.map((item, idx) => (
                 <Product key={idx} data={item} />
             ))
         }
+      </div> 
 
         {pagination && totalPages > 1 && (
           <div className="flex justify-center items-center mt-4">

@@ -120,6 +120,8 @@ const TestimonialsSection = () => {
   return (
     <section className="py-20 bg-gray-100 to-white overflow-hidden">
       <div className="container mx-auto px-4">
+        {/**
+         * 
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             TESTIMONIALS
@@ -129,6 +131,7 @@ const TestimonialsSection = () => {
             Hear from our community members about their spiritual journey and experiences
           </p>
         </div>
+         */}
 
         <div className="relative max-w-7xl mx-auto">
           {/* Navigation Buttons */}
@@ -181,6 +184,12 @@ const TestimonialsSection = () => {
               />
             ))}
           </div>
+        </div>
+
+        <div className="text-center mb-16 mt-4">
+          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4">
+            TESTIMONIALS
+          </h2>
         </div>
       </div>
     </section>

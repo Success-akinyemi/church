@@ -14,7 +14,7 @@ export default {
         'color-1': '#FFD700', //gold
 
         'white': '#fff',
-        'transparent-bg': 'rgba(0, 0, 0, 0.4)',
+        'transparent-bg': 'rgba(0, 0, 0, 0.9)',
         'transparent-bg-2': 'rgba(0, 0, 0, 0.8)',
 
 
