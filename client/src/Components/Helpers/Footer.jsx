@@ -15,7 +15,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#242424] py-12 px-4 sm:px-8 lg:px-16 text-white  ">
+    <footer className="bg-[#242424] py-12 pad1 text-white  ">
       {/* Subscription Section */}
       <div className="flex flex-col items-center mb-12">
         <h2 className="text-3xl font-bold mb-4">SUBSCRIBE NOW!</h2>

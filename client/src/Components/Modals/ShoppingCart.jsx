@@ -12,8 +12,8 @@ function ShoppingCart() {
   console.log('CART',cart.products)
 
   const handleQuantity = (type, productId) => {
-    const productIndex = cart.products.findIndex((item) => item._id === productId);
-
+    const productIndex = cart.products.findIndex((item) => item.id === productId);
+    
     if (productIndex !== -1) {
       const currentQuantity = cart.products[productIndex].quantity;
       const newQuantity = type === 'dec' ? Math.max(currentQuantity - 1, 1) : currentQuantity + 1;
@@ -30,12 +30,14 @@ function ShoppingCart() {
 
 
   return (
-    <div className="flex flex-col items-center max-h-[85vh] overflow-y-auto">
-      <h3 className="focusText border-b-0 text-left w-full text-[24px] phone:text-[20px]">View Cart</h3>
-      
-      <p className="text-text-color-2 font-semibold text-[19px] mt-2">
-        Cart subtotal ({cart.products?.length} Items): ${Number(cart.total).toFixed(2).toLocaleString()}
-      </p>
+    <div className="relative flex flex-col items-center max-h-[85vh] overflow-y-auto">
+      <div className="fixed left-0">
+        <h3 className="focusText border-b-0 text-left w-full text-[24px] phone:text-[20px]">View Cart</h3>
+        
+        <p className="text-text-color-2 font-semibold text-[19px] mt-2">
+          Cart subtotal ({cart.products?.length} Items): ${Number(cart.total).toFixed(2).toLocaleString()}
+        </p>
+      </div>
       
       <div className="mt-5">
       {
@@ -46,33 +48,36 @@ function ShoppingCart() {
                             </div>
                         ) : (
                             cart.products?.map((item, idx) => (
-                                <div key={idx} className="card">
+                                <div key={idx} className="flex items-center justify-start gap-4 pb-4 pt-4 border-b-[2px] border-b-transparent-bg">
                                     <div className="w-[25%]">
                                         <img src={item?.img} alt={`${item?.name}`} />
                                     </div>
-                                    <div className="info">
-                                        <span>Product: <p>{item?.name}</p></span>
-                                        <span style={{ fontSize: '14px'}}>ID: <p>{item?._id}</p></span>
+
+                                    <div>
+                                      <div className="flex flex-col gap-3">
+                                          <span className="flex gap-[2px]  text-[18px]">Product: <p className="font-semibold">{item?.name}</p></span>
+                                          <span className="text-[18px] flex items-center gap-[2px]">ID: <p className="font-semibold text-[14px]">{item?.id}</p></span>
 
 
-                                    </div>
-                                    <div className="price">
-                                        <div className="quantity">
-                                            <p className='title'>Quantity:</p>
-                                            <div className='q-card'>
-                                                <button onClick={() => handleQuantity('dec', item?._id)} className='qbtn'><CgRemove className='icon' /></button>
-                                                <span className="number">{item?.quantity}</span>
-                                                <button onClick={() => handleQuantity('inc', item?._id)} className='qbtn'><CgAdd className='icon' /></button>
-                                            </div>
-                                        </div>
+                                      </div>
+                                      <div className="flex flex-col gap-3">
+                                          <div className="flex flex-col gap-3">
+                                              <p className='font-semibold text-[18px]'>Quantity:</p>
+                                              <div className='flex items-center gap-4'>
+                                                  <button onClick={() => handleQuantity('dec', item?.id)} className='text-[28px] cursor-pointer'><CgRemove className='icon' /></button>
+                                                  <span className="number">{item?.quantity}</span>
+                                                  <button onClick={() => handleQuantity('inc', item?.id)} className='text-[28px] cursor-pointer'><CgAdd className='icon' /></button>
+                                              </div>
+                                          </div>
 
-                                        <span className="amount">
-                                            NGN {item?.price * item?.quantity}
-                                        </span>
-                                        
-                                        <button onClick={() => handleRemoveFromCart(idx)} className='bg-black text-white rounded-[4px] hover:bg-transparent hover:text-black'>
-                                            Remove from cart
-                                        </button>
+                                          <span className="amount">
+                                              NGN {item?.price * item?.quantity}
+                                          </span>
+                                          
+                                          <button onClick={() => handleRemoveFromCart(idx)} className='bg-black border-[1px] hover:border-black p-1 text-white rounded-[4px] hover:bg-transparent hover:text-black'>
+                                              Remove from cart
+                                          </button>
+                                      </div>
                                     </div>
                                 </div>
                             ))

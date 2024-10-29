@@ -11,6 +11,8 @@ import Store from './Pages/Store';
 import Fada from './Pages/About/Fada';
 import AboutUs from './Pages/AboutUs';
 import { Toaster } from 'react-hot-toast';
+import Blogs from './Pages/Blogs';
+import Blog from './Pages/Blog';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -91,6 +93,10 @@ function App() {
           <Route path='/shop' element={<Store setSelectedCard={setSelectedCard} />} />
           <Route path='/about-fada' element={<Fada />} />
           <Route path='/about-us' element={<AboutUs setSelectedCard={setSelectedCard} />} />
+          <Route path='/blogs' element={<Blogs setSelectedCard={setSelectedCard} />} />
+          <Route path='/blog/:id' element={<Blog setSelectedCard={setSelectedCard} />} />
+
+
 
         </Routes>
       </BrowserRouter>

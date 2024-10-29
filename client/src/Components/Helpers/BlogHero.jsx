@@ -1,6 +1,6 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 
-const BlogCard = ({ image, title, description }) => (
+const BlogCard = ({ image, title, description, link }) => (
   <div className="group bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
     <div className="relative overflow-hidden h-64">
       <img 
@@ -18,7 +18,9 @@ const BlogCard = ({ image, title, description }) => (
         {description}
       </p>
       <div className="flex items-center justify-between">
-        <button className="text-main-color-dark font-semibold hover:text-main-color transition-colors flex items-center gap-2">
+        <Link 
+          to={`/blog/${link}`}
+          className="text-main-color-dark font-semibold hover:text-main-color transition-colors flex items-center gap-2">
           READ MORE 
           <svg 
             className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
@@ -28,33 +30,17 @@ const BlogCard = ({ image, title, description }) => (
           >
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
-        </button>
+        </Link>
       </div>
     </div>
   </div>
 );
 
-const BlogSection = () => {
-  const blogs = [
-    {
-      image: "/api/placeholder/800/600",
-      title: "The Sacred Mystery of the Eucharist: Exploring Its Meaning and Reverence",
-      description: "Introduction: The Eucharist, also known as Holy Communion, stands as the pinnacle of Catholic worship, embodying the profound mystery of Christ's presence in the consecrated bread and wine. From ancient rituals..."
-    },
-    {
-      image: "/api/placeholder/800/600",
-      title: "The Sacred Tradition of Holy Mass: Exploring Its Significance and Practice",
-      description: "Introduction: Holy Mass stands as the cornerstone of Catholic worship, embodying the sacred tradition of commemorating Christ's sacrifice and experiencing the real presence of the Eucharist. From the ancient rituals..."
-    },
-    {
-      image: "/api/placeholder/800/600",
-      title: "Exploring the Power of Miracles in Christian Faith: A Comprehensive Guide",
-      description: "Introduction: Miracles have always held a profound significance in Christian theology, serving as divine interventions that defy natural laws and showcase the power of God. From biblical accounts of Jesus..."
-    }
-  ];
+const BlogSection = ({ data }) => {
+  const blogs = data
 
   return (
-    <section className="py-16 px-4 lg:px-[5rem] bg-gray-50">
+    <section className="py-16 pad1 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">BLOGS</h2>
@@ -64,10 +50,11 @@ const BlogSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog, index) => (
             <BlogCard 
-              key={index}
+              key={blog.id}
               image={blog.image}
               title={blog.title}
               description={blog.description}
+              link={blog.id}
             />
           ))}
         </div>
