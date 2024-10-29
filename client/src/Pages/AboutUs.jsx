@@ -27,9 +27,9 @@ function AboutUs({ setSelectedCard }) {
         </div>
 
         <div className="flex items-center justify-center mt-6 text-[24px] gap-4 font-semibold">
-          <div onClick={() => setActiveCard('ministry')} className={`cursor-pointer border-b-2 hover:`}>Ministry</div>
-          <div onClick={() => setActiveCard('fada')} className={`cursor-pointer border-b-2 hover:`}>FADA</div>
-        </div>
+          <div onClick={() => setActiveCard('ministry')} className={`cursor-pointer border-b-2 hover: ${activeCard === 'ministry' ? 'text-main-color border-b-main-color' : ''}`}>Ministry</div>
+          <div onClick={() => setActiveCard('fada')} className={`cursor-pointer border-b-2 hover: ${activeCard === 'fada' ? 'text-main-color border-b-main-color' : ''}`}>FADA</div>
+        </div>  
 
         <div>
           {

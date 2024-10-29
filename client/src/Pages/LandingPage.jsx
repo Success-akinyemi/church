@@ -12,9 +12,13 @@ import SociailMedia from "../Components/Helpers/SociailMedia"
 import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
 import TestimonialsSection from "../Components/Helpers/TestimonalSection"
 import UpcomingEvents from "../Components/UpcomingEvents"
+import { blogs } from "../data/blogs"
 
 function LandingPage({setSelectedCard}) {
     const upcomingEventData = ''
+
+    const blogData = blogs.slice(0, 3)
+
   return (
     <div className="page">
         {/**
@@ -48,7 +52,7 @@ function LandingPage({setSelectedCard}) {
 
         <TestimonialsSection />
 
-<BlogSection />
+<BlogSection data={blogData} />
 
 {/**SECTION FOR SOCILA MEDIA POSTS OR ACCOUNTS */}
 <SociailMedia />
