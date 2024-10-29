@@ -20,7 +20,7 @@ function Register() {
     }
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-4">
         <div className="inputGroup">
             <label className="label font-semibold" >Name:</label>
             <input id="name" onChange={handleChange} type="text" placeholder="Enter Name" className="input" />

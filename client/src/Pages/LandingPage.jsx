@@ -6,6 +6,7 @@ import Menue from "../Components/Helpers/Menu"
 import Navbar from "../Components/Helpers/Navbar"
 import OurCampaign from "../Components/Helpers/OurCampaign"
 import QuickNav from "../Components/Helpers/QuickNav"
+import QuickResource from "../Components/Helpers/QuickResource"
 import SignupBanner from "../Components/Helpers/SignupBanner"
 import SociailMedia from "../Components/Helpers/SociailMedia"
 import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
@@ -35,6 +36,10 @@ function LandingPage({setSelectedCard}) {
             <UpcomingEvents data={upcomingEventData} />
         </div>
         <StatementOfFaith />
+
+        <div className="py-8">
+            <QuickResource />
+        </div>
         
         {/**
          * 

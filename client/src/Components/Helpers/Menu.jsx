@@ -10,7 +10,7 @@ const Menu = ({setSelectedCard}) => {
 
   const menuItems = menuLinks
 
-  const handleDonation = (value) => {
+  const handleClick = (value) => {
     setSelectedCard(`${value}`)
   }
 
@@ -25,7 +25,7 @@ const Menu = ({setSelectedCard}) => {
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
-              <IoCloseCircleOutline className="h-6 w-6" />
+              <IoCloseCircleOutline className="text-[32px] h-6 w-6" />
             ) : (
               <HiOutlineMenuAlt3 className="h-6 w-6" />
             )}
@@ -36,7 +36,8 @@ const Menu = ({setSelectedCard}) => {
             {menuItems.map((item, index) => (
               <li key={index} className="relative group">
                 <Link
-                  to={item.link || '#'}
+                  to={`${item.link}`}
+                  onClick={ () => item.onclick ? handleClick(item?.clickValue) : null }
                   className={`${item?.style ? item?.style : `text-slate-100 hover:text-color-1 font-medium  text-[14px]  flex items-center uppercase` } uppercase`}
                 >
                   {item.name}
@@ -53,16 +54,16 @@ const Menu = ({setSelectedCard}) => {
             isOpen ? 'block' : 'hidden'
           } absolute top-[70px] left-0 w-full bg-main-color pb-6 pad1`}
         >
-          <ul className="px-4 pt-2 space-y-2">
+          <ul className="px-4 pt-2 space-y-4">
             {menuItems.map((item, index) => (
               <li key={index} className="relative">
                 <div
                   className={``}
-                  onClick={ () => item.onclick ? handleDonation(item?.clickValue) : null }
                 >
                   <Link
-                    href={item.link || '#'}
-                    className={`${item?.style ? item?.style : 'text-slate-100 hover:text-color-1 font-medium text-[14px]' } uppercase`}
+                    to={`${item.link}`}
+                    onClick={ () => item.onclick ? handleClick(item?.clickValue) : null }
+                    className={`${item?.style ? item?.style : 'mb-3 text-slate-100 hover:text-color-1 font-medium text-[14px] ' } uppercase`}
                   >
                     {item.name}
                   </Link>

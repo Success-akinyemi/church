@@ -35,6 +35,7 @@ export const category = [
 
 export const product = [
     {
+        id: '1',
         name: 'Book 1',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
@@ -46,6 +47,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '2',
         name: 'Book 2',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 10,
@@ -57,6 +59,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '3',
         name: 'Book 3',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 20,
@@ -68,6 +71,7 @@ export const product = [
         discountPercernt: 5,
     },
     {
+        id: '4',
         name: 'Book 4',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 24,
@@ -79,6 +83,7 @@ export const product = [
         discountPercernt: 10,
     },
     {
+        id: '5',
         name: 'Book 5',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
@@ -90,6 +95,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '6',
         name: 'Music 1',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 12,
@@ -101,6 +107,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '7',
         name: 'Music 2',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 16,
@@ -112,6 +119,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '8',
         name: 'Music 3',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
@@ -123,6 +131,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '9',
         name: 'Music 4',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 24,
@@ -134,6 +143,7 @@ export const product = [
         discountPercernt: 10,
     },
     {
+        id: '10',
         name: 'Music 5',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 19,
@@ -145,6 +155,7 @@ export const product = [
         discountPercernt: 8,
     },
     {
+        id: '11',
         name: 'Series 1',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
@@ -156,6 +167,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '12',
         name: 'Series 2',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
@@ -167,6 +179,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '13',
         name: 'Series 3',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 10,
@@ -178,6 +191,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '14',
         name: 'Series 4',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 5,
@@ -189,6 +203,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '15',
         name: 'Series 5',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
@@ -200,6 +215,7 @@ export const product = [
         discountPercernt: 7,
     },
     {
+        id: '16',
         name: 'Gift 1',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 25,
@@ -211,6 +227,7 @@ export const product = [
         discountPercernt: 15,
     },
     {
+        id: '17',
         name: 'Gift 2',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 25,
@@ -222,6 +239,7 @@ export const product = [
         discountPercernt: 15,
     },
     {
+        id: '18',
         name: 'Gift 3',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
@@ -233,6 +251,7 @@ export const product = [
         discountPercernt: 6,
     },
     {
+        id: '19',
         name: 'Gift 4',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,
@@ -244,6 +263,7 @@ export const product = [
         discountPercernt: '',
     },
     {
+        id: '20',
         name: 'Gift 5',
         img: 'https://images.pexels.com/photos/6373305/pexels-photo-6373305.jpeg?auto=compress&cs=tinysrgb&w=600',
         price: 15,

@@ -14,7 +14,7 @@ export default {
         'color-1': '#FFD700', //gold
 
         'white': '#fff',
-        'transparent-bg': 'rgba(0, 0, 0, 0.9)',
+        'transparent-bg': 'rgba(0, 0, 0, 0.6)',
         'transparent-bg-2': 'rgba(0, 0, 0, 0.8)',
 
 
@@ -28,6 +28,7 @@ export default {
         'tablet': {'max': '700px'},
         'phone': {'max': '500px'},
         'small-phone': {'max': '450px'},
+        'smaller-phone': {'max': '400px'},
       },
       fontFamily: {
         'font-1': ['Poppins', 'sans-serif'], 

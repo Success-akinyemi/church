@@ -39,7 +39,7 @@ export default FeatureProducts
 //export a reuseable component here.
 export const FilerComponent = ({ img, title, desc, linkText, setCatState, slug }) => {
     const changeCategory = (item) => {
-        alert(`Hello, ${item}`)
+        //alert(`Hello, ${item}`)
         setCatState(item)
     }
     return (
