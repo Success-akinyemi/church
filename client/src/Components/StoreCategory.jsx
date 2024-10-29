@@ -18,7 +18,7 @@ function StoreCategory() {
 
   return (
     <div className="w-full">
-        <div className="w-full pad1 bg-main-color flex items-center gap-[2px] ">
+        <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
             <div onClick={() => changeCategory('featured')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${catState === 'featured' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${catState === 'featured' ? 'text-white' : 'text-text-white'} hover:text-white`}>
                     <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>Featured</p>
             </div>

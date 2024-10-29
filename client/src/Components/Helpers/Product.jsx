@@ -1,7 +1,16 @@
 import { MdAddShoppingCart } from "react-icons/md";
 import { MdOutlineViewTimeline } from "react-icons/md";
+import { IoIosAddCircleOutline } from "react-icons/io";
+import { IoIosRemoveCircleOutline } from "react-icons/io";
+import { useState } from "react";
+import { addProduct } from "../../redux/cart/cartSlice";
+import { useDispatch } from "react-redux";
+import toast from "react-hot-toast";
 
 function Product({data}) {
+    const dispatch = useDispatch()
+    const [ productquantity, setProductQuantity ] = useState(1)
+
     function truncateText(text, maxLength) {
         if (text?.length <= maxLength) {
             return text;
@@ -26,6 +35,21 @@ function Product({data}) {
     }
 
     const discountPayableAmount = calculateDiscountedPrice(data?.price, data?.discountPercernt)
+
+    const handleQuantity = (type) => {
+        if(type === 'dec'){
+            productquantity > 1 && setProductQuantity(productquantity - 1)
+        } else{
+            setProductQuantity(productquantity + 1)
+        }
+    }
+
+    const handleAddToCart = () => {
+        dispatch(
+            addProduct({ ...data, id: data?.id, price: data?.isDiscountAllowed ? data?.discountPrice : data?.price,  quantity: productquantity })
+        )
+        toast.success('Item addded to cart')
+    }
 
   return (
     <div className="w-[450px] phone:w-[94%] overflow-hidden shadow-xl rounded-[8px]">
@@ -61,8 +85,24 @@ function Product({data}) {
 
             <hr className="w-full border-[1px] rounded-[10px] border-text-color-3 my-4" />
             
+            <div className="flex items-center justify-center gap-3 mb-2">
+                <div 
+                    onClick={() => handleQuantity('dec')}
+                    className="text-[32px] phone:text-[28px] cursor-pointer text-text-color-2 font-bold transition-all duration-300 hover:text-main-color"
+                >
+                    <IoIosRemoveCircleOutline />
+                </div>
+                <span className="text-[19px] phone:text-[16px] font-semibold">{productquantity}</span>
+                <div 
+                    onClick={() => handleQuantity('inc')}
+                    className="text-[32px] phone:text-[28px] cursor-pointer text-text-color-2 font-bold transition-all duration-300 hover:text-main-color"
+                >
+                    <IoIosAddCircleOutline />
+                </div>
+            </div>
+
             <div className="flex gap-3">
-                <div className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
+                <div onClick={handleAddToCart} className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
                     <MdAddShoppingCart />
                     Add To Cart
                 </div>

@@ -30,7 +30,7 @@ function ShoppingCart() {
 
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center max-h-[85vh] overflow-y-auto">
       <h3 className="focusText border-b-0 text-left w-full text-[24px] phone:text-[20px]">View Cart</h3>
       
       <p className="text-text-color-2 font-semibold text-[19px] mt-2">
@@ -47,7 +47,7 @@ function ShoppingCart() {
                         ) : (
                             cart.products?.map((item, idx) => (
                                 <div key={idx} className="card">
-                                    <div className="img">
+                                    <div className="w-[25%]">
                                         <img src={item?.img} alt={`${item?.name}`} />
                                     </div>
                                     <div className="info">

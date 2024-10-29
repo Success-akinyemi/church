@@ -10,6 +10,7 @@ import Donations from './Components/Modals/Donations';
 import Store from './Pages/Store';
 import Fada from './Pages/About/Fada';
 import AboutUs from './Pages/AboutUs';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -64,6 +65,7 @@ function App() {
 
   return (
     <div className='app overflow-hidden'>
+      <Toaster position='top-center'></Toaster>
       {
         selectedCard && (
           <>
