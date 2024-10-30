@@ -13,6 +13,7 @@ import AboutUs from './Pages/AboutUs';
 import { Toaster } from 'react-hot-toast';
 import Blogs from './Pages/Blogs';
 import Blog from './Pages/Blog';
+import Resources from './Pages/Resources';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -95,6 +96,7 @@ function App() {
           <Route path='/about-us' element={<AboutUs setSelectedCard={setSelectedCard} />} />
           <Route path='/blogs' element={<Blogs setSelectedCard={setSelectedCard} />} />
           <Route path='/blog/:id' element={<Blog setSelectedCard={setSelectedCard} />} />
+          <Route path='/resources' element={<Resources setSelectedCard={setSelectedCard} />} />
 
 
 
