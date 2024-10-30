@@ -10,7 +10,11 @@ function Blog({setSelectedCard}) {
         <div className="mt-[70px]">
             <QuickNav setSelectedCard={setSelectedCard} />
         </div>
+        
+        <div className='mt-[110px]'>
       BLog
+
+        </div>
 
       <Footer />
     </div>

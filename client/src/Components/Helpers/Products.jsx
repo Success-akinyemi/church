@@ -30,7 +30,7 @@ function Products({ data, quantityToDisplay, slug, pagination, noPerPage }) {
       </div> 
 
         {pagination && totalPages > 1 && (
-          <div className="flex justify-center items-center mt-4">
+          <div className="flex justify-center items-center mt-5 mb-5">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
