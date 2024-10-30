@@ -41,7 +41,7 @@ function ResourcesComponents() {
                 )
             }
             {
-                catSte === 'testimonials' && (
+                catState === 'testimonials' && (
                     <Testimonials />
                 )
             }
