@@ -1,9 +1,8 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCross, FaHandHoldingHeart, FaUsers, FaChurch, FaArrowRight } from 'react-icons/fa';
 import ChurchValues from './ChurchValues';
 
-const StatementOfFaith = () => {
+const StatementOfFaith = ({ setSelectedCard }) => {
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -28,6 +27,10 @@ const StatementOfFaith = () => {
       text: "Growing in Faith"
     }
   ];
+
+  const handlePopup = (item) => {
+    setSelectedCard(item)
+  }
 
   return (
     <>
@@ -125,7 +128,8 @@ const StatementOfFaith = () => {
                 <motion.div
                   animate={{ y: [-5, 5, -5] }}
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="absolute -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg z-20"
+                  className="absolute cursor-pointer -top-6 -right-6 bg-white p-4 rounded-lg shadow-lg z-20"
+                  onClick={() => handlePopup('donations')}
                 >
                   <FaCross className="w-6 h-6 text-[#9B111E]" />
                 </motion.div>
@@ -133,7 +137,8 @@ const StatementOfFaith = () => {
                 <motion.div
                   animate={{ y: [5, -5, 5] }}
                   transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                  className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg z-20"
+                  className="absolute cursor-pointer -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg z-20"
+                  onClick={() => handlePopup('donations')}
                 >
                   <FaHandHoldingHeart className="w-6 h-6 text-[#9B111E]" />
                 </motion.div>

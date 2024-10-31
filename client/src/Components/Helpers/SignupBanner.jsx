@@ -39,7 +39,7 @@ function SignupBanner() {
         <div className="pad1">
             <form className='flex flex-col items-center justify-center gap-5 text-white'>
               <h2 className='text-[28px] tablet:text-[21px] phone:text-[19px] text-center'>Sign up to receive life changing hope and encouragement!</h2>
-              <div className='flex items-center justify-center small-pc:flex-col gap-3 small-pc:w-full'>
+              <div className='flex items-center justify-center small-pc:flex-col gap-3 small-pc:w-full phone:w-full'>
                 <div className="inputGroup">
                   <input onChange={handleChange} type="text" id='firstName' placeholder='First Name'className='text-[17px] p-2 border-none text-text-color-2 outline-none' />
                 </div>

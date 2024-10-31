@@ -1,10 +1,12 @@
-import React from 'react'
 import TestimonialsSection from '../Helpers/TestimonalSection'
+import { testimonialData } from '../../data/testimonies'
 
 function Testimonials() {
+  const testimonies = testimonialData
+
   return (
     <div>
-      <TestimonialsSection />
+      <TestimonialsSection data={testimonies} />
     </div>
   )
 }
