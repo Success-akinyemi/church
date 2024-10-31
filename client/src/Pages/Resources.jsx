@@ -1,8 +1,8 @@
-import React from 'react'
 import Menu from '../Components/Helpers/Menu'
 import QuickNav from '../Components/Helpers/QuickNav'
 import Banner from '../Components/Helpers/Banner'
 import ResourcesComponents from '../Components/ResourcesComponents'
+import Footer from '../Components/Helpers/Footer'
 
 function Resources({setSelectedCard}) {
   return (
@@ -20,6 +20,8 @@ function Resources({setSelectedCard}) {
         </div>
 
         <ResourcesComponents />
+
+        <Footer />
       
     </div>
   )

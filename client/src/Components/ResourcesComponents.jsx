@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import Testimonials from './ResourcesUi/Testimonials'
+import Gallery from './ResourcesUi/Gallery'
 
 function ResourcesComponents() {
+
     const subMenu = [
         {
             link: 'Gallery',
@@ -16,7 +18,7 @@ function ResourcesComponents() {
             slug: 'videoteachings'
         }
     ]
-    const [ catState, setCatState ] = useState(subMenu[0].link)
+    const [ catState, setCatState ] = useState(subMenu[0].slug)
 
     const changeCategory = (item) => {
         setCatState(item)
@@ -34,10 +36,10 @@ function ResourcesComponents() {
             }
         </div>
 
-        <div className='w-full pad1 mt-12'>
+        <div className='w-full pad1 mt-12 mb-5'>
             {
-                catState === '' && (
-                    ''
+                catState === 'gallery' && (
+                    <Gallery />
                 )
             }
             {

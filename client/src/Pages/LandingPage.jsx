@@ -13,11 +13,14 @@ import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
 import TestimonialsSection from "../Components/Helpers/TestimonalSection"
 import UpcomingEvents from "../Components/UpcomingEvents"
 import { blogs } from "../data/blogs"
+import { testimonialData } from "../data/testimonies"
 
-function LandingPage({setSelectedCard}) {
+function LandingPage({ setSelectedCard }) {
     const upcomingEventData = ''
 
     const blogData = blogs.slice(0, 3)
+
+    const testimonies = testimonialData.splice(0, 3)
 
   return (
     <div className="page">
@@ -39,7 +42,7 @@ function LandingPage({setSelectedCard}) {
         <div className='mt-[30px]' >
             <UpcomingEvents data={upcomingEventData} />
         </div>
-        <StatementOfFaith />
+        <StatementOfFaith setSelectedCard={setSelectedCard} />
 
         <div className="py-8">
             <QuickResource />
@@ -50,7 +53,7 @@ function LandingPage({setSelectedCard}) {
          */}
         <OurCampaign />
 
-        <TestimonialsSection />
+        <TestimonialsSection data={testimonies} />
 
 <BlogSection data={blogData} />
 
