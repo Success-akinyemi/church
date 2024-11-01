@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaHands, FaCross, FaArrowRight } from 'react-icons/fa';
 import { RiHeartLine } from 'react-icons/ri';
@@ -9,21 +8,21 @@ const ChurchWebsite = () => {
       title: "National Convention Houston",
       description: "Join us for a transformative experience of worship and fellowship",
       date: "June 15-18, 2024",
-      image: "https://hgfpmi.org/wp-content/uploads/2024/06/b-Houston.jpg",
+      image: "https://youtu.be/UN6JMzTN2oQ",
       tag: "Featured Event"
     },
     {
       title: "Connect & Pray Online",
       description: "Unite in prayer with believers worldwide",
       date: "Daily Sessions",
-      image: "https://hgfpmi.org/wp-content/uploads/2024/06/b-Houston.jpg",
+      image: "https://youtu.be/UN6JMzTN2oQ",
       tag: "Online Prayer"
     },
     {
       title: "Daily Prayer Sessions",
       description: "Strengthen your spiritual journey through daily communion",
       date: "Every Day",
-      image: "https://hgfpmi.org/wp-content/uploads/2024/06/b-Houston.jpg",
+      image: "https://youtu.be/UN6JMzTN2oQ",
       tag: "Spiritual Growth"
     }
   ];
@@ -74,11 +73,12 @@ const ChurchWebsite = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative w-full h-full"
           >
-            <img
+            <video
               src={campaign.image}
-              alt={campaign.title}
+             muted
               className="w-full  object-cover brightness-90"
-            />
+            >
+            </video> 
           </motion.div>
 
           {/* Overlay Elements */}
@@ -208,7 +208,7 @@ const ChurchWebsite = () => {
       className="min-h-screen bg-[#FFFDF9] bg-gradient-to-b from-#9B111E to-white"
     >
       {/* Campaigns Section */}
-      <section className="py-24 px-3 lg:px-[5rem] bg-gradient-to-b from-[#d05864] to-white">
+      <section className="py-24 pad1 bg-gradient-to-b from-[#d05864] to-white">
         <div className="container mx-auto px-6">
           {/**
            * 

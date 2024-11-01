@@ -55,6 +55,11 @@ export const menuLinks = [
        * 
        */
     },
+    { 
+      name: 'Live', 
+      link: '/live',
+      style: '',
+    },
     {
       name: 'Programs & Events',
       link: '/programs-and-events',

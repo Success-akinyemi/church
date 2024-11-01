@@ -1,4 +1,4 @@
-import BooksImg from '../../assests/books.png'
+import BooksImg from '../../assests/books.jpg'
 import Button from './Button'
 
 function QuickResource() {
@@ -13,7 +13,7 @@ function QuickResource() {
   return (
     <div className='pad1 flex items-center justify-center gap-3 tablet:flex-col'>
       <div className='flex-1 w-full'>
-        <img src={data.image} alt='' className=' w-[85%]' />
+        <img src={data.image} alt='' className=' w-[85%] h-[400px] object-contain object-center' />
       </div>  
 
       <div className='flex-1 text-text-black flex flex-col gap-7'>
@@ -22,7 +22,7 @@ function QuickResource() {
           {data.description}
         </p>
         <div className='w-[50%]'>
-          <Button text={'Request Now'} onClick={handleRequestResource} style={'uppercase w-fit p-2'}/>
+          <Button text={'Request Now'} onClick={handleRequestResource} style={'uppercase w-fit p-2 rounded-[0px]'}/>
         </div>
       </div>
     </div>
