@@ -1,32 +1,22 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
+import { FaPlay } from "react-icons/fa";
 
 function Hero() {
-    const [ hoverState, setHoverState ] = useState(false)
   return (
     <div className='w-full h-[90vh] relative'>
         <div className='absolute pad1 w-full h-full z-20 bg-transparent-bg left-0 top-0 flex flex-col justify-center'>
             <h1 className='text-[48px] small-pc:text-[36px] tablet:text-[32px] phone:text-[24px] text-white '>    
-                Live inspired. Reach your dreams. <br /> Become all God created you to be.
+                Live Prayer Session. <br /> Connect With Fada Everyday.
             </h1>
 
             <div className='flex items-center gap-3 mt-8 smaller-phone:flex-col'>
-                <Link 
-                    to='' 
-                    className={`flex items-center justify-center text-center py-2 phone:py-1 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${hoverState ? 'bg-white' : 'bg-transparent'}`}
-                    onMouseEnter={() => setHoverState(false)}
-                    onMouseLeave={() => setHoverState(true)}
-                >
-                    Todays Offer
-                </Link>
 
                 <Link 
-                    to='' 
-                    className={`flex items-center justify-center text-center py-2 phone:py-1 px-8 small-pc:px-7 tablet:px-6 rounded-[8px] link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-white ${!hoverState ? 'bg-white' : 'bg-transparent'}`}
-                    onMouseEnter={() => setHoverState(true)}
-                    onMouseLeave={() => setHoverState(false)}
+                    to='/live' 
+                    className={`flex items-center justify-center gap-2 py-3 phone:py-2 px-10 small-pc:px-9 tablet:px-8 link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-color-1 bg-color-1 hover:text-white`}
                 >
-                    Daily Insipration
+                    <FaPlay className='' />
+                    Live
                 </Link>
             </div>
         </div>

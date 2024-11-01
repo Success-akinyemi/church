@@ -4,9 +4,11 @@ import Menu from "../Components/Helpers/Menu"
 import QuickNav from "../Components/Helpers/QuickNav"
 import Minstry from "../Components/AboutUi/Minstry"
 import AboutFada from "../Components/AboutUi/AboutFada"
+import Branches from "../Components/AboutUi/Branches"
+import AboutHGFPMI from "../Components/AboutUi/AboutHGFPMI"
 
 function AboutUs({ setSelectedCard }) {
-  const [ activeCard, setActiveCard ] = useState('ministry')
+  const [ activeCard, setActiveCard ] = useState('fada')
 
   const toggleCard = (cardValue) => {
     setActiveCard(cardValue)
@@ -26,20 +28,40 @@ function AboutUs({ setSelectedCard }) {
             />
         </div>
 
-        <div className="flex items-center justify-center mt-6 text-[24px] gap-4 font-semibold">
-          <div onClick={() => setActiveCard('ministry')} className={`cursor-pointer border-b-2 hover: ${activeCard === 'ministry' ? 'text-main-color border-b-main-color' : ''}`}>Ministry</div>
-          <div onClick={() => setActiveCard('fada')} className={`cursor-pointer border-b-2 hover: ${activeCard === 'fada' ? 'text-main-color border-b-main-color' : ''}`}>FADA</div>
-        </div>  
+        <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
+          <div onClick={() => toggleCard('abouthgfmi')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'abouthgfmi' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'abouthgfmi' ? 'text-white' : 'text-text-white'} hover:text-white`}>
+              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>About HGGPMI</p>
+          </div>
+          <div onClick={() => toggleCard('fada')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'fada' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'fada' ? 'text-white' : 'text-text-white'} hover:text-white`}>
+              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>FADA</p>
+          </div>
+          <div onClick={() => toggleCard('ministry')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'ministry' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'ministry' ? 'text-white' : 'text-text-white'} hover:text-white`}>
+              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>Leaders</p>
+          </div>
+          <div onClick={() => toggleCard('branches')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'branches' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'branches' ? 'text-white' : 'text-text-white'} hover:text-white`}>
+              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>Branches</p>
+          </div>
+        </div> 
 
         <div>
+          {
+            activeCard === 'abouthgfmi' && (
+              <AboutHGFPMI />
+            )
+          }
+          {
+            activeCard === 'fada' && (
+              <AboutFada />
+            )
+          }
           {
             activeCard === 'ministry' && (
               <Minstry />
             )
           }
           {
-            activeCard === 'fada' && (
-              <AboutFada />
+            activeCard === 'branches' && (
+              <Branches />
             )
           }
         </div>

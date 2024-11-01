@@ -10,6 +10,7 @@ import QuickResource from "../Components/Helpers/QuickResource"
 import SignupBanner from "../Components/Helpers/SignupBanner"
 import SociailMedia from "../Components/Helpers/SociailMedia"
 import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
+import StreamLiveBanner from "../Components/Helpers/StreamLiveBanner"
 import TestimonialsSection from "../Components/Helpers/TestimonalSection"
 import UpcomingEvents from "../Components/UpcomingEvents"
 import { blogs } from "../data/blogs"
@@ -51,7 +52,11 @@ function LandingPage({ setSelectedCard }) {
         {/**
          * 
          */}
+         <StreamLiveBanner />
+
         <OurCampaign />
+
+        
 
         <TestimonialsSection data={testimonies} />
 

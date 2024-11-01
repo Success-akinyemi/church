@@ -132,8 +132,8 @@ return (
         <Menu />
         <QuickNav />
 
-        <div className="container mx-auto px-4 lg:px-[5rem] py-16 bg-gray-50">
-            <h2 className="text-4xl font-bold text-center mb-4">Our Team</h2>
+        <div className="container pad1 py-16 bg-gray-50">
+            <h2 className="text-4xl font-bold text-center mb-4">Ministry Officials</h2>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
                 Meet our talented team of professionals who make the magic happen
             </p>

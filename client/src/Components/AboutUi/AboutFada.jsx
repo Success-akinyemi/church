@@ -46,7 +46,7 @@ const AboutFada = () => {
       <Menu />
       <QuickNav />
 
-      <div className="min-h-screen lg:px-[5rem]">
+      <div className="min-h-screen pad1">
         {/* Enhanced Hero Section */}
         <motion.div 
           initial={{ opacity: 0 }}
