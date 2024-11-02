@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import BlogSection from "../Components/Helpers/BlogHero"
 import ChurchValues from "../Components/Helpers/ChurchValues"
 import Footer from "../Components/Helpers/Footer"
@@ -11,12 +12,24 @@ import SignupBanner from "../Components/Helpers/SignupBanner"
 import SociailMedia from "../Components/Helpers/SociailMedia"
 import StatementOfFaith from "../Components/Helpers/StatmentofFaith"
 import StreamLiveBanner from "../Components/Helpers/StreamLiveBanner"
+import Teachings from "../Components/Helpers/Teachings"
 import TestimonialsSection from "../Components/Helpers/TestimonalSection"
 import UpcomingEvents from "../Components/UpcomingEvents"
 import { blogs } from "../data/blogs"
 import { testimonialData } from "../data/testimonies"
+import { useEffect } from "react"
 
 function LandingPage({ setSelectedCard }) {
+    useEffect(() => {
+        // Scroll to the top of the page when the component mounts
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+        });
+    
+    }, []);
+
     const upcomingEventData = ''
 
     const blogData = blogs.slice(0, 3)
@@ -54,13 +67,33 @@ function LandingPage({ setSelectedCard }) {
          */}
          <StreamLiveBanner />
 
+        <Teachings />
+        {/**
+         * 
         <OurCampaign />
+         */}
+
 
         
+        <div className="mb-8">
+            <TestimonialsSection data={testimonies} showMore={false} />
 
-        <TestimonialsSection data={testimonies} />
+            <div className="text-center mt-12">
+          <Link to='/resources' className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors">
+            View More
+          </Link>
+        </div>
+        </div>
 
-<BlogSection data={blogData} />
+        <div className="mb-8 bg-gray-50 py-5">
+            <BlogSection data={blogData} />
+
+            <div className="text-center mt-4">
+          <Link to='/blogs' className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors">
+          View All Blogs
+          </Link>
+        </div>
+        </div>
 
 {/**SECTION FOR SOCILA MEDIA POSTS OR ACCOUNTS */}
 <SociailMedia />

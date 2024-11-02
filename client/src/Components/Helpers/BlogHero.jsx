@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 const BlogCard = ({ image, title, description, link }) => (
@@ -36,19 +37,30 @@ const BlogCard = ({ image, title, description, link }) => (
   </div>
 );
 
-const BlogSection = ({ data }) => {
-  const blogs = data
+const BlogSection = ({ data, pagination, noPerPage }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(data.length / noPerPage);
+
+  // Determine what data to display
+  const currentPageData = pagination 
+    ? data.slice((currentPage - 1) * noPerPage, currentPage * noPerPage)
+    : data;
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
-    <section className="py-16 pad1 bg-gray-50">
+    <section className="py-16 pad1">
       <div className="container mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">BLOGS</h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog, index) => (
+          {currentPageData.map((blog) => (
             <BlogCard 
               key={blog.id}
               image={blog.image}
@@ -59,11 +71,34 @@ const BlogSection = ({ data }) => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors">
-            View All Blogs
-          </button>
-        </div>
+        {/* Pagination Controls */}
+        {pagination && (
+  <div className="flex justify-center items-center mt-8">
+    <button
+      onClick={() => handlePageChange(currentPage - 1)}
+      disabled={currentPage === 1}
+      className={`px-4 py-2 rounded-l ${
+        currentPage === 1 ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-main-color text-white hover:bg-main-color-dark'
+      }`}
+    >
+      &lt;
+    </button>
+
+    <span className="mx-4 text-lg font-semibold">
+      {currentPage} / {totalPages}
+    </span>
+
+    <button
+      onClick={() => handlePageChange(currentPage + 1)}
+      disabled={currentPage === totalPages}
+      className={`px-4 py-2 rounded-r ${
+        currentPage === totalPages ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-main-color text-white hover:bg-main-color-dark'
+      }`}
+    >
+      &gt;
+    </button>
+  </div>
+)}
       </div>
     </section>
   );

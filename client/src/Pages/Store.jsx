@@ -4,8 +4,19 @@ import Banner from '../Components/Helpers/Banner'
 import Footer from '../Components/Helpers/Footer'
 import StoreCategory from '../Components/StoreCategory'
 import Menu from '../Components/Helpers/Menu'
+import { useEffect } from 'react'
 
 function Store({ setSelectedCard }) {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+
+}, []);
+
   return (
     <div className='page'>
         <Menu setSelectedCard={setSelectedCard} />

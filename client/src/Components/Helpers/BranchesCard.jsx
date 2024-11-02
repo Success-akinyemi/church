@@ -19,9 +19,9 @@ const BranchesCard = ({ image, title, description, link }) => (
       </p>
       <div className="flex items-center justify-between">
         <Link 
-          to={`/blog/${link}`}
+          to={``}
           className="text-main-color-dark font-semibold hover:text-main-color transition-colors flex items-center gap-2">
-          READ MORE 
+          VISIT
           <svg 
             className="w-4 h-4 group-hover:translate-x-1 transition-transform" 
             fill="none" 
@@ -43,7 +43,7 @@ const BranchesSection = ({ data }) => {
     <section className="py-16 pad1 bg-gray-50">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">BLOGS</h2>
+          <h2 className="text-5xl small-pc:text-4xl tablet:text-3xl  font-bold text-gray-900 mb-4">Ministry Branches</h2>
           <div className="w-24 h-1 bg-yellow-500 mx-auto rounded-full"></div>
         </div>
         
@@ -59,11 +59,7 @@ const BranchesSection = ({ data }) => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <button className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors">
-            View All Blogs
-          </button>
-        </div>
+
       </div>
     </section>
   );

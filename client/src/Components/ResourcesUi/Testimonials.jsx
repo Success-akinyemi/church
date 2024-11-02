@@ -6,7 +6,7 @@ function Testimonials() {
 
   return (
     <div>
-      <TestimonialsSection data={testimonies} />
+      <TestimonialsSection data={testimonies} showMore={true} />
     </div>
   )
 }
