@@ -36,12 +36,12 @@ function SignupBanner() {
 
   return (
     <div className='w-full bg-text-color-3 flex items-center justify-center p-8'>
-        <div className="pad1">
-            <form className='flex flex-col items-center justify-center gap-5 text-white'>
+        <div className="w-full">
+            <form className=' w-full small-pc:w-full flex flex-col items-center justify-center gap-5 text-white'>
               <h2 className='text-[28px] tablet:text-[21px] phone:text-[19px] text-center'>Sign up to receive life changing hope and encouragement!</h2>
               <div className='flex items-center justify-center small-pc:flex-col gap-3 small-pc:w-full phone:w-full'>
-                <div className="inputGroup">
-                  <input onChange={handleChange} type="text" id='firstName' placeholder='First Name'className='text-[17px] p-2 border-none text-text-color-2 outline-none' />
+                <div className="inputGroup small-pc:w-full ">
+                  <input onChange={handleChange} type="text" id='firstName' placeholder='First Name'className='small-pc:w-full text-[17px] p-2 border-none text-text-color-2 outline-none' />
                 </div>
                 <div className="inputGroup">
                   <input onChange={handleChange} type="text" id='lastName' placeholder='Last Name' className='text-[17px] p-2 border-none text-text-color-2 outline-none' />

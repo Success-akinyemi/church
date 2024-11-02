@@ -1,4 +1,4 @@
-import BooksImg from '../../assests/books.jpg'
+import BooksImg from '../../assests/roc.jpg'
 import Button from './Button'
 
 function QuickResource() {
@@ -21,8 +21,8 @@ function QuickResource() {
         <p className='text-[18px] tablet:text-[16px] phone:text-[15px] font-extralight'>
           {data.description}
         </p>
-        <div className='w-[50%]'>
-          <Button text={'Request Now'} onClick={handleRequestResource} style={'uppercase w-fit p-2 rounded-[0px]'}/>
+        <div className='w-[50%] phone:w-full'>
+          <Button text={'Request Now'} onClick={handleRequestResource} style={'uppercase w-fit p-2 rounded-[0px] bg-main-color text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group'}/>
         </div>
       </div>
     </div>

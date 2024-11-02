@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import LogoImg from '../../assests/HGFPMI-LOGO.png'
 
 const TestimonialCard = ({ name, role, testimony }) => (
-  <div className="bg-white rounded-xl shadow-lg p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+  <div className="bg-white rounded-xl shadow-md p-6 transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
     <div className="flex flex-col items-center">
       <div className="mb-4">
-        <div className="w-16 h-16 relative">
+        <div className="w-16 h-16 relative flex items-center justify-center">
           <div className="absolute inset-0 bg-red-500 rounded-full opacity-20"></div>
-          <svg className="w-full h-full text-red-500 p-4" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm4.59-12.42L10 14.17l-2.59-2.58L6 13l4 4 8-8z"/>
-          </svg>
+          <img alt='logo' src={LogoImg} className='w-[38px]' />
         </div>
       </div>
       <blockquote className="text-gray-700 text-center mb-4 line-clamp-4">
@@ -22,7 +21,7 @@ const TestimonialCard = ({ name, role, testimony }) => (
   </div>
 );
 
-const TestimonialsSection = ({ data}) => {
+const TestimonialsSection = ({ data, showMore }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const itemsPerSlide = 3;
@@ -54,37 +53,33 @@ const TestimonialsSection = ({ data}) => {
   return (
     <section className="py-20 bg-gray-100 to-white overflow-hidden">
       <div className="container mx-auto px-4">
-        {/**
-         * 
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            TESTIMONIALS
-          </h2>
-          <div className="w-24 h-1 bg-red-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Hear from our community members about their spiritual journey and experiences
-          </p>
-        </div>
-         */}
 
         <div className="relative max-w-7xl mx-auto">
           {/* Navigation Buttons */}
-          <button 
-            onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
-          >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-          <button 
-            onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
-          >
-            <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
+          {
+            showMore && (
+              <>
+              <button 
+                onClick={prevSlide}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 lg:-translate-x-12 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 lg:translate-x-12 z-10 bg-white p-3 rounded-full shadow-lg hover:bg-gray-50 transition-colors"
+              >
+                <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+              
+              </>
+
+            )
+          }
 
           {/* Slider */}
           <div className="overflow-hidden">
@@ -122,7 +117,7 @@ const TestimonialsSection = ({ data}) => {
 
         <div className="text-center mb-16 mt-4">
           <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4">
-            TESTIMONIALS
+            TESTIMONIES
           </h2>
         </div>
       </div>

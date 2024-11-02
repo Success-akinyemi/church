@@ -10,12 +10,8 @@ function ResourcesComponents() {
             slug: 'gallery'
         },
         {
-            link: 'Testimonials',
-            slug: 'testimonials'
-        },
-        {
-            link: 'Video Teachings',
-            slug: 'videoteachings'
+            link: 'Testimonies',
+            slug: 'testimonies'
         }
     ]
     const [ catState, setCatState ] = useState(subMenu[0].slug)
@@ -30,7 +26,7 @@ function ResourcesComponents() {
             {
                 subMenu.map((item, idx) => (
                     <div key={idx} onClick={() => changeCategory(item.slug)} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${item?.slug === catState ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${item.slug === catState ? 'text-white' : 'text-text-white'} hover:text-white`}>
-                        <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>{item.link}</p>
+                        <p className={`text-center font-semibold text-[24px] phone:text-[17px] `}>{item.link}</p>
                     </div>
                 ))
             }
@@ -43,13 +39,8 @@ function ResourcesComponents() {
                 )
             }
             {
-                catState === 'testimonials' && (
+                catState === 'testimonies' && (
                     <Testimonials />
-                )
-            }
-            {
-                catState === '' && (
-                    ''
                 )
             }
         </div>

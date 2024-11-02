@@ -14,6 +14,7 @@ import Blogs from './Pages/Blogs';
 import Blog from './Pages/Blog';
 import Resources from './Pages/Resources';
 import Sermon from './Pages/Sermon';
+import ProgramsAndEvents from './Pages/ProgramsAndEvents';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -97,6 +98,7 @@ function App() {
           <Route path='/blog/:id' element={<Blog setSelectedCard={setSelectedCard} />} />
           <Route path='/resources' element={<Resources setSelectedCard={setSelectedCard} />} />
           <Route path='/live' element={<Sermon setSelectedCard={setSelectedCard} />} />
+          <Route path='/programs-and-events' element={<ProgramsAndEvents setSelectedCard={setSelectedCard} />} />
 
 
 

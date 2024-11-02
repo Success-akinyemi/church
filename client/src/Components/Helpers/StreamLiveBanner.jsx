@@ -11,7 +11,7 @@ function StreamLiveBanner() {
       <div className='pad1 relative w-full h-full z-50 flex flex-col gap-8 items-center justify-center'>
             <Link 
                 to='/live' 
-                className={`flex items-center justify-center gap-2 py-3 phone:py-2 px-20 small-pc:px-9 tablet:px-8 link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-color-1 bg-color-1 hover:text-white`}
+                className={`bg-main-color text-[24px] phone:text-[18px] text-white font-semibold px-16 phone:px-12 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group`}
             >
                 <FaPlay className='' />
                 Live Stream
@@ -19,7 +19,7 @@ function StreamLiveBanner() {
 
             <Link 
                 to='' 
-                className={`flex items-center justify-center gap-2 py-3 phone:py-2 px-20 small-pc:px-9 tablet:px-8 link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-color-1 bg-color-1 hover:text-white`}
+                className={`bg-main-color text-[24px] phone:text-[18px] text-white font-semibold px-16 phone:px-12 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group`}
             >
                 <PiHandsPrayingFill className='' />
                 Prayer Point

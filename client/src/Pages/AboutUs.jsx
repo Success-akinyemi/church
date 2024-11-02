@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Banner from "../Components/Helpers/Banner"
 import Menu from "../Components/Helpers/Menu"
 import QuickNav from "../Components/Helpers/QuickNav"
@@ -9,6 +9,16 @@ import AboutHGFPMI from "../Components/AboutUi/AboutHGFPMI"
 
 function AboutUs({ setSelectedCard }) {
   const [ activeCard, setActiveCard ] = useState('fada')
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+
+}, []);
 
   const toggleCard = (cardValue) => {
     setActiveCard(cardValue)
@@ -30,16 +40,16 @@ function AboutUs({ setSelectedCard }) {
 
         <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
           <div onClick={() => toggleCard('abouthgfmi')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'abouthgfmi' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'abouthgfmi' ? 'text-white' : 'text-text-white'} hover:text-white`}>
-              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>About HGGPMI</p>
+              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>About HGGPMI</p>
           </div>
           <div onClick={() => toggleCard('fada')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'fada' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'fada' ? 'text-white' : 'text-text-white'} hover:text-white`}>
-              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>FADA</p>
+              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>FADA</p>
           </div>
           <div onClick={() => toggleCard('ministry')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'ministry' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'ministry' ? 'text-white' : 'text-text-white'} hover:text-white`}>
-              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>Leaders</p>
+              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>Leaders</p>
           </div>
           <div onClick={() => toggleCard('branches')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'branches' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'branches' ? 'text-white' : 'text-text-white'} hover:text-white`}>
-              <p className={`text-center font-semibold text-[24px] phone:text-[20px] `}>Branches</p>
+              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>Branches</p>
           </div>
         </div> 
 

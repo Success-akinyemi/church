@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect } from 'react'
 import Menu from '../Components/Helpers/Menu'
 import QuickNav from '../Components/Helpers/QuickNav'
 import Banner from '../Components/Helpers/Banner'
@@ -7,6 +7,17 @@ import BlogSection from '../Components/Helpers/BlogHero'
 import Footer from '../Components/Helpers/Footer'
 
 function Blogs({setSelectedCard}) {
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+    });
+
+}, []);
+
     const blogData = blogs
   return (
     <div>
@@ -22,7 +33,7 @@ function Blogs({setSelectedCard}) {
             />
         </div>
 
-        <BlogSection data={blogData} />
+        <BlogSection data={blogData} pagination={true} noPerPage={2} />
 
         <Footer />
     </div>

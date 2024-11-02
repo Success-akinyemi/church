@@ -113,12 +113,12 @@ function ShoppingCart() {
       <div className="flex items-center gap-4">
         <a
           href=""
-          className="link border-2 border-main-color text-main-color hover:bg-main-color hover:text-white duration-500 rounded-[4px] p-3"
+          className="text-center link border-2 border-main-color text-main-color hover:bg-main-color hover:text-white duration-500 rounded-[4px] p-3"
         >
           Continue Shopping
         </a>
         {cart.products.length > 0 && (
-          <div className="border-2 b border-main-color text-color-1 bg-main-color hover:bg-transparent hover:text-main-color duration-500 rounded-[4px] p-3 cursor-pointer">
+          <div className="text-center border-2 b border-main-color text-color-1 bg-main-color hover:bg-transparent hover:text-main-color duration-500 rounded-[4px] p-3 cursor-pointer">
             Proceed to Checkout
           </div>
         )}

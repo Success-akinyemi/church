@@ -72,7 +72,7 @@ const StatementOfFaith = ({ setSelectedCard }) => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#9B111E] text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group"
+                  className="bg-main-color text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group"
                 >
                   Join our Community
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
