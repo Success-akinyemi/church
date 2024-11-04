@@ -18,7 +18,7 @@ function StreamLiveBanner() {
             </Link>
 
             <Link 
-                to='' 
+                to='/consultations' 
                 className={`bg-main-color text-[24px] phone:text-[18px] text-white font-semibold px-16 phone:px-12 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group`}
             >
                 <PiHandsPrayingFill className='' />
