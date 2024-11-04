@@ -8,7 +8,7 @@ import Branches from "../Components/AboutUi/Branches"
 import AboutHGFPMI from "../Components/AboutUi/AboutHGFPMI"
 
 function AboutUs({ setSelectedCard }) {
-  const [ activeCard, setActiveCard ] = useState('fada')
+  const [ activeCard, setActiveCard ] = useState('abouthgfmi')
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts

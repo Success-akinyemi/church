@@ -12,7 +12,7 @@ function Hero() {
             <div className='flex items-center gap-3 mt-8 smaller-phone:flex-col'>
 
                 <Link 
-                    to='/live' 
+                    to='/sermon' 
                     className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-color-1 bg-color-1 hover:text-white`}
                 >
                     <FaPlay className='' />
