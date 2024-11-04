@@ -1,5 +1,6 @@
 import ConsultationCategory from "../Components/ConsultationUi/ConsultationCategory"
 import Banner from "../Components/Helpers/Banner"
+import Footer from "../Components/Helpers/Footer"
 import Menu from "../Components/Helpers/Menu"
 import QuickNav from "../Components/Helpers/QuickNav"
 
@@ -18,6 +19,9 @@ function Consultations({ setSelectedCard }) {
       </div>
 
       <ConsultationCategory />
+
+
+      <Footer />
 
     </div>
   )
