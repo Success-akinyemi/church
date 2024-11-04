@@ -19,6 +19,7 @@ import { blogs } from "../data/blogs";
 import { testimonialData } from "../data/testimonies";
 import { useEffect } from "react";
 import QuickBanner from "../Components/Helpers/QuickBanner";
+import CommunityBanner from "../Components/Helpers/CommunityBanner";
 
 function LandingPage({ setSelectedCard }) {
   useEffect(() => {
@@ -98,6 +99,9 @@ function LandingPage({ setSelectedCard }) {
           </Link>
         </div>
       </div>
+
+      {/**COMMUNITY */}
+      <CommunityBanner />
 
       {/**SECTION FOR SOCILA MEDIA POSTS OR ACCOUNTS */}
       <SociailMedia />
