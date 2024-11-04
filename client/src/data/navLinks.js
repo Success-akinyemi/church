@@ -57,7 +57,7 @@ export const menuLinks = [
     },
     { 
       name: 'Live', 
-      link: '/live',
+      link: '/sermon',
       style: '',
     },
     {
