@@ -94,8 +94,7 @@ export const menuLinks = [
     },
     {
       name: 'Children Coner',
-      link: '',
-      onclick: true,
+      link: '/children-coner',
       /**
        * 
       submenu: [

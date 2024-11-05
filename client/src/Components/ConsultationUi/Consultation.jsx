@@ -73,74 +73,82 @@ function Consultation() {
     }
 
     return (
-        <div className="flex items-center justify-center">
-            <form className="w-[500px] phone:w-[94%] shadow-xl rounded-[10px] p-5">
-                <h2 className="w-full text-[21px] font-semibold text-main-color mb-7">My Prayer Request Card</h2>
+        <div className="relative flex flex-col items-center justify-center">
+            
+            <div className="w-full pad1 font-light bg-[#f5e9d9] mb-12 py-4">
+                <h2 className="w-full text-[36px] tablet:text-[32px] phone:text-[21px] font-semibold text-main-color">Consultation Card Request</h2>
+            </div>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Name</label>
-                    <input id="name" onChange={handleChange} type="text" className="input p-2" />
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
-                </div>
+            <div className="pad1">
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Gender</label>
+                <form className="w-[500px] phone:w-[94%] shadow-xl rounded-[10px] p-5">
+                    <h2 className="w-full text-[21px] font-semibold text-main-color mb-7">My Prayer Request Card</h2>
 
-                    <div className="flex gap-4">
-                        <div className="flex items-center gap-[2px]">
-                            <input
-                                type="radio"
-                                id="male"
-                                name="gender"
-                                value="male"
-                                checked={formData.gender === 'male'}
-                                onChange={handleGender}
-                            />
-                            <label htmlFor="male" className="label font-semibold text-main-color">Male</label>
-                        </div>
-
-                        <div className="flex items-center gap-[2px]">
-                            <input
-                                type="radio"
-                                id="female"
-                                name="gender"
-                                value="female"
-                                checked={formData.gender === 'female'}
-                                onChange={handleGender}
-                            />
-                            <label htmlFor="female" className="label font-semibold text-main-color">Female</label>
-                        </div>
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Name</label>
+                        <input id="name" onChange={handleChange} type="text" className="input p-2" />
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
                     </div>
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.gender}</p>
 
-                </div>
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Gender</label>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Mobile Number</label>
-                    <input id="mobileNumber" onChange={handleChange} type="text" className="input p-2" />
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.mobileNumber}</p>
-                </div>
+                        <div className="flex gap-4">
+                            <div className="flex items-center gap-[2px]">
+                                <input
+                                    type="radio"
+                                    id="male"
+                                    name="gender"
+                                    value="male"
+                                    checked={formData.gender === 'male'}
+                                    onChange={handleGender}
+                                />
+                                <label htmlFor="male" className="label font-semibold text-main-color">Male</label>
+                            </div>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Email</label>
-                    <input id="email" onChange={handleChange} type="text" className="input p-2" />
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.email}</p>
-                </div>
+                            <div className="flex items-center gap-[2px]">
+                                <input
+                                    type="radio"
+                                    id="female"
+                                    name="gender"
+                                    value="female"
+                                    checked={formData.gender === 'female'}
+                                    onChange={handleGender}
+                                />
+                                <label htmlFor="female" className="label font-semibold text-main-color">Female</label>
+                            </div>
+                        </div>
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.gender}</p>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Prayer Request</label>
-                    <textarea 
-                        id="resonToSeeFada" 
-                        onChange={handleChange} 
-                        className="input resize-none p-2 h-[150px]"
-                    >
-                        
-                    </textarea>
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.resonToSeeFada}</p>
-                </div>
+                    </div>
 
-                <Button onClick={handleSubmit} text={'Submit'} />
-            </form>
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Mobile Number</label>
+                        <input id="mobileNumber" onChange={handleChange} type="text" className="input p-2" />
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.mobileNumber}</p>
+                    </div>
+
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Email</label>
+                        <input id="email" onChange={handleChange} type="text" className="input p-2" />
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.email}</p>
+                    </div>
+
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Prayer Request</label>
+                        <textarea 
+                            id="resonToSeeFada" 
+                            onChange={handleChange} 
+                            className="input resize-none p-2 h-[150px]"
+                        >
+                            
+                        </textarea>
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.resonToSeeFada}</p>
+                    </div>
+
+                    <Button onClick={handleSubmit} text={'Submit'} />
+                </form>
+            </div>
         </div>
     );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "../Helpers/Button";
+import PrayingHandImg from '../../assests/prayingHand.jpg'
 
 function PrayerRequest() {
     const [formData, setFormData] = useState({ gender: 'male' }); 
@@ -56,62 +57,80 @@ function PrayerRequest() {
     }
 
     return (
-        <div className="flex items-center justify-center">
-            <form className="w-[500px] phone:w-[94%] shadow-xl rounded-[10px] p-5">
-                <h2 className="w-full text-[21px] font-semibold text-main-color mb-7">My Prayer Request Card</h2>
+        <div className="relative flex flex-col items-center justify-center">
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Name</label>
-                    <input id="name" onChange={handleChange} type="text" className="input p-2" />
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
+            <div className="w-full pad1 font-light bg-[#f5e9d9] mb-12 py-4">
+                    <h2 className="w-full text-[36px] tablet:text-[32px] phone:text-[21px] font-semibold text-main-color">My Prayer Request Card</h2>
+            </div>
+
+            <div className="pad1 flex items-center justify-center gap-16 tablet:gap-12 tablet:flex-col">
+                <div className="flex flex-1 flex-col text-[18px]">
+                    <p>
+                        “We have such a High Priest, who sits at the right of the throne of the Divine Majesty in heaven” (Hebrews 8:1). “And so he is able, now and always, to save those who come to God through him, because he lives forever to plead with God for them” (Hebrews 17:25). Jesus will never turn us away in our time of need. His Love and Mercy is boundless. Let us together lift up our prayers to him in complete faith.
+                        <br />
+                        <br />
+                        If you wish to submit a prayer request, please follow the details in the form to fill up your details. The Prayer form is open 24 hours a day, 7 days a week, so you can send your request anytime, from anywhere!
+                    </p>
+
+                    <img alt="praying hand" src={PrayingHandImg} className="rounded-[20px] w-[300px] mt-9" />
                 </div>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Gender</label>
-
-                    <div className="flex gap-4">
-                        <div className="flex items-center gap-[2px]">
-                            <input
-                                type="radio"
-                                id="male"
-                                name="gender"
-                                value="male"
-                                checked={formData.gender === 'male'}
-                                onChange={handleGender}
-                            />
-                            <label htmlFor="male" className="label font-semibold text-main-color">Male</label>
-                        </div>
-
-                        <div className="flex items-center gap-[2px]">
-                            <input
-                                type="radio"
-                                id="female"
-                                name="gender"
-                                value="female"
-                                checked={formData.gender === 'female'}
-                                onChange={handleGender}
-                            />
-                            <label htmlFor="female" className="label font-semibold text-main-color">Female</label>
-                        </div>
+                <form className="flex-1 w-full phone:w-[94%] shadow-xl rounded-[10px] p-5">
+                    <h3 className="mb-12 text-[24px] font-semibold">Prayer Card</h3>
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Name</label>
+                        <input id="name" onChange={handleChange} type="text" className="input p-2" />
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
                     </div>
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.gender}</p>
 
-                </div>
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Gender</label>
 
-                <div className="inputGroup gap-[6px] mb-6">
-                    <label className="label font-semibold text-main-color">Prayer Request</label>
-                    <textarea 
-                        id="prayerRequest" 
-                        onChange={handleChange} 
-                        className="input resize-none p-2 h-[150px]"
-                    >
-                        
-                    </textarea>
-                    <p className="text-[14px] font-semibold text-main-color-dark">{error?.prayerRequest}</p>
-                </div>
+                        <div className="flex gap-4">
+                            <div className="flex items-center gap-[2px]">
+                                <input
+                                    type="radio"
+                                    id="male"
+                                    name="gender"
+                                    value="male"
+                                    checked={formData.gender === 'male'}
+                                    onChange={handleGender}
+                                />
+                                <label htmlFor="male" className="label font-semibold text-main-color">Male</label>
+                            </div>
 
-                <Button onClick={handleSubmit} text={'Submit'} />
-            </form>
+                            <div className="flex items-center gap-[2px]">
+                                <input
+                                    type="radio"
+                                    id="female"
+                                    name="gender"
+                                    value="female"
+                                    checked={formData.gender === 'female'}
+                                    onChange={handleGender}
+                                />
+                                <label htmlFor="female" className="label font-semibold text-main-color">Female</label>
+                            </div>
+                        </div>
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.gender}</p>
+
+                    </div>
+
+                    <div className="inputGroup gap-[6px] mb-6">
+                        <label className="label font-semibold text-main-color">Prayer Request</label>
+                        <textarea 
+                            id="prayerRequest" 
+                            onChange={handleChange} 
+                            className="input resize-none p-2 h-[150px]"
+                        >
+                            
+                        </textarea>
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.prayerRequest}</p>
+                    </div>
+
+                    <Button onClick={handleSubmit} text={'Submit'} />
+                </form>
+            </div>
+
         </div>
     );
 }

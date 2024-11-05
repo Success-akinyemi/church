@@ -5,7 +5,7 @@ import Consultation from './Consultation'
 function ConsultationCategory() {
     const stateCategory = [
         {
-            name: 'Payer Request',
+            name: 'Prayer Request',
             slug: 'prayerrequest'
         },
         {
@@ -33,7 +33,7 @@ function ConsultationCategory() {
             }
         </div>
 
-        <div className="w-full pad1 mt-12 mb-8">
+        <div className="w-full mt-12 mb-8">
             {
                 catState === 'prayerrequest' && (
                     <PrayerRequest />

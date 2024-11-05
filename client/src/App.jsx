@@ -18,6 +18,7 @@ import ProgramsAndEvents from './Pages/ProgramsAndEvents';
 import SermonTeachings from './Pages/SermonTeachings';
 import Community from './Pages/Community';
 import Consultations from './Pages/Consultations';
+import ChildrenConer from './Pages/ChildrenConer';
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
@@ -106,6 +107,8 @@ function App() {
           <Route path='/sermon/teaching/:id' element={<SermonTeachings setSelectedCard={setSelectedCard} />} />
           <Route path='/community' element={<Community setSelectedCard={setSelectedCard} />} />
           <Route path='/consultations' element={<Consultations setSelectedCard={setSelectedCard} />} />
+          <Route path='/children-coner' element={<ChildrenConer setSelectedCard={setSelectedCard} />} />
+
 
         </Routes>
       </BrowserRouter>

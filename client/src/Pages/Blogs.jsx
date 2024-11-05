@@ -33,7 +33,7 @@ function Blogs({setSelectedCard}) {
             />
         </div>
 
-        <BlogSection data={blogData} pagination={true} noPerPage={2} />
+        <BlogSection data={blogData} pagination={true} noPerPage={3} />
 
         <Footer />
     </div>
