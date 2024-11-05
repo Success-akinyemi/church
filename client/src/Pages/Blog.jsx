@@ -13,6 +13,7 @@ function Blog({setSelectedCard}) {
     });
 
 }, []);
+
   return (
     <div>
         <Menu setSelectedCard={setSelectedCard} />
