@@ -20,7 +20,7 @@ function Login({setSelectedCard}) {
     }
 
   return (
-    <div className="flex flex-col gap-4" >
+    <div className="flex flex-col gap-2" >
          <div className="inputGroup">
             <label className="label font-semibold" >Email:</label>
             <input type="email" id="email" onChange={handleChange} placeholder="Enter Email Address" className="input" />

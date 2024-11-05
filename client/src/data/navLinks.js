@@ -113,7 +113,7 @@ export const menuLinks = [
       link:'',
       onclick: true,
       clickValue: 'donations',
-      style: 'bg-[#800000] hover:bg-transparent text-white px-2 py-1 hover:text-[#FFD700] border-b-[#FFD700] text-main-color'
+      style: 'bg-[#1c2e64] hover:bg-transparent text-white px-2 py-1 hover:text-[#FFD700] border-b-[#FFD700] text-main-color'
       /**
        * 
       submenu: [

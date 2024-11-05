@@ -113,8 +113,8 @@ function Teachings() {
       };
 
   return (
-      <section className="py-16 pad1 bg-gradient-to-b from-[#d05864] to-white">
-          <h2 className="text-2xl mb-6 text-center uppercase md:text-5xl font-semibold text-gray-900 ">
+      <section className="py-16 pad1 bg-gradient-to-b from-[#2B4593] to-white">
+          <h2 className="text-2xl mb-6 text-center uppercase md:text-5xl font-semibold text-color-1 ">
             Teachings
           </h2>
         <div className="container mx-auto px-6">

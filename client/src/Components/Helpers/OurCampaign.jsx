@@ -43,7 +43,7 @@ const ChurchWebsite = () => {
             transition={{ type: "spring", stiffness: 300 }}
             className="mb-6"
           >
-            <div className="mx-auto w-24 h-24 bg-[#9B111E]/10 rounded-full flex items-center justify-center text-[#9B111E]">
+            <div className="mx-auto w-24 h-24 bg-[#9B111E]/10 rounded-full flex items-center justify-center text-main-color-dark">
               {pillar.icon}
             </div>
           </motion.div>
@@ -51,7 +51,7 @@ const ChurchWebsite = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-2xl font-bold mb-4 text-[#9B111E] text-center"
+            className="text-2xl font-bold mb-4 text-main-color text-center"
           >
             {pillar.title}
           </motion.h3>
@@ -118,7 +118,7 @@ const ChurchWebsite = () => {
             viewport={{ once: true }}
             className="text-center space-y-4 mb-16"
           >
-            <h2 className="text-4xl font-bold text-[#9B111E]">Our Three Pillars</h2>
+            <h2 className="text-4xl font-bold text-main-color">Our Three Pillars</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               The foundational principles that guide our ministry and service
             </p>

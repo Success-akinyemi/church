@@ -64,7 +64,7 @@ function PrayerRequest() {
             </div>
 
             <div className="pad1 flex items-center justify-center gap-16 tablet:gap-12 tablet:flex-col">
-                <div className="flex flex-1 flex-col text-[18px]">
+                <div className="bg-main-color text-white p-4 rounded-[4px] flex flex-1 flex-col text-[18px]">
                     <p>
                         “We have such a High Priest, who sits at the right of the throne of the Divine Majesty in heaven” (Hebrews 8:1). “And so he is able, now and always, to save those who come to God through him, because he lives forever to plead with God for them” (Hebrews 17:25). Jesus will never turn us away in our time of need. His Love and Mercy is boundless. Let us together lift up our prayers to him in complete faith.
                         <br />
@@ -77,13 +77,13 @@ function PrayerRequest() {
 
                 <form className="flex-1 w-full phone:w-[94%] shadow-xl rounded-[10px] p-5">
                     <h3 className="mb-12 text-[24px] font-semibold">Prayer Card</h3>
-                    <div className="inputGroup gap-[6px] mb-6">
-                        <label className="label font-semibold text-main-color">Name</label>
-                        <input id="name" onChange={handleChange} type="text" className="input p-2" />
+                    <div className="inputGroup gap-[6px] mb-2">
+                        <label className="label font-semibold text-main-color">Full Name</label>
+                        <input id="name" onChange={handleChange} type="text" placeholder="Enter Full Name" className="input p-2" />
                         <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
                     </div>
 
-                    <div className="inputGroup gap-[6px] mb-6">
+                    <div className="inputGroup gap-[6px] mb-2">
                         <label className="label font-semibold text-main-color">Gender</label>
 
                         <div className="flex gap-4">
@@ -115,7 +115,7 @@ function PrayerRequest() {
 
                     </div>
 
-                    <div className="inputGroup gap-[6px] mb-6">
+                    <div className="inputGroup gap-[6px] mb-2">
                         <label className="label font-semibold text-main-color">Prayer Request</label>
                         <textarea 
                             id="prayerRequest" 
