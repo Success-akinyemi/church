@@ -112,7 +112,7 @@ function ShoppingCart() {
 
       <div className="flex items-center gap-4">
         <a
-          href=""
+          href="/shop"
           className="text-center link border-2 border-main-color text-main-color hover:bg-main-color hover:text-white duration-500 rounded-[4px] p-3"
         >
           Continue Shopping

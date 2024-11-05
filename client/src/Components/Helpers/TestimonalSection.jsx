@@ -51,7 +51,7 @@ const TestimonialsSection = ({ data, showMore }) => {
   };
 
   return (
-    <section className="py-20 bg-gray-100 to-white overflow-hidden">
+    <section className="py-8 bg-gray-100 to-white overflow-hidden">
       <div className="container mx-auto px-4">
 
         <div className="relative max-w-7xl mx-auto">
@@ -115,8 +115,8 @@ const TestimonialsSection = ({ data, showMore }) => {
           </div>
         </div>
 
-        <div className="text-center mb-16 mt-4">
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-4">
+        <div className="text-center mt-4">
+          <h2 className="text-2xl md:text-4xl font-semibold text-gray-900 ">
             TESTIMONIES
           </h2>
         </div>

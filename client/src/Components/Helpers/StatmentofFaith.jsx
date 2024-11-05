@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
 import { FaCross, FaHandHoldingHeart, FaUsers, FaChurch, FaArrowRight } from 'react-icons/fa';
 import ChurchValues from './ChurchValues';
+import { useNavigate } from 'react-router-dom';
 
 const StatementOfFaith = ({ setSelectedCard }) => {
+  const navigate = useNavigate()
   const fadeInUp = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -32,6 +34,10 @@ const StatementOfFaith = ({ setSelectedCard }) => {
     setSelectedCard(item)
   }
 
+  const handleJoinCommunity = () => {
+    navigate('/community')
+  }
+
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-white to-slate-50 py-16 px-4 lg:px-8">
@@ -53,14 +59,14 @@ const StatementOfFaith = ({ setSelectedCard }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
-                <div className="flex items-center gap-2 text-[#9B111E] mb-4">
+                <div className="flex items-center gap-2 text-main-color mb-4">
                   <FaCross className="w-5 h-5" />
                   <span className="text-sm font-medium uppercase tracking-wider">Our Beliefs</span>
                 </div>
                 
                 <h2 className="text-4xl font-bold text-slate-800 mb-6">
                   STATEMENT OF{' '}
-                  <span className="bg-gradient-to-r from-[#9B111E] to-orange-600 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-main-color to-main-color-dark bg-clip-text text-transparent">
                     FAITH
                   </span>
                 </h2>
@@ -72,7 +78,8 @@ const StatementOfFaith = ({ setSelectedCard }) => {
                 <motion.button 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-main-color text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-orange-600 transition-all shadow-lg hover:shadow-xl group"
+                  onClick={handleJoinCommunity}
+                  className="bg-main-color text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-main-color-dark transition-all shadow-lg hover:shadow-xl group"
                 >
                   Join our Community
                   <FaArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

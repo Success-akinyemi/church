@@ -74,10 +74,10 @@ function LandingPage({ setSelectedCard }) {
         <OurCampaign />
          */}
 
-      <div className="mb-8">
+      <div className="mb-8 bg-gray-100">
         <TestimonialsSection data={testimonies} showMore={false} />
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-6 mb-12">
           <Link
             to="/resources"
             className="bg-main-color-dark text-white px-8 py-3 rounded-full font-semibold hover:bg-main-color transition-colors"
@@ -103,11 +103,20 @@ function LandingPage({ setSelectedCard }) {
       {/**COMMUNITY */}
       <CommunityBanner />
 
+      <div className="pad1">
+        <hr className="mt-36 border-[2px] border-main-color" />
+      </div>
+
       {/**SECTION FOR SOCILA MEDIA POSTS OR ACCOUNTS */}
       <SociailMedia />
 
+      <div className="pad1">
+        <hr className="mt-4 border-[2px] border-main-color" />
+      </div>
+
+
       {/**Quick Banner */}
-      <div className="mt-8 mb-8">
+      <div className="mb-8">
       </div>
         <QuickBanner />  
 

@@ -95,7 +95,7 @@ function ChildrenVideos({ data }) {
             onClick={(e) => e.stopPropagation()} // Prevent click inside modal from closing it
           >
             <button
-              className="absolute top-2 right-2 text-white bg-gray-700 hover:bg-gray-900 rounded-full p-1"
+              className="absolute top-2 right-2 z-50 text-white bg-gray-700 hover:bg-gray-900 rounded-full p-1"
               onClick={handleCloseModal}
             >
               Close

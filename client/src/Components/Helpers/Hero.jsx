@@ -13,10 +13,10 @@ function Hero() {
 
                 <Link 
                     to='/sermon' 
-                    className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-text-color-2 text-[18px] tablet:text-[16px] duration-300 border-[2px] border-color-1 bg-color-1 hover:text-white`}
+                    className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
                 >
                     <FaPlay className='' />
-                    Live
+                    Click To Watch Now
                 </Link>
             </div>
         </div>

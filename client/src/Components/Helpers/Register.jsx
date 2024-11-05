@@ -20,7 +20,7 @@ function Register() {
     }
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-2">
         <div className="inputGroup">
             <label className="label font-semibold" >Name:</label>
             <input id="name" onChange={handleChange} type="text" placeholder="Enter Name" className="input" />
@@ -47,7 +47,7 @@ function Register() {
             </div>
         </div>
         
-        <Button onClick={handleRegister} text={'Create Account'} />
+        <Button onClick={handleRegister} text={'Create Account'} style={'mt-2'} />
     </div>
   )
 }

@@ -3,9 +3,16 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 
 function QuickNav({setSelectedCard}) {
   const cart = useSelector(state => state.cart)
+  const [ showSearch, setShowSearch ] = useState(false)
+
+  const toggleSearch = () => {
+    setShowSearch((prev) => !prev)
+  }
   return (
     <div className="z-[990] flex items-center h-[20px] justify-between py-[18px] pad1 bg-main-color-dark fixed top-[70px] left-0 w-full">
       {/**
@@ -15,14 +22,27 @@ function QuickNav({setSelectedCard}) {
         </marquee>
        */}
 
-       <div className="ml-auto w-full flex items-center gap-2">
-        <input type="text" className="w-[95%] rounded-[5px] outline-none border-none px-2 py-[2px]" />
-        <div className="cursor-pointer">
-          <FaSearch className="text-color-1 text-[26px] phone:text-[22px]" />
-        </div>
-       </div>
+        {/**SEARCH BAR */}
+        {
+          showSearch && (
+          <div className="ml-auto w-full flex items-center gap-2">
+            <input type="text" className="w-[95%] rounded-[5px] outline-none border-none px-2 py-[2px]" />
+            <div onClick={toggleSearch} className="cursor-pointer">
+              <IoClose className="text-color-1 text-[26px] phone:text-[22px]" />
+            </div>
+          </div>
+          )
+        }
 
         <div className='flex items-center ml-auto gap-10 phone:gap-3'>
+          {
+            !showSearch && (
+              <div onClick={toggleSearch} className="cursor-pointer">
+                <FaSearch className="text-color-1 text-[26px] phone:text-[22px]" />
+              </div>
+            )
+          }
+
             <Link onClick={() => setSelectedCard('shoppingCart')} className="relative text cursor-pointer  text-color-1 hover:text-white duration-200">
                 <MdOutlineShoppingCart className="text-[28px] phone:text-[24px]" />
                 {

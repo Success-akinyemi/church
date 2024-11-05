@@ -40,7 +40,7 @@ function AboutUs({ setSelectedCard }) {
 
         <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
           <div onClick={() => toggleCard('abouthgfmi')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'abouthgfmi' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'abouthgfmi' ? 'text-white' : 'text-text-white'} hover:text-white`}>
-              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>About HGGPMI</p>
+              <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>About HGFPMI</p>
           </div>
           <div onClick={() => toggleCard('fada')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'fada' ? 'border-b-white' : 'border-b-transparent'} hover:border-b-white ${activeCard === 'fada' ? 'text-white' : 'text-text-white'} hover:text-white`}>
               <p className={`text-center font-semibold text-[24px] phone:text-[16px] `}>FADA</p>

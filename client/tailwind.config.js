@@ -7,8 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'main-color': '#9B111E', //ruby red
-        'main-color-dark': '#800000', //ruby red
+        'main-color': '#2B4593', //ruby red
+
+        //'main-color': '#9B111E', //ruby red#2B4593
+        'main-color-dark': '#1c2e64', //ruby red#1c2e64
+        //'main-color-dark': '#800000', //ruby red#1c2e64
+
         'dove': '#FFFDF9', //dove color #D6D6D6
         
         'color-1': '#FFD700', //gold

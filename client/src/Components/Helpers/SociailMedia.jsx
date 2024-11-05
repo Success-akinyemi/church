@@ -1,9 +1,24 @@
-import React from 'react'
+import { FaWhatsapp, FaTwitter, FaYoutube, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 
 function SociailMedia() {
+  const socialLinks = [
+    { name: 'WhatsApp', icon: <FaWhatsapp />, url: 'https://whatsapp.com' },
+    { name: 'Twitter', icon: <FaTwitter />, url: 'https://twitter.com' },
+    { name: 'YouTube', icon: <FaYoutube />, url: 'https://youtube.com' },
+    { name: 'Instagram', icon: <FaInstagram />, url: 'https://instagram.com' },
+    { name: 'Facebook', icon: <FaFacebook />, url: 'https://facebook.com' },
+    { name: 'TikTok', icon: <FaTiktok />, url: 'https://tiktok.com' },
+  ];
+
   return (
-    <div className='pad1'>
-      Social media posts
+    <div className='pad1 flex items-center justify-center my-12 gap-12'>
+      {socialLinks.map((item, idx) => (
+        <div key={idx} className=''>
+          <a href={item.url} target='_blank' rel='noopener noreferrer' aria-label={item.name} className='text-main-color hover:text-main-color-dark duration-300 text-[64px] tablet:text-[50px] phone:text-[48px]'>
+            {item.icon}
+          </a>
+        </div>
+      ))}
     </div>
   )
 }
