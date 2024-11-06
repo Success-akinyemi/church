@@ -4,6 +4,7 @@ import { FaLinkedin, FaTwitter, FaGithub, FaInstagram, FaFacebook } from 'react-
 import Menu from '../Helpers/Menu';
 import QuickNav from '../Helpers/QuickNav';
 import Footer from '../Helpers/Footer';
+import { ministryOfficials } from '../../data/ministryOfficials';
 
 const TeamMember = ({ name, image }) => {
     return (
@@ -15,7 +16,7 @@ const TeamMember = ({ name, image }) => {
             <img
                 src={image}
                 alt={name}
-                className="w-full h-64 object-cover"
+                className="w-full h-72 object-cover object-top"
             />
 
             <motion.div
@@ -62,69 +63,7 @@ const TeamMember = ({ name, image }) => {
 };
 
 const Minstry = () => {
-    const teamMembers = [
-        {
-            name: "Chinwe Nwabude",
-
-            image: "https://media.istockphoto.com/id/1364388460/photo/cheerful-black-teacher-standing-outside-education-building.webp?a=1&b=1&s=612x612&w=0&k=20&c=iPZfeQn-JKIokh4o98C-MmLRJtVgJCXkU_1D894xo3M="
-        },
-        {
-            name: "Dr. Eucharia Nnawulezi",
-
-            image: "/api/placeholder/400/400"
-        },
-        {
-            name: "Tommy Chuke",
-
-            image: "/api/placeholder/400/400"
-        },
-        {
-            name: "OGE NWITOR HEAD OF INTERCESSORY MINISTRY",
-
-            image: "/api/placeholder/400/400"
-        },
-        {
-            name: "TONY ONUAKUPA TO FR. EBUBE MUONSO",
-
-            image: "/api/placeholder/400/400"
-        },
-        {
-            name: "Dr Lady Schola Ogomaka P.R.O and Publicity Secretary",
-      role: "Sales Director",
-            image: "/api/placeholder/400/400"
-        },
-        {
-            name: "Rev. Sr. Maria Paracleta Anekwe Spiritual Counselor",
-     
-      image: "/api/placeholder/400/400"
-    },
-        {
-            name: "UCHE ENENWALI ATTORNEY/ BOARD SECRETAR",
-     
-      image: "/api/placeholder/400/400"
-    },
-    {
-        name: "Dr. Lorreta Oguonu",
-
-        image: "/api/placeholder/400/400"
-    },
-    {
-        name: "Callista Ugorji-Ikwechegh Head of Evangelism",
-       
-        image: "/api/placeholder/400/400"
-      },
-    {
-        name: "Dr. Peter Oraekwe Head of Media and Security",
-       
-        image: "/api/placeholder/400/400"
-      },
-
-     {
-        name: "STEWARD, DEPUTY CHIEF",
-       
-        image: "/api/placeholder/400/400"
-      }
-  ];
+    const teamMembers = ministryOfficials
 
 return (
 
