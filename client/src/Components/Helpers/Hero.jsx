@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { FaPlay } from "react-icons/fa";
+import VideoSrc from '../../assests/Vid/heroVid.mp4'
 
 function Hero() {
   return (
@@ -21,10 +22,15 @@ function Hero() {
             </div>
         </div>
         <p></p>
-
+        
+        {/**
+         * 
         <video src='https://videos.pexels.com/video-files/1722697/1722697-sd_640_360_25fps.mp4' autoPlay muted 
             className='z-10 w-full h-full object-cover object-center'>
-
+        </video>
+         */}
+        <video src={VideoSrc} autoPlay muted 
+            className='z-10 w-full h-full object-cover object-top'>
         </video>
 
     </div>

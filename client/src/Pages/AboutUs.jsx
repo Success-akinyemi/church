@@ -6,6 +6,7 @@ import Minstry from "../Components/AboutUi/Minstry"
 import AboutFada from "../Components/AboutUi/AboutFada"
 import Branches from "../Components/AboutUi/Branches"
 import AboutHGFPMI from "../Components/AboutUi/AboutHGFPMI"
+import VideoSrc from '../assests/Vid/heroVid.mp4'
 
 function AboutUs({ setSelectedCard }) {
   const [ activeCard, setActiveCard ] = useState('abouthgfmi')
