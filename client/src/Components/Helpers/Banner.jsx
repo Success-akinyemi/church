@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Banner({img, video, alt, text}) {
+function Banner({img, video, alt, text, style}) {
   return (
     <div className='w-full h-[50vh] relative'>
         {
@@ -12,7 +12,7 @@ function Banner({img, video, alt, text}) {
         {
           video && (            
           <video src={video} autoPlay muted 
-            className='w-full h-full object-cover object-center'>
+            className={`w-full h-full object-cover object-center ${style}`}>
 
           </video>
           )
