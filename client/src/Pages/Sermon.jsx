@@ -5,6 +5,8 @@ import QuickNav from '../Components/Helpers/QuickNav'
 import LiveMessage from '../Components/SermonUi/LiveMessage'
 import PreviousMessages from '../Components/SermonUi/PreviousMessages'
 import { useEffect, useState } from 'react'
+import VideoSrc from '../assests/Vid/heroVid.mp4'
+
 
 function Sermon({ setSelectedCard }) {
   const [ activeCard, setActiveCard ] = useState('livemessages')
@@ -33,8 +35,9 @@ function Sermon({ setSelectedCard }) {
   
           <div className="mt-[30px]">
               <Banner 
-                video={'https://videos.pexels.com/video-files/3772777/3772777-sd_640_360_24fps.mp4'} 
+                video={VideoSrc} 
                 text={'Live Streaming'}
+                style={'object-top'}
               />
           </div>
           <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
