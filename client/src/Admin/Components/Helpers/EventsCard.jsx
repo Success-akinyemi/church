@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom"
 
-function EventsCard({ data }) {
+function EventsCard({ data, setSelectedCard, setEditEventID }) {
+    const handleEditEvent = async (id) => {
+        setEditEventID(id)
+        setSelectedCard('newEvents')
+    }
+
   return (
-    <div className="group bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
+    <div onClick={() => handleEditEvent(data.id)} className="group cursor-pointer bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
     <div className="relative overflow-hidden h-64">
       <img 
         src={data?.coverImg} 
