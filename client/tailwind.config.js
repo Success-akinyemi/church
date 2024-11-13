@@ -21,6 +21,7 @@ export default {
         'transparent-bg': 'rgba(0, 0, 0, 0.6)',
         'transparent-bg-2': 'rgba(0, 0, 0, 0.8)',
 
+        'error': '#ff6347',
 
         'text-black': '#000',
         'text-color-2' :'#2f313f', //gray

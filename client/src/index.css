@@ -30,6 +30,9 @@
   .errorText{
     @apply font-bold text-main-color-dark
   }
+  .card{
+    @apply p-4 rounded-[10px]
+  }
 }
 
 .link {
@@ -38,4 +41,23 @@
 
 .linear-gradient{
   background: linear-gradient(to, right, #9B111E, #fff);
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #D7E1f4; /* Track color */
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #869DCB; /* Handle color */
+  border-radius: 10px; /* Rounded corners */
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #6882B6; /* Handle hover color */
 }

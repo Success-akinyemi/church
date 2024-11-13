@@ -19,9 +19,31 @@ import SermonTeachings from './Pages/SermonTeachings';
 import Community from './Pages/Community';
 import Consultations from './Pages/Consultations';
 import ChildrenConer from './Pages/ChildrenConer';
+import Dashboard from './Admin/Pages/Dashboard';
+import Events from './Admin/Pages/Events';
+import Testimonies from './Admin/Pages/Testimonies';
+import Consulations from './Admin/Pages/Consulations';
+import AdminStore from './Admin/Pages/AdminStore';
+import Notifications from './Admin/Pages/Notifications';
+import AdminChildrenConer from './Admin/Pages/AdminChildrenConer';
+import AdminDonations from './Admin/Pages/AdminDonations';
+import Ministry from './Admin/Pages/Ministry';
+import Bookmarks from './Admin/Pages/Bookmarks';
+import Accounting from './Admin/Pages/Accounting';
+import Profile from './Admin/Pages/Profile';
+import PrayerRequest from './Admin/Pages/PrayerRequest';
+import NewEvents from './Admin/Modal/NewEvents';
+import NewCategory from './Admin/Modal/NewCategory';
+import NewProductItem from './Admin/Modal/NewProductItem';
+
+
+
 
 function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
+  const [ editEventId, setEditEventID ] = useState()
+  const [ productItemId, setProductItemId ] = useState()
+
 
   const renderPopup = () => {
     switch(selectedCard){
@@ -45,6 +67,24 @@ function App() {
         return (
           <div>
             <Donations setSelectedCard={setSelectedCard} />
+          </div>
+        )
+      case 'newEvents':
+        return (
+          <div>
+            <NewEvents editEventId={editEventId} />
+          </div>
+        )
+      case 'categoryCard':
+        return (
+          <div>
+            <NewCategory />
+          </div>
+        )
+      case 'productCard':
+        return (
+          <div>
+            <NewProductItem productItemId={productItemId} />
           </div>
         )
     }
@@ -109,6 +149,20 @@ function App() {
           <Route path='/consultations' element={<Consultations setSelectedCard={setSelectedCard} />} />
           <Route path='/children-coner' element={<ChildrenConer setSelectedCard={setSelectedCard} />} />
 
+
+          <Route path='/admin/dashboard' element={<Dashboard />} />
+          <Route path='/admin/events' element={<Events setSelectedCard={setSelectedCard} setEditEventID={setEditEventID} />} />
+          <Route path='/admin/testimonies' element={<Testimonies />} />
+          <Route path='/admin/consultation' element={<Consulations />} />
+          <Route path='/admin/prayer-request' element={<PrayerRequest />} />
+          <Route path='/admin/store' element={<AdminStore setProductItemId={setProductItemId} setSelectedCard={setSelectedCard} />} />
+          <Route path='/admin/notifications' element={<Notifications />} />
+          <Route path='/admin/children-coner' element={<AdminChildrenConer />} />
+          <Route path='/admin/donations' element={<AdminDonations />} />
+          <Route path='/admin/ministry' element={<Ministry />} />
+          <Route path='/admin/bookmark' element={<Bookmarks />} />
+          <Route path='/admin/account' element={<Accounting />} />
+          <Route path='/admin/profile' element={<Profile />} />
 
         </Routes>
       </BrowserRouter>
