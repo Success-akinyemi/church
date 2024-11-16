@@ -6,7 +6,11 @@ function Testimonials() {
 
   return (
     <div>
-      <TestimonialsSection data={testimonies} showMore={true} />
+      <TestimonialsSection data={testimonies} showMore={true} text={'TESTIMONIES'} />
+
+      <div className="mt-4">
+      <TestimonialsSection data={testimonies} showMore={true} text={'VIDEOS'} />
+      </div>
     </div>
   )
 }
