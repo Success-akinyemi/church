@@ -59,7 +59,7 @@ function Consultation() {
 
     return (
         <div className="relative flex flex-col items-center justify-center">
-            <div className="w-full pad1 font-light bg-[#f5e9d9] mb-12 py-4">
+            <div className="w-full pad1 font-light border-b-[3px] mb-12 py-4">
                 <h2 className="w-full text-[36px] tablet:text-[32px] phone:text-[21px] font-semibold text-main-color">
                     Consultation Card Request
                 </h2>
@@ -67,10 +67,10 @@ function Consultation() {
 
             <div className="pad1">
                 <form className="w-[500px] phone:w-[94%] shadow-xl rounded-[10px] p-5">
-                    <h2 className="w-full text-[21px] font-semibold text-main-color mb-7">My Prayer Request Card</h2>
+                    <h2 className="w-full text-[21px] font-semibold text-main-color mb-7">My Consulation Request Card</h2>
 
                     <div className="inputGroup gap-[6px] mb-2">
-                        <label className="label font-semibold text-main-color">Name</label>
+                        <label className="label font-semibold text-main-color">Full Name</label>
                         <input id="name" onChange={handleChange} type="text" className="input p-2" />
                         <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
                     </div>
@@ -130,7 +130,7 @@ function Consultation() {
                     </div>
 
                     <div className="inputGroup gap-[6px] mb-2">
-                        <label className="label font-semibold text-main-color">Prayer Request</label>
+                        <label className="label font-semibold text-main-color">Reason to see FADA</label>
                         <textarea
                             id="resonToSeeFada"
                             onChange={handleChange}

@@ -29,7 +29,7 @@ function Consultations({ setSelectedCard }) {
           />
       </div>
 
-      <ConsultationCategory />
+      <ConsultationCategory setSelectedCard={setSelectedCard} />
 
 
       <Footer />

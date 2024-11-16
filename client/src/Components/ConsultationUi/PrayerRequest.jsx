@@ -59,7 +59,7 @@ function PrayerRequest() {
     return (
         <div className="relative flex flex-col items-center justify-center">
 
-            <div className="w-full pad1 font-light bg-[#f5e9d9] mb-12 py-4">
+            <div className="w-full pad1 font-light border-b-[3px] mb-12 py-4">
                     <h2 className="w-full text-[36px] tablet:text-[32px] phone:text-[21px] font-semibold text-main-color">My Prayer Request Card</h2>
             </div>
 

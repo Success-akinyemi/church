@@ -35,6 +35,9 @@ import PrayerRequest from './Admin/Pages/PrayerRequest';
 import NewEvents from './Admin/Modal/NewEvents';
 import NewCategory from './Admin/Modal/NewCategory';
 import NewProductItem from './Admin/Modal/NewProductItem';
+import MassReqestPayout from './Components/Modals/MassReqestPayout';
+import FaceBookLive from './Components/SermonUi/FaceBookLive';
+import TiktokLive from './Components/SermonUi/TiktokLive';
 
 
 
@@ -43,6 +46,8 @@ function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
   const [ editEventId, setEditEventID ] = useState()
   const [ productItemId, setProductItemId ] = useState()
+
+  const [ countDownTime, setCountDownTime ] = useState(1)
 
 
   const renderPopup = () => {
@@ -85,6 +90,12 @@ function App() {
         return (
           <div>
             <NewProductItem productItemId={productItemId} />
+          </div>
+        )
+      case 'massRequestPayout':
+        return (
+          <div>
+            <MassReqestPayout />
           </div>
         )
     }
@@ -141,13 +152,17 @@ function App() {
           <Route path='/blogs' element={<Blogs setSelectedCard={setSelectedCard} />} />
           <Route path='/blog/:id' element={<Blog setSelectedCard={setSelectedCard} />} />
           <Route path='/resources' element={<Resources setSelectedCard={setSelectedCard} />} />
-          <Route path='/sermon' element={<Sermon setSelectedCard={setSelectedCard} />} />
+          <Route path='/sermon' element={<Sermon countDownTime={countDownTime} setSelectedCard={setSelectedCard} />} />
           <Route path='/programs-and-events' element={<ProgramsAndEvents setSelectedCard={setSelectedCard} />} />
           <Route path='/sermon/teaching/:id' element={<SermonTeachings setSelectedCard={setSelectedCard} />} />
           <Route path='/sermon/teaching/:id' element={<SermonTeachings setSelectedCard={setSelectedCard} />} />
           <Route path='/community' element={<Community setSelectedCard={setSelectedCard} />} />
           <Route path='/consultations' element={<Consultations setSelectedCard={setSelectedCard} />} />
           <Route path='/children-coner' element={<ChildrenConer setSelectedCard={setSelectedCard} />} />
+
+
+          <Route path='/faceBookLive' element={<FaceBookLive countDownTime={countDownTime} setSelectedCard={setSelectedCard} />} />
+          <Route path='/tiktokLive' element={<TiktokLive countDownTime={countDownTime} setSelectedCard={setSelectedCard} />} />
 
 
           <Route path='/admin/dashboard' element={<Dashboard />} />
