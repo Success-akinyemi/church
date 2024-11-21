@@ -16,10 +16,10 @@ export const category = [
     }
     ,
     {
-        name: 'Series',
+        name: 'Sacramentals',
         slug: 'series',
-        desc: "Church Ministries newest series `The Abundant Life` is available now!",
-        cta: 'View all Series',
+        desc: "Church Ministries newest sacramentals `The Abundant Life` is available now!",
+        cta: 'View all Sacramentals',
         img: 'https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&w=600'
     }
     ,
