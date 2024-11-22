@@ -47,7 +47,7 @@ function StoreCategory() {
                 )
             }
             {
-                catState === 'series' && (
+                catState === 'sacramentals' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }
