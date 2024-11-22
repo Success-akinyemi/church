@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Button from './Button'
 
 function SignupBanner() {
@@ -57,7 +57,7 @@ function SignupBanner() {
                   { errorText ? (errorText) : ''}
                 </p>
               <small className='text-[14px] pad1'>
-                *By submitting this form, you consent to receive emails from Joel Osteen Ministries. We respect your privacy and will handle your information in accordance with our TOS/Privacy Policy. You can unsubscribe at any time.
+                *By submitting this form, you consent to receive emails from HGFPMI Ministries. We respect your privacy and will handle your information in accordance with our TOS/Privacy Policy. You can unsubscribe at any time.
               </small>
             </form>
         </div>
