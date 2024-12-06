@@ -1,16 +1,31 @@
 import { Link } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
+import { consultationRequest } from "../Data/consultation";
+import ConsultationTable from "../Components/ConsultationTable";
+import { IoClose } from "react-icons/io5";
+import { useState } from "react";
 
 function Dashboard() {
+  const data = consultationRequest;
+  const filterData = data.splice(0, 5)
+
+  const [ menu, setMenu ] = useState(false)
+
+  const toggleMenu = () => {
+    setMenu((prev) => !prev)
+  }
   return (
     <div className="relative flex items-start gap-[12px] p-3 h-[100vh] w-[100vw]">
 
-      <div className="fixed rounded-[20px] left-3 top-3 w-[260px] h-[calc(100vh-24px)] bg-main-color z-10">
+      <div className={`fixed flex flex-col tablet:hidden ${ menu ? '!fixed !flex' : '' } rounded-[20px] tablet:rounded-none left-3 top-3 tablet:left-0 tablet:top-0 w-[260px] phone:w-[90%] h-[calc(100vh-24px)] tablet:h-[100vh] bg-main-color z-10 tablet:z-[9999]`}>
+        <div onClick={toggleMenu} className="hidden tablet:flex ml-auto cursor-pointer">
+          <IoClose className="text-[36px] text-white mt-3 mr-3" />
+        </div>
         <Sidebar />
       </div>
 
-      <div className="relative overflow-x-hidden flex-1 ml-[272px] h-full rounded-[20px] border-[2px] border-red-500">
+      <div className="relative overflow-x-hidden tablet:w-full flex-1 ml-[272px] tablet:ml-0 h-full rounded-[20px] border-[2px] border-red-500">
         <Navbar title={'DashBoard'} />
 
         <div className="mt-[1rem] p-3">
@@ -72,9 +87,14 @@ function Dashboard() {
 
           {/**BOTTOM */}
           <div className="mt-8">
-            consulation table
-            <br />            
-            prayer request table
+            <div className="flex w-full flex-col gap-3">
+              <h2 className="font-semibold text-main-color text-[18px]">Top Consultations</h2>
+              <ConsultationTable data={filterData} />
+            </div>
+            <br />        
+            <div className="flex w-full flex-col gap-3">
+              <h2 className="font-semibold text-main-color text-[18px]">Prayer Request Table</h2>
+            </div>    
           </div>
 
         </div>

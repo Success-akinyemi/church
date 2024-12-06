@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaCross, FaHandHoldingHeart, FaUsers, FaChurch, FaArrowRight } from 'react-icons/fa';
 import ChurchValues from './ChurchValues';
 import { useNavigate } from 'react-router-dom';
+import MainImg from '../../assests/church1.jpg'
 
 const StatementOfFaith = ({ setSelectedCard }) => {
   const navigate = useNavigate()
@@ -126,7 +127,7 @@ const StatementOfFaith = ({ setSelectedCard }) => {
                 
                 {/* Main Image */}
                 <img
-                  src="https://hgfpmi.org/wp-content/uploads/2023/12/NoPath-Copy-197.png"
+                  src={MainImg}
                   alt="Community gathering with a cross"
                   className="rounded-lg shadow-xl object-cover h-96 w-full lg:w-full relative z-10"
                 />

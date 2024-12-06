@@ -38,6 +38,8 @@ import NewProductItem from './Admin/Modal/NewProductItem';
 import MassReqestPayout from './Components/Modals/MassReqestPayout';
 import FaceBookLive from './Components/SermonUi/FaceBookLive';
 import TiktokLive from './Components/SermonUi/TiktokLive';
+import NewTestimony from './Admin/Modal/NewTestimony';
+import OnlineGiving from './Components/Modals/OnlineGiving';
 
 
 
@@ -46,6 +48,7 @@ function App() {
   const [ selectedCard, setSelectedCard ] = useState(null)
   const [ editEventId, setEditEventID ] = useState()
   const [ productItemId, setProductItemId ] = useState()
+  const [ testimonyId, setTestimonyId ] = useState()
 
   const [ countDownTime, setCountDownTime ] = useState(1)
 
@@ -74,6 +77,12 @@ function App() {
             <Donations setSelectedCard={setSelectedCard} />
           </div>
         )
+      case 'onlineGiving':
+        return (
+          <div>
+            <OnlineGiving />
+          </div>
+        )
       case 'newEvents':
         return (
           <div>
@@ -98,6 +107,12 @@ function App() {
             <MassReqestPayout />
           </div>
         )
+      case 'newTestimony':
+        return (
+          <div>
+            <NewTestimony setTestimonyId={setTestimonyId} testimonyId={testimonyId} />
+          </div>
+        )
     }
   }
 
@@ -120,6 +135,9 @@ function App() {
 
   const closePopup = () => {
     setSelectedCard(null);
+    setEditEventID()
+    setProductItemId()
+    setTestimonyId()
   };
 
   return (
@@ -167,7 +185,7 @@ function App() {
 
           <Route path='/admin/dashboard' element={<Dashboard />} />
           <Route path='/admin/events' element={<Events setSelectedCard={setSelectedCard} setEditEventID={setEditEventID} />} />
-          <Route path='/admin/testimonies' element={<Testimonies />} />
+          <Route path='/admin/testimonies' element={<Testimonies setSelectedCard={setSelectedCard} setTestimonyId={setTestimonyId} />} />
           <Route path='/admin/consultation' element={<Consulations />} />
           <Route path='/admin/prayer-request' element={<PrayerRequest />} />
           <Route path='/admin/store' element={<AdminStore setProductItemId={setProductItemId} setSelectedCard={setSelectedCard} />} />

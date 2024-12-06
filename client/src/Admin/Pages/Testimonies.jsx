@@ -1,11 +1,13 @@
 import Button from "../../Components/Helpers/Button"
+import AllTestimonies from "../Components/AllTestimonies"
 import Navbar from "../Components/Navbar"
 import Sidebar from "../Components/Sidebar"
+import { testimoniesData } from "../Data/testimonies"
 
-function Testimonies() {
-
+function Testimonies({ setSelectedCard, setTestimonyId }) {
+    const data = testimoniesData
     const handleNewTestimony = () => {
-
+      setSelectedCard('newTestimony')
     }
   return (
     <div className="relative flex items-start gap-[12px] p-3 h-[100vh] w-[100vw]">
@@ -23,6 +25,12 @@ function Testimonies() {
              <div className="ml-auto">
                 <Button onClick={handleNewTestimony} text={'Add Testimony'} style={''} />
              </div>
+          </div>
+
+          <div className="mt-[1rem] p-3">
+
+            <AllTestimonies data={data} setSelectedCard={setSelectedCard} setTestimonyId={setTestimonyId} />
+
           </div>
 
         </div>

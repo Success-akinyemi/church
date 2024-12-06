@@ -6,6 +6,7 @@ import { useState } from "react";
 import { addProduct } from "../../redux/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import toast from "react-hot-toast";
+import OrderForm from "../Modals/OrderForm";
 
 function Product({data}) {
     const dispatch = useDispatch()
@@ -49,6 +50,13 @@ function Product({data}) {
             addProduct({ ...data, id: data?.id, price: data?.isDiscountAllowed ? data?.discountPrice : data?.price,  quantity: productquantity })
         )
         toast.success('Item addded to cart')
+    }
+
+    const [ orderForm, setOrderForm ] = useState(false)
+    const [ productId, setProductId] = useState()
+    const handleOrderForm = (id) => {
+        setProductId(id)
+        setOrderForm((prev) => !prev)
     }
 
   return (
@@ -107,13 +115,18 @@ function Product({data}) {
                     Add To Cart
                 </div>
 
-                <div className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
-                    <MdOutlineViewTimeline />
-                    Quick View
+                <div onClick={() => handleOrderForm(data?.id)} className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
+                    Order within Nigeria
                 </div>
             </div>
         
         </div>
+
+        {
+            orderForm && (
+                <OrderForm setOrderForm={setOrderForm} setProductId={setProductId} productId={productId} />
+            )
+        }
     </div>
   )
 }

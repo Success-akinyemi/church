@@ -8,6 +8,7 @@ function Sidebar() {
     const isActive = (path) => {
       return location.pathname === path;
     };
+    
     const menu = menuLinks
 
   return (
