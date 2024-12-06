@@ -48,10 +48,13 @@ function TiktokLive({ setSelectedCard, countDownTime }) {
           Back
         </Link>
       </div>
-
+      
+      {/**
+       * 
       <div className="w-[50%] my-10 m-auto">
         <Comments />
       </div>
+       */}
 
       <div className="mt-auto">
         <Footer />

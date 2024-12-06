@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import BooksImg from '../../assests/roc.jpg'
 import Button from './Button'
+import Image from '../../assests/church2.jpg'
 
 function QuickResource() {
   const navigate = useNavigate()
@@ -19,7 +20,7 @@ function QuickResource() {
           <img 
             src={data?.image}
             alt='' 
-            className=' w-full h-full  object-contain object-center' 
+            className=' w-full h-full  object-cover object-center' 
           />
           <div className="absolute z-20  w-full h-full left-0 top-0 bg-transparent-bg"></div>
         </div>
@@ -43,7 +44,7 @@ export default QuickResource
 export const resourceData = [
   {
     id: '1',
-    image: "https://plus.unsplash.com/premium_photo-1678233035763-5ddf32e2f75b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: Image,
     title: 'Empty Out the Negative',
     description: 'Joy, peace, creativity, advancement, a spouse, healing—God wants to bless you! It’s time to let go of the old, empty out the negative, and make room for all that He is going to do in your life. Our ministry thank you will inspire you to create space so God can fill your life with good things!'
   }

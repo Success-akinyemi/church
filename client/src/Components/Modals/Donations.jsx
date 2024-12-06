@@ -29,13 +29,16 @@ function Donations({setSelectedCard}) {
             }, 2000)
             return
         }
-        if(!formData?.checked){
-            setError('Please agree with terms and conditions')
-            setTimeout(() => {
-                setError()
-            }, 2000)
-            return
-        }
+        /**
+         if(!formData?.checked){
+             setError('Please agree with terms and conditions')
+             setTimeout(() => {
+                 setError()
+             }, 2000)
+             return
+         }
+         * 
+         */
         setState('donate')
     }
 
@@ -94,8 +97,7 @@ function Donations({setSelectedCard}) {
                         </div>
 
                         <div className='flex items-center gap-[2px] mt-3'>
-                            <input type="checkbox" onClick={handleChecked} id="checked" className='cursor-pointer'/>
-                            <p className='text-[15px]'> agree to the <span className='focusText text-[14px]'>terms of service</span> and <span className='focusText text-[15px]'>privacy policy.</span> </p>
+                            <p className='text-[15px]'><span className='text-main-color font-semibold'>Note:</span> Your donation to the ministry would be used to probagate HGAM causes</p>
                         </div>
                         
                         <p className='errorText text-center mt-6'>{error}</p>

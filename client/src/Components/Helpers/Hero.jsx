@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom'
 import { FaPlay } from "react-icons/fa";
 import VideoSrc from '../../assests/Vid/heroVid.mp4'
+import { FaMoneyBill } from "react-icons/fa";
 
-function Hero() {
+function Hero({ setSelectedCard }) {
+    const handleGiving = () => {
+        setSelectedCard('onlineGiving')
+    }
   return (
     <div className='w-full h-[90vh] relative'>
         <div className='absolute pad1 w-full h-full z-20 bg-transparent-bg left-0 top-0 flex flex-col justify-center'>
@@ -18,6 +22,14 @@ function Hero() {
                 >
                     <FaPlay className='' />
                     Click To Watch Now
+                </Link>
+
+                <Link 
+                    onClick={handleGiving}
+                    className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
+                >
+                    <FaMoneyBill className='text-[26px]' />
+                    Online Giving
                 </Link>
             </div>
         </div>

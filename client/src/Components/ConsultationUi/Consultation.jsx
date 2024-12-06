@@ -16,7 +16,8 @@ function Consultation() {
         setFormData({ ...formData, mobileNumber: value });
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         if (loading) {
             return;
         }
@@ -28,6 +29,11 @@ function Consultation() {
         if (!formData?.gender) {
             setError({ gender: 'Please Select a gender' });
             setTimeout(() => setError({ gender: '' }), 3000);
+            return;
+        }
+        if (!formData?.country) {
+            setError({ country: 'Please Enter your country' });
+            setTimeout(() => setError({ country: '' }), 3000);
             return;
         }
         if (!formData?.mobileNumber) {
@@ -103,6 +109,12 @@ function Consultation() {
                             </div>
                         </div>
                         <p className="text-[14px] font-semibold text-main-color-dark">{error?.gender}</p>
+                    </div>
+
+                    <div className="inputGroup gap-[6px] mb-2">
+                        <label className="label font-semibold text-main-color">Country</label>
+                        <input id="country" onChange={handleChange} type="text" className="input p-2" />
+                        <p className="text-[14px] font-semibold text-main-color-dark">{error?.country}</p>
                     </div>
 
                     <div className="inputGroup gap-[6px] mb-2 overflow-hidden">

@@ -50,7 +50,7 @@ function LandingPage({ setSelectedCard }) {
       </div>
 
       <div className="mt-[30px]">
-        <Hero />
+        <Hero setSelectedCard={setSelectedCard} />
       </div>
       <SignupBanner />
 
