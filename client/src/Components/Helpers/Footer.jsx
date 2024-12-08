@@ -2,6 +2,7 @@ import React from 'react';
 import { FaWhatsapp, FaTwitter, FaYoutube, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 import { PiPaperPlaneTiltFill } from "react-icons/pi";
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   // Array of social media links and corresponding icons
@@ -54,13 +55,13 @@ const Footer = () => {
         <div className="lg:text-center sm:text-left">
           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Home</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">About Us</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Donation</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Programs & Events</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Resources</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Blogs</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Contact</a></li>
+            <li><Link to="/" className="text-gray-400 hover:text-yellow-500">Home</Link></li>
+            <li><Link to="/about-us" className="text-gray-400 hover:text-yellow-500">About Us</Link></li>
+            <li><Link to="/sermon" className="text-gray-400 hover:text-yellow-500">Live</Link></li>
+            <li><Link to="/programs-and-events" className="text-gray-400 hover:text-yellow-500">Programs & Events</Link></li>
+            <li><Link to="/resources" className="text-gray-400 hover:text-yellow-500">Resources</Link></li>
+            <li><Link to="/blogs" className="text-gray-400 hover:text-yellow-500">Blogs</Link></li>
+            <li><Link to="/shop" className="text-gray-400 hover:text-yellow-500">Shop</Link></li>
           </ul>
         </div>
 

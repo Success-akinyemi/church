@@ -123,7 +123,7 @@ function Donations({setSelectedCard}) {
                         </select>
                         {
                             formData.donationPurpose === 'Others' && (
-                                <input type="text" onChange={handleChange} className='input mt-3 p-2' placeholder='Enter Donation Purpose' />
+                                <input id='donationPurpose' type="text" onChange={handleChange} className='input mt-3 p-2' placeholder='Enter Donation Purpose' />
                             )
                         }
                     </div>
