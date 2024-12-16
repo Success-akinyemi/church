@@ -87,9 +87,10 @@ function LandingPage({ setSelectedCard }) {
         </div>
       </div>
 
+        {/**
+         * 
       <div className="mb-8 bg-gray-50 py-5">
-        <BlogSection data={blogData} />
-
+          <BlogSection data={blogData} />
         <div className="text-center mt-4">
           <Link
             to="/blogs"
@@ -98,7 +99,9 @@ function LandingPage({ setSelectedCard }) {
             View All Blogs
           </Link>
         </div>
+
       </div>
+         */}
 
       {/**COMMUNITY */}
       <CommunityBanner />

@@ -18,6 +18,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#242424] py-12 pad1 text-white  ">
       {/* Subscription Section */}
+      {/**
+       * 
       <div className="flex flex-col items-center mb-12">
         <h2 className="text-3xl font-bold mb-4">SUBSCRIBE NOW!</h2>
         <p className="text-center max-w-xl text-gray-300 mb-6">
@@ -35,8 +37,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
+      { Divider }
       <div className="border-t border-yellow-500 mb-12"></div>
+       */}
 
       {/* Footer Content */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
