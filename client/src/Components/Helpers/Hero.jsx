@@ -14,7 +14,7 @@ function Hero({ setSelectedCard }) {
                 Live Prayer Session. <br /> Connect With Fada Everyday.
             </h1>
 
-            <div className='flex items-center gap-3 mt-8 smaller-phone:flex-col'>
+            <div className='flex items-center gap-3 mt-8 phone:flex-col smaller-phone:flex-col'>
 
                 <Link 
                     to='/sermon' 
