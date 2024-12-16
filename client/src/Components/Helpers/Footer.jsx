@@ -2,6 +2,7 @@ import React from 'react';
 import { FaWhatsapp, FaTwitter, FaYoutube, FaInstagram, FaFacebook, FaTiktok } from 'react-icons/fa';
 import { PiPaperPlaneTiltFill } from "react-icons/pi";
 import Logo from './Logo';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   // Array of social media links and corresponding icons
@@ -17,6 +18,8 @@ const Footer = () => {
   return (
     <footer className="bg-[#242424] py-12 pad1 text-white  ">
       {/* Subscription Section */}
+      {/**
+       * 
       <div className="flex flex-col items-center mb-12">
         <h2 className="text-3xl font-bold mb-4">SUBSCRIBE NOW!</h2>
         <p className="text-center max-w-xl text-gray-300 mb-6">
@@ -34,8 +37,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Divider */}
+      { Divider }
       <div className="border-t border-yellow-500 mb-12"></div>
+       */}
 
       {/* Footer Content */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 ">
@@ -54,13 +58,13 @@ const Footer = () => {
         <div className="lg:text-center sm:text-left">
           <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
           <ul className="space-y-2">
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Home</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">About Us</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Donation</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Programs & Events</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Resources</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Blogs</a></li>
-            <li><a href="#" className="text-gray-400 hover:text-yellow-500">Contact</a></li>
+            <li><Link to="/" className="text-gray-400 hover:text-yellow-500">Home</Link></li>
+            <li><Link to="/about-us" className="text-gray-400 hover:text-yellow-500">About Us</Link></li>
+            <li><Link to="/sermon" className="text-gray-400 hover:text-yellow-500">Live</Link></li>
+            <li><Link to="/programs-and-events" className="text-gray-400 hover:text-yellow-500">Programs & Events</Link></li>
+            <li><Link to="/resources" className="text-gray-400 hover:text-yellow-500">Resources</Link></li>
+            <li><Link to="/blogs" className="text-gray-400 hover:text-yellow-500">Blogs</Link></li>
+            <li><Link to="/shop" className="text-gray-400 hover:text-yellow-500">Shop</Link></li>
           </ul>
         </div>
 

@@ -20,9 +20,9 @@ function QuickResource() {
           <img 
             src={data?.image}
             alt='' 
-            className=' w-full h-full  object-cover object-center' 
+            className=' w-full h-full object-cover object-center' 
           />
-          <div className="absolute z-20  w-full h-full left-0 top-0 bg-transparent-bg"></div>
+          <div className="absolute z-20  w-full h-full left-0 top-0 "></div>
         </div>
       </div>  
 

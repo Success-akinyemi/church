@@ -36,8 +36,18 @@ function OrderForm({ setOrderForm, productId, setProductId }) {
             {/**CONTENT */}
 
             <div className="inputGroup">
+                <label className="label focusText border-b-0">Product ID:</label>
+                <input type="text" id='productId' className="input p-3" readOnly disabled defaultValue={productId} />
+            </div>
+
+            <div className="inputGroup">
                 <label className="label focusText border-b-0">Product Name:</label>
-                <input type="text" id='productName' className="input p-3" readOnly disabled defaultValue={productId} />
+                <input type="text" id='productName' className="input p-3" readOnly disabled defaultValue={''} />
+            </div>
+
+            <div className="inputGroup">
+                <label className="label focusText border-b-0">Product Quantity:</label>
+                <input type="number" id='productQuantiy' className="input p-3" />
             </div>
 
             <div className="inputGroup">
@@ -48,6 +58,11 @@ function OrderForm({ setOrderForm, productId, setProductId }) {
             <div className="inputGroup">
                 <label className="label focusText border-b-0">Customer Address</label>
                 <input type="text" id='customerAddress' onChange={handleChange} className="input p-3"  />
+            </div>
+
+            <div className="inputGroup">
+                <label className="label focusText border-b-0">Customer Address</label>
+                <input type="text" id='customerCountry' onChange={handleChange} className="input p-3" defaultValue={`Nigeria`} disabled readOnly value={`Nigeria`} />
             </div>
 
             <div className="inputGroup">
