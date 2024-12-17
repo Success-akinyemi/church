@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "../Helpers/Button";
 import PhoneInput from 'react-phone-input-2';
+import { massRequest } from "../../Helpers/apis";
+import toast from "react-hot-toast";
 
 
 function MassRequest({ setSelectedCard }) {
@@ -47,10 +49,15 @@ function MassRequest({ setSelectedCard }) {
         }
         try {
             setLoading(true);
-            //const res = await sendPrayerRequest(formData)
-            setSelectedCard('massRequestPayout')
+            const res = await massRequest(formData)
+            if(res.data.message){
+                toast.success(res.data.message)
+                setFormData({ name: '', date: '', mobileNumber: '', reasonForMassRequest: ''})
+                //setSelectedCard('massRequestPayout')
+            }
         } catch (error) {
-            console.error(error);
+            toast.error('Unable to submit mass request')
+            //console.error(error);
         } finally {
             setLoading(false);
         }
@@ -114,7 +121,7 @@ function MassRequest({ setSelectedCard }) {
 
 
 
-            <Button onClick={handleSubmit} text={'Submit'} />
+            <Button disabled={loading} onClick={handleSubmit} text={`${loading ? 'Submitting...' : 'Submit'}`} />
             <br />
             <br />
             <div className="flex mr-auto w-[50%] small-phone:w-[70%] smaller-phone:w-[85%]">
