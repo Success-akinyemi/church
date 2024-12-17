@@ -4,10 +4,10 @@ function SociailMedia() {
   const socialLinks = [
     { name: 'WhatsApp', icon: <FaWhatsapp />, url: 'https://whatsapp.com' },
     { name: 'Twitter', icon: <FaTwitter />, url: 'https://twitter.com' },
-    { name: 'YouTube', icon: <FaYoutube />, url: 'https://youtube.com' },
+    { name: 'YouTube', icon: <FaYoutube />, url: 'https://www.youtube.com/@fr.ebubemuonsoholyghostado9611' },
     { name: 'Instagram', icon: <FaInstagram />, url: 'https://instagram.com' },
-    { name: 'Facebook', icon: <FaFacebook />, url: 'https://facebook.com' },
-    { name: 'TikTok', icon: <FaTiktok />, url: 'https://tiktok.com' },
+    { name: 'Facebook', icon: <FaFacebook />, url: 'https://www.facebook.com/fadaebube' },
+    { name: 'TikTok', icon: <FaTiktok />, url: 'https://vm.tiktok.com/ZMkRMheak' },
   ];
 
   return (
