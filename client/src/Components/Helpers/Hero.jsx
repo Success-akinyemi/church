@@ -18,7 +18,7 @@ function Hero({ setSelectedCard }) {
 
                 <Link 
                     to='/sermon' 
-                    className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
+                    className={`flex items-center justify-center gap-3 py-3 phone:w-full tablet:w-[75%] phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
                 >
                     <FaPlay className='' />
                     Click To Watch Now
@@ -26,7 +26,7 @@ function Hero({ setSelectedCard }) {
 
                 <Link 
                     onClick={handleGiving}
-                    className={`flex items-center justify-center gap-3 py-3 phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
+                    className={`flex items-center justify-center gap-3 py-3 phone:w-full tablet:w-[75%] phone:py-2 px-16 small-pc:px-14 tablet:px-14 link text-[18px] tablet:text-[16px] duration-300 border-[2px] border-main-color bg-main-color text-white hover:text-white hover:bg-main-color-dark`}
                 >
                     <FaMoneyBill className='text-[26px]' />
                     Online Giving

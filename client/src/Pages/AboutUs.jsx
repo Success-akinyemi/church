@@ -40,17 +40,17 @@ function AboutUs({ setSelectedCard }) {
         </div>
 
         <div className="w-full pad1 bg-main-color flex items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
-          <div onClick={() => toggleCard('abouthgfmi')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'abouthgfmi' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'abouthgfmi' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
-              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[16px] `}>About HGFPMI</p>
+          <div onClick={() => toggleCard('abouthgfmi')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] tablet:border-b-[2px] p-1 ${activeCard === 'abouthgfmi' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'abouthgfmi' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
+              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[14px] `}>About us</p>
           </div>
-          <div onClick={() => toggleCard('fada')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'fada' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'fada' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
-              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[16px] `}>FADA</p>
+          <div onClick={() => toggleCard('fada')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] tablet:border-b-[2px] p-1 ${activeCard === 'fada' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'fada' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
+              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[14px] `}>FADA</p>
           </div>
-          <div onClick={() => toggleCard('ministry')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'ministry' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'ministry' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
-              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[16px] `}>Leaders</p>
+          <div onClick={() => toggleCard('ministry')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] tablet:border-b-[2px] p-1 ${activeCard === 'ministry' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'ministry' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
+              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[14px] `}>Leaders</p>
           </div>
-          <div onClick={() => toggleCard('branches')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] ${activeCard === 'branches' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'branches' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
-              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[16px] `}>Branches</p>
+          <div onClick={() => toggleCard('branches')} className={`cursor-pointer flex flex-1 items-center justify-center border-b-[4px] tablet:border-b-[2px] p-1 ${activeCard === 'branches' ? 'border-b-color-1' : 'border-b-white'} hover:border-b-color-1 ${activeCard === 'branches' ? 'text-color-1' : 'text-white'} hover:text-color-1`}>
+              <p className={`text-center uppercase font-semibold text-[24px] phone:text-[14px] `}>Branches</p>
           </div>
         </div> 
 

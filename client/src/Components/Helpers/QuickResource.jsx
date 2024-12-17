@@ -16,11 +16,11 @@ function QuickResource() {
   return (
     <div className='pad1 flex items-center justify-center gap-3 tablet:flex-col'>
       <div className=' flex-1 w-full'>
-        <div className='relative w-[85%] h-[400px] rounded-[20px] overflow-hidden'>
+        <div className='relative w-[85%] tablet:w-full h-[400px] tablet:h-auto rounded-[20px] overflow-hidden'>
           <img 
             src={data?.image}
             alt='' 
-            className=' w-full h-full object-cover object-center' 
+            className=' w-full h-full tablet:h-auto object-cover object-center' 
           />
           <div className="absolute z-20  w-full h-full left-0 top-0 "></div>
         </div>
@@ -31,7 +31,7 @@ function QuickResource() {
         <p className='text-[18px] tablet:text-[16px] phone:text-[15px] font-extralight'>
           {data.description}
         </p>
-        <div className='w-[50%] phone:w-full'>
+        <div className='w-[50%] phone:w-full small-pc:w-full'>
           <Button text={'Request Now'} onClick={handleRequestResource} style={'uppercase w-fit p-2 rounded-[0px] bg-main-color text-white font-semibold px-8 py-4 rounded-full flex items-center gap-3 hover:bg-main-color-dark transition-all shadow-lg hover:shadow-xl group'}/>
         </div>
       </div>

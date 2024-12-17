@@ -129,7 +129,7 @@ const StatementOfFaith = ({ setSelectedCard }) => {
                 <img
                   src={MainImg}
                   alt="Community gathering with a cross"
-                  className="rounded-lg shadow-xl object-cover h-96 w-full lg:w-full relative z-10"
+                  className="rounded-lg shadow-xl object-cover h-96 tablet:h-auto w-full lg:w-full relative z-10"
                 />
 
                 {/* Floating Elements */}

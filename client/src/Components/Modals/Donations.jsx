@@ -59,6 +59,8 @@ function Donations({setSelectedCard}) {
             }, 2000)
             return
         }
+        /**
+         * 
         if(!formData?.checked){
             setError('Please agree with terms and conditions')
             setTimeout(() => {
@@ -66,6 +68,8 @@ function Donations({setSelectedCard}) {
             }, 2000)
             return
         }
+         * 
+         */
         if(!formData.donationPurpose){
             setError('Please select a purpose for donation')
             setTimeout(() => {
