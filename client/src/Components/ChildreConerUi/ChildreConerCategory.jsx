@@ -1,8 +1,11 @@
 import { childrenVideo } from "../../data/ChlidrenVideo"
+import { useFetchChildrenProgram } from "../../Helpers/fetch.hooks"
+import Spinner from "../Helpers/Spinner"
 import ChildrenVideos from "./ChildrenVideos"
 
 function ChildreConerCategory() {
-  const video = childrenVideo
+  const { data, isFetching } = useFetchChildrenProgram()
+  const video = data || []
   return (
     <div>
       <div className="flex w-full pad1">
@@ -11,7 +14,13 @@ function ChildreConerCategory() {
         </div>
       </div>
 
-      <ChildrenVideos data={video} />
+      {
+        isFetching ? (
+          <Spinner />
+        ) : (
+          <ChildrenVideos data={video} />
+        )
+      }
     </div>
   )
 }

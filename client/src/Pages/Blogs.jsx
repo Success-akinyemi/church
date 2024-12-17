@@ -5,11 +5,11 @@ import Banner from '../Components/Helpers/Banner'
 import { blogs } from '../data/blogs'
 import BlogSection from '../Components/Helpers/BlogHero'
 import Footer from '../Components/Helpers/Footer'
-import { useFetchBlogs } from '../APis/fetch.hooks'
+import { useFetchBlogs } from '../Helpers/fetch.hooks'
+import Spinner from '../Components/Helpers/Spinner'
 
 function Blogs({setSelectedCard}) {
   const { data, isFetching } = useFetchBlogs()
-  console.log('BLOGS DATAAA', data)
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
@@ -21,7 +21,7 @@ function Blogs({setSelectedCard}) {
 
 }, []);
 
-    const blogData = blogs
+    const blogData = data || []
   return (
     <div>
         <Menu setSelectedCard={setSelectedCard} />
@@ -36,7 +36,13 @@ function Blogs({setSelectedCard}) {
             />
         </div>
 
-        <BlogSection data={blogData} pagination={true} noPerPage={3} />
+        {
+          isFetching ? (
+            <Spinner />
+          ) : (
+            <BlogSection data={blogData} pagination={true} noPerPage={3} />
+          )
+        }
 
         <Footer />
     </div>

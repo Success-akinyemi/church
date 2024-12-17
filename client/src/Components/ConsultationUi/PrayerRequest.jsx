@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import Button from "../Helpers/Button";
 import PrayingHandImg from '../../assests/prayingHand.jpg'
+import { prayerRequest } from "../../Helpers/apis";
+import toast from "react-hot-toast";
 
 function PrayerRequest() {
     const [formData, setFormData] = useState({ gender: 'male' }); 
     const [ error, setError ] = useState({})
-    const [ loading, setLaoding ] = useState(false)
+    const [ loading, setLoading ] = useState(false)
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -21,7 +23,8 @@ function PrayerRequest() {
         setFormData({ ...formData, gender: selectedGender });
     };
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
         if(loading){
             return;
         }
@@ -47,12 +50,16 @@ function PrayerRequest() {
             }, 3000)
         }
         try {
-            setLaoding(true)
-            //const res = await sendPrayerRequest(formData)
+            setLoading(true)
+            const res = await prayerRequest(formData)
+            if(res.data.message){
+                toast.success(res?.data?.message)
+                setFormData({ name: "", gender: "male", prayerRequest: "" });
+            }
         } catch (error) {
-            
+            toast.error('Unable to submit prayer request')
         } finally {
-            setLaoding(false)
+            setLoading(false)
         }
     }
 
@@ -79,7 +86,7 @@ function PrayerRequest() {
                     <h3 className="mb-12 text-[24px] font-semibold">Prayer Card</h3>
                     <div className="inputGroup gap-[6px] mb-2">
                         <label className="label font-semibold text-main-color">Full Name</label>
-                        <input id="name" onChange={handleChange} type="text" placeholder="Enter Full Name" className="input p-2" />
+                        <input id="name" value={formData?.name} onChange={handleChange} type="text" placeholder="Enter Full Name" className="input p-2" />
                         <p className="text-[14px] font-semibold text-main-color-dark">{error?.name}</p>
                     </div>
 
@@ -119,6 +126,7 @@ function PrayerRequest() {
                         <label className="label font-semibold text-main-color">Prayer Request</label>
                         <textarea 
                             id="prayerRequest" 
+                            value={formData?.prayerRequest}
                             onChange={handleChange} 
                             className="input resize-none p-2 h-[150px]"
                         >
@@ -127,7 +135,7 @@ function PrayerRequest() {
                         <p className="text-[14px] font-semibold text-main-color-dark">{error?.prayerRequest}</p>
                     </div>
 
-                    <Button onClick={handleSubmit} text={'Submit'} />
+                    <Button disabled={loading} onClick={handleSubmit} text={`${loading ? 'Submitting...' : 'Submit'} `} />
                 </form>
             </div>
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from "react-router-dom";
 
-const BlogCard = ({ image, title, description, link }) => (
+const BlogCard = ({ image, title, body, link }) => (
   <div className="group bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
     <div className="relative overflow-hidden h-64">
       <img 
@@ -16,7 +16,7 @@ const BlogCard = ({ image, title, description, link }) => (
         {title}
       </h3>
       <p className="text-gray-600 line-clamp-3 mb-4">
-        {description}
+        {body}
       </p>
       <div className="flex items-center justify-between">
         <Link 
@@ -65,7 +65,7 @@ const BlogSection = ({ data, pagination, noPerPage }) => {
               key={blog.id}
               image={blog.image}
               title={blog.title}
-              description={blog.description}
+              body={blog.body}
               link={blog.id}
             />
           ))}

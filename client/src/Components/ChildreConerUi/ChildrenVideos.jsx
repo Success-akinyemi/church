@@ -57,11 +57,11 @@ function ChildrenVideos({ data }) {
           <div
             key={index}
             className={`relative cursor-pointer overflow-hidden rounded-lg ${getRandomSize()}`}
-            onClick={() => handleVideoClick(video.link)}
+            onClick={() => handleVideoClick(video.video_content_url)}
           >
-            <video src={video.link} className="w-full h-full" controls={false} muted autoPlay loop></video>
+            <video src={video.video_content_url} className="w-full h-full" controls={false} muted autoPlay loop></video>
             <div className="absolute bottom-0 left-0 w-full bg-main-color text-white text-center text-[19px]">
-              Story Title: {video.title}
+              Story Title: {video.content_title}
             </div>
           </div>
         ))}

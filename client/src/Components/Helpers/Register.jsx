@@ -2,9 +2,13 @@ import { useState } from "react";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import Button from "./Button";
+import toast from "react-hot-toast";
+import { register } from "../../Helpers/apis";
 
 function Register() {
     const [ formData, setFormData ] = useState({})
+    const [ loading, setLoading ] = useState(false)
+    const [ error, setError ] = useState()
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value })
@@ -15,7 +19,31 @@ function Register() {
         setShowPassword((prev) => !prev)
     }
 
-    const handleRegister = () => {
+    const handleRegister = async () => {
+        if(loading){
+            return
+        }
+        if(!formData?.username){
+            setError('Enter Username')
+            setTimeout(() => { setError() }, 2500)
+            return
+        }
+        if(!formData?.password){
+            setError('Enter password')
+            setTimeout(() => { setError() }, 2500)
+            return
+        }
+
+        try {
+            setLoading(true)
+            const res = await register(formData)
+        } catch (error) {
+            toast.error('Unable to register user')
+            setError('Unable to register user')
+            setTimeout(() => { setError() }, 2500)
+        } finally {
+            setLoading(false)
+        }
 
     }
 
@@ -23,7 +51,7 @@ function Register() {
     <div className="flex flex-col gap-2">
         <div className="inputGroup">
             <label className="label font-semibold" >Name:</label>
-            <input id="name" onChange={handleChange} type="text" placeholder="Enter Name" className="input" />
+            <input id="username" onChange={handleChange} type="text" placeholder="Enter Name" className="input" />
         </div>
 
         <div className="inputGroup">
@@ -46,8 +74,10 @@ function Register() {
                 </div>
             </div>
         </div>
+
+        <p className="text-[16px] font-semibold text-main-color text-center">{error}</p>
         
-        <Button onClick={handleRegister} text={'Create Account'} style={'mt-2'} />
+        <Button disabled={loading} onClick={handleRegister} text={`${loading ? 'Creating' : 'Create Account'}`} style={'mt-2'} />
     </div>
   )
 }

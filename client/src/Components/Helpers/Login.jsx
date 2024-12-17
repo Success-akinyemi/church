@@ -2,9 +2,12 @@ import { useState } from "react";
 import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import Button from "./Button";
+import { login } from "../../Helpers/apis";
 
 function Login({setSelectedCard}) {
     const [ formData, setFormData ] = useState({})
+    const [ loading, setLoading ] = useState(false)
+    const [ error, setError ] = useState()
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value })
@@ -15,9 +18,34 @@ function Login({setSelectedCard}) {
         setShowPassword((prev) => !prev)
     }
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
+        if(loading){
+            return
+        }
+        if(!formData?.username){
+            setError('Enter Username')
+            setTimeout(() => { setError() }, 2500)
+            return
+        }
+        if(!formData?.password){
+            setError('Enter password')
+            setTimeout(() => { setError() }, 2500)
+            return
+        }
+
+        try {
+            setLoading(true)
+            const res = await login(formData)
+        } catch (error) {
+            toast.error('Unable to login user')
+            setError('Unable to login user')
+            setTimeout(() => { setError() }, 2500)
+        } finally {
+            setLoading(false)
+        }
 
     }
+
 
   return (
     <div className="flex flex-col gap-2" >
@@ -46,7 +74,7 @@ function Login({setSelectedCard}) {
             Forgot Password?
         </div>
 
-        <Button onClick={handleLogin} text={'Login'}  />
+        <Button disabled={loading} onClick={handleLogin} text={`${loading ? 'Please wait...' : 'Login'}`}  />
     </div>
   )
 }
