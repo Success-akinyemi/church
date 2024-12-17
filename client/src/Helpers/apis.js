@@ -26,6 +26,18 @@ export async function login(formData) {
     }
 }
 
+//NEWSLETTER SUBSCRIBPTION
+export async function newsletterSubscription(formData) {
+    try {
+        const res = await axios.post('/about_us/newsletter/', formData )
+        return res
+    } catch (error) {
+        const res = error.response || 'Unable to subscribe user'
+        return res?.data
+    }
+}
+
+
 //SUBMIT PRAYER REQUEST
 export async function prayerRequest(formData) {
     try {
