@@ -5,8 +5,11 @@ import Banner from '../Components/Helpers/Banner'
 import { blogs } from '../data/blogs'
 import BlogSection from '../Components/Helpers/BlogHero'
 import Footer from '../Components/Helpers/Footer'
+import { useFetchBlogs } from '../APis/fetch.hooks'
 
 function Blogs({setSelectedCard}) {
+  const { data, isFetching } = useFetchBlogs()
+  console.log('BLOGS DATAAA', data)
 
   useEffect(() => {
     // Scroll to the top of the page when the component mounts

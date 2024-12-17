@@ -85,7 +85,7 @@ export const menuLinks = [
        */
     },
     { 
-      name: 'Blogs', 
+      name: 'Blog', 
       link: '/blogs' 
     },
     { 

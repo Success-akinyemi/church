@@ -101,7 +101,7 @@ function Donations({setSelectedCard}) {
                         </div>
 
                         <div className='flex items-center gap-[2px] mt-3'>
-                            <p className='text-[15px]'><span className='text-main-color font-semibold'>Note:</span> Your donation to the ministry would be used to probagate HGAM causes</p>
+                            <p className='text-[15px]'><span className='text-main-color font-semibold'>Note:</span> Your donation to the ministry would be used to propagate HGAM causes</p>
                         </div>
                         
                         <p className='errorText text-center mt-6'>{error}</p>
