@@ -42,7 +42,7 @@ function Blog({setSelectedCard}) {
         </div>
 
         {
-          !isFetching ? (
+          isFetching ? (
             <Spinner />
           ) : (
             <div className='mt-[10px] pad1'>
