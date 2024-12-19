@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import OrderForm from "../Modals/OrderForm";
 
 function Product({data}) {
+    console.log('object darata', data)
     const dispatch = useDispatch()
     const [ productquantity, setProductQuantity ] = useState(1)
 
@@ -62,25 +63,25 @@ function Product({data}) {
 
   return (
     <div className="w-[450px] phone:w-[94%] overflow-hidden shadow-xl rounded-[8px]">
-        <div className="w-full relative overflow-hidden">
-            <img alt={data?.name} src={data.img} className={`absolute w-full top-0 left-0`} />
+        <div className="w-full h-auto relative overflow-x-hidden">
+            <img alt={data?.name} src={data?.image} className={`w-full h-auto top-0 left-0`} />
         </div>
 
         <div className="flex w-full flex-col p-6">
             <div className="flex items-center gap-1 justify-between">
-                <h3 className="text-text-color-2 font-semibold text-[21px]">{truncateText(data?.name, 10)}</h3>
+                <h3 className="text-text-color-2 font-semibold text-[21px]">{truncateText(data?.name, 20)}</h3>
                 <div>
                     {
-                        data?.allowDiscount ? (
+                        data?.discount_available ? (
                             <span className="flex gap-[2px]">
                                 <small className="text-text-color-2 line-through text-[15px] font-semibold">${data?.price}</small>
                                 <p className="text-color-1 font-bold text-[18px]" >
-                                    ${discountPayableAmount}
+                                    ${data?.discount_price}
                                 </p>
                             </span>
                         ) : (
                             <span className="text-color-1 font-bold text-[18px]">
-                                ${data.price}
+                                ${data?.price}
                             </span>
                         )
                     }
@@ -88,7 +89,11 @@ function Product({data}) {
             </div>
 
             <div className="flex items-center justify-between text-text-color-3">
-                <span>{truncateText(data?.authour, 15)}</span>
+            <span
+                dangerouslySetInnerHTML={{
+                    __html: truncateText(data?.description, 25)
+                }}
+                ></span>
                 <span>{data?.type}</span>
             </div>
 

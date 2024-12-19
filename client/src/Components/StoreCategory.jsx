@@ -2,16 +2,23 @@ import { useState } from "react"
 import { category, product } from "../data/store"
 import FeatureProducts from "./FeatureProducts"
 import Products from "./Helpers/Products"
+import { useFetchProducts } from "../Helpers/fetch.hooks"
 
 function StoreCategory() {
-    const productsCategory = category
+    const { data, isFetching } = useFetchProducts()
+    const result = data?.map(item => ({
+        name: item.name,
+        slug: item.slug
+      }));
+    const productsCategory = result || [] || category
     const [ catState, setCatState ] = useState('featured')
 
     const changeCategory = (item) => {
         setCatState(item)
     }
 
-    const allProducts = product
+    const allProducts = data || []
+    console.log('datares', allProducts)
     const sortedProducts = allProducts.filter((productItem) => productItem.slug === catState);
 
 
@@ -37,12 +44,12 @@ function StoreCategory() {
                 )
             }
             {
-                catState === 'books' && (
+                catState === 'ministry-wraper' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }
             {
-                catState === 'music' && (
+                catState === 'ministry-candle' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }
@@ -52,7 +59,7 @@ function StoreCategory() {
                 )
             }
                         {
-                catState === 'gift' && (
+                catState === 'paraclet-water' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
             }

@@ -20,7 +20,8 @@ const MessagesCard = ({ image, title, author, link, id }) => (
       </p>
       <div className="flex items-center justify-between">
         <Link 
-          to={`/sermon/teaching/${id}`}
+          to={`${link}`}
+          target='_blank'
           className="text-main-color-dark font-semibold hover:text-main-color transition-colors flex items-center gap-2">
           OPEN
           <svg 
@@ -66,10 +67,10 @@ const MessagesSection = ({ data }) => {
           {currentData.map((message) => (
             <MessagesCard 
               key={message.id}
-              image={message.coverImg}
-              title={message.title}
-              author={message.author}
-              link={message.video}
+              image={message.url_for}
+              title={message.message_title}
+              author={message.author || 'HGFPMI'}
+              link={message.url_for}
               id={message.id}
             />
           ))}

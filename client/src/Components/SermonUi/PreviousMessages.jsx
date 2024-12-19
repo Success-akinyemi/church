@@ -1,11 +1,20 @@
 import { previousMessages } from "../../data/previousMessages"
+import { useFetchMessages } from "../../Helpers/fetch.hooks"
 import MessagesSection from "../Helpers/MessagesCard"
+import Spinner from "../Helpers/Spinner"
 
 function PreviousMessages() {
-  const messages = previousMessages
+  const { data, isFetching } = useFetchMessages()
+  const messages = data || []
   return (
     <div className="pad1">
-        <MessagesSection data={messages} />
+        {
+          isFetching ? (
+            <Spinner />
+          ) : (
+            <MessagesSection data={messages} />
+          )
+        }
     </div>
   )
 }
