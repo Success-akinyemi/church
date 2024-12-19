@@ -10,10 +10,10 @@ function Hero({ setSelectedCard }) {
 
     const videoUrl = "https://youtu.be/-ndFtmrpN5U?si=9F71UgeS0fBuxC3B";
 
-    // Convert to embed URL
     const embedUrl = videoUrl
-        .split("?")[0]
-        .replace("youtu.be/", "www.youtube.com/embed/")
+    .split("?")[0]
+    .replace("youtu.be/", "www.youtube.com/embed/") + "?autoplay=1&mute=1";
+
   return (
     <div className='w-full h-[90vh] relative'>
         <div className='absolute pad1 w-full h-full z-20 bg-transparent-bg left-0 top-0 flex flex-col justify-center'>
@@ -50,13 +50,14 @@ function Hero({ setSelectedCard }) {
 
          */}
 
+    <iframe
+        src={embedUrl}
+        className="absolute top-0 left-0 w-full h-full"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+    />
 
-            <iframe
-                src={embedUrl}
-                className="z-10 w-full h-full object-cover object-top"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            />
+
     </div>
   )
 }
