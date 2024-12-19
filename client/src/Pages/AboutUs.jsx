@@ -6,7 +6,7 @@ import Minstry from "../Components/AboutUi/Minstry"
 import AboutFada from "../Components/AboutUi/AboutFada"
 import Branches from "../Components/AboutUi/Branches"
 import AboutHGFPMI from "../Components/AboutUi/AboutHGFPMI"
-import VideoSrc from '../assests/Vid/heroVid.mp4'
+import HeroBg from '../assests/hero-bg.jpg'
 
 function AboutUs({ setSelectedCard }) {
   const [ activeCard, setActiveCard ] = useState('abouthgfmi')
@@ -34,8 +34,8 @@ function AboutUs({ setSelectedCard }) {
 
         <div className="mt-[30px]">
             <Banner 
-              video={'https://videos.pexels.com/video-files/3772777/3772777-sd_640_360_24fps.mp4'} 
               text={'About Us'}
+              img={HeroBg}
             />
         </div>
 
