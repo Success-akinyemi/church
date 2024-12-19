@@ -4,7 +4,7 @@ import MessagesSection from "../Helpers/MessagesCard"
 import Spinner from "../Helpers/Spinner"
 
 function PreviousMessages() {
-  const { data, isFetching } = useFetchMessages()
+  const { data, isFetching } = useFetchMessages({ live: false })
   const messages = data || []
   return (
     <div className="pad1">

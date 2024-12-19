@@ -2,11 +2,14 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 const MessagesCard = ({ image, title, author, link, id }) => (
+
   <div className="group bg-white rounded-xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-2">
     <div className="relative overflow-hidden h-64">
-      <img 
+      <iframe 
         src={image} 
         alt={title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
@@ -64,16 +67,23 @@ const MessagesSection = ({ data }) => {
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentData.map((message) => (
-            <MessagesCard 
-              key={message?.id}
-              image={message?.url_for}
-              title={message?.message_title}
-              author={message?.author || 'HGFPMI'}
-              link={message?.url_for}
-              id={message?.id}
-            />
-          ))}
+          {currentData.map((message) => {
+            const embedUrl = message?.url_for
+            .split("?")[0]
+            .replace("youtu.be/", "www.youtube.com/embed/") + "?autoplay=1&mute=1";
+
+            return (
+              <MessagesCard 
+                key={message?.id}
+                image={embedUrl}
+                title={message?.message_title}
+                author={message?.author || 'HGFPMI'}
+                link={message?.url_for}
+                id={message?.id}
+              />
+            )
+          }
+          )}
         </div>
 
         {/** PAGINATION */}
