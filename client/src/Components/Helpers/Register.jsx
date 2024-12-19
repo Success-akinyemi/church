@@ -5,7 +5,7 @@ import Button from "./Button";
 import toast from "react-hot-toast";
 import { register } from "../../Helpers/apis";
 
-function Register() {
+function Register({ setCardState }) {
     const [ formData, setFormData ] = useState({})
     const [ loading, setLoading ] = useState(false)
     const [ error, setError ] = useState()
@@ -37,6 +37,11 @@ function Register() {
         try {
             setLoading(true)
             const res = await register(formData)
+            console.log('object', res)
+            if(res.data.message){
+                toast.success(res.data.message)
+                setCardState('login')
+            }
         } catch (error) {
             toast.error('Unable to register user')
             setError('Unable to register user')
@@ -54,10 +59,13 @@ function Register() {
             <input id="username" onChange={handleChange} type="text" placeholder="Enter Name" className="input" />
         </div>
 
+        {/**
+         * 
         <div className="inputGroup">
             <label className="label font-semibold" >Email:</label>
             <input id="email" onChange={handleChange} type="email" placeholder="Enter Email Address" className="input" />
         </div>
+         */}
 
         <div className="inputGroup">
             <label className="label font-semibold" >Password</label>

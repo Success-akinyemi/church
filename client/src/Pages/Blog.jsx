@@ -8,6 +8,7 @@ import { useFetchBlogs } from '../Helpers/fetch.hooks';
 import { formatDateAndTime } from '../Helpers/formatDateAndTime';
 import { FaArrowLeft } from "react-icons/fa6";
 import Spinner from '../Components/Helpers/Spinner';
+import HeroBg from '../assests/hero-bg.jpg'
 
 function Blog({setSelectedCard}) {
   const loc = useLocation()
@@ -36,7 +37,7 @@ function Blog({setSelectedCard}) {
 
         <div className="mt-[30px]">
             <Banner
-              video={'https://videos.pexels.com/video-files/3772777/3772777-sd_640_360_24fps.mp4'} 
+              img={HeroBg} 
               text={`${ blogData?.title ? blogData?.title : 'Blog'}`}
             />
         </div>

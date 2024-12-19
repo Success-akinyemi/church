@@ -3,6 +3,7 @@ import { IoIosEye } from "react-icons/io";
 import { IoIosEyeOff } from "react-icons/io";
 import Button from "./Button";
 import { login } from "../../Helpers/apis";
+import toast from "react-hot-toast";
 
 function Login({setSelectedCard}) {
     const [ formData, setFormData ] = useState({})
@@ -36,6 +37,13 @@ function Login({setSelectedCard}) {
         try {
             setLoading(true)
             const res = await login(formData)
+            console.log('object', res)
+            if(res.status === 200 && res.data){
+                toast.success('Login Successful')
+                localStorage.setItem('HGFPMIACCESS', res.data.access)
+                localStorage.setItem('HGFPMIREFRESH', res.data.refresh)
+                setSelectedCard(null)
+            }
         } catch (error) {
             toast.error('Unable to login user')
             setError('Unable to login user')
@@ -50,8 +58,8 @@ function Login({setSelectedCard}) {
   return (
     <div className="flex flex-col gap-2" >
          <div className="inputGroup">
-            <label className="label font-semibold" >Email:</label>
-            <input type="email" id="email" onChange={handleChange} placeholder="Enter Email Address" className="input" />
+            <label className="label font-semibold" >Username:</label>
+            <input type="text" id="username" onChange={handleChange} placeholder="Enter username" className="input" />
         </div>
 
         <div className="inputGroup">
@@ -74,7 +82,11 @@ function Login({setSelectedCard}) {
             Forgot Password?
         </div>
 
-        <Button disabled={loading} onClick={handleLogin} text={`${loading ? 'Please wait...' : 'Login'}`}  />
+        <p className="text-[16px] font-semibold text-main-color text-center">{error}</p>
+        
+        <div className="" onClick={handleLogin}>
+            <Button disabled={loading} onClick={handleLogin} text={`${loading ? 'Please wait...' : 'Login'}`}  />
+        </div>
     </div>
   )
 }

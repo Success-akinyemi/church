@@ -6,6 +6,7 @@ import LiveMessage from '../Components/SermonUi/LiveMessage'
 import PreviousMessages from '../Components/SermonUi/PreviousMessages'
 import { useEffect, useState } from 'react'
 import VideoSrc from '../assests/Vid/heroVid.mp4'
+import HeroBg from '../assests/hero-bg.jpg'
 
 
 function Sermon({ setSelectedCard, countDownTime }) {
@@ -35,8 +36,8 @@ function Sermon({ setSelectedCard, countDownTime }) {
   
           <div className="mt-[30px]">
               <Banner 
-                video={VideoSrc} 
-                text={'Live Streaming'}
+                img={HeroBg} 
+                text={ activeCard === 'livemessages' ?  'Live Streaming' : 'Previous Messages' }
                 style={'object-top'}
               />
           </div>

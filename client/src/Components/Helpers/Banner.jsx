@@ -5,7 +5,7 @@ function Banner({img, video, alt, text, style}) {
     <div className='w-full h-[50vh] relative'>
         {
           img && (
-            <img alt={alt} src={img} className='w-full h-full object-cover object-center' />
+            <img alt={alt} src={img} className='w-full h-full object-cover object-top' />
           )
         }
 

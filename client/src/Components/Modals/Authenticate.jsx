@@ -27,7 +27,7 @@ function Authenticate({setSelectedCard}) {
 
             {
                 cardState === 'register' && (
-                    <Register />
+                    <Register setCardState={setCardState} />
                 )
             }
         </div>
