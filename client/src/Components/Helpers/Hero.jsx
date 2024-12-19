@@ -7,6 +7,13 @@ function Hero({ setSelectedCard }) {
     const handleGiving = () => {
         setSelectedCard('onlineGiving')
     }
+
+    const videoUrl = "https://youtu.be/-ndFtmrpN5U?si=9F71UgeS0fBuxC3B";
+
+    // Convert to embed URL
+    const embedUrl = videoUrl
+        .split("?")[0]
+        .replace("youtu.be/", "www.youtube.com/embed/")
   return (
     <div className='w-full h-[90vh] relative'>
         <div className='absolute pad1 w-full h-full z-20 bg-transparent-bg left-0 top-0 flex flex-col justify-center'>
@@ -37,14 +44,19 @@ function Hero({ setSelectedCard }) {
         
         {/**
          * 
-        <video src='https://videos.pexels.com/video-files/1722697/1722697-sd_640_360_25fps.mp4' autoPlay muted 
-            className='z-10 w-full h-full object-cover object-center'>
-        </video>
-         */}
-        <video src={VideoSrc} autoPlay muted 
-            className='z-10 w-full h-full object-cover object-top'>
-        </video>
+         <video src={VideoSrc} autoPlay muted 
+             className='z-10 w-full h-full object-cover object-top'>
+         </video>
 
+         */}
+
+
+            <iframe
+                src={embedUrl}
+                className="z-10 w-full h-full object-cover object-top"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+            />
     </div>
   )
 }

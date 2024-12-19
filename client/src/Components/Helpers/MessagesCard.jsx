@@ -43,11 +43,11 @@ const MessagesSection = ({ data }) => {
   const itemsPerPage = 6;
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const totalPages = Math.ceil(data?.length / itemsPerPage);
 
   // Get current page data
   const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentData = data.slice(startIndex, startIndex + itemsPerPage);
+  const currentData = data?.slice(startIndex, startIndex + itemsPerPage);
 
   const handlePageChange = (newPage) => {
     if (newPage > 0 && newPage <= totalPages) {
@@ -66,12 +66,12 @@ const MessagesSection = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {currentData.map((message) => (
             <MessagesCard 
-              key={message.id}
-              image={message.url_for}
-              title={message.message_title}
-              author={message.author || 'HGFPMI'}
-              link={message.url_for}
-              id={message.id}
+              key={message?.id}
+              image={message?.url_for}
+              title={message?.message_title}
+              author={message?.author || 'HGFPMI'}
+              link={message?.url_for}
+              id={message?.id}
             />
           ))}
         </div>
