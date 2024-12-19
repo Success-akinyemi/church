@@ -5,8 +5,10 @@ import Menu from '../Helpers/Menu';
 import QuickNav from '../Helpers/QuickNav';
 import Footer from '../Helpers/Footer';
 import { ministryOfficials } from '../../data/ministryOfficials';
+import { useFetchLeaders } from '../../Helpers/fetch.hooks';
+import Spinner from '../Helpers/Spinner';
 
-const TeamMember = ({ name, image }) => {
+const TeamMember = ({ name_in_full: name, photo }) => {
     return (
         <motion.div
             className="relative overflow-hidden rounded-lg shadow-lg"
@@ -14,7 +16,7 @@ const TeamMember = ({ name, image }) => {
             transition={{ duration: 0.3 }}
         >
             <img
-                src={image}
+                src={photo}
                 alt={name}
                 className="w-full h-72 object-cover object-top"
             />
@@ -64,6 +66,7 @@ const TeamMember = ({ name, image }) => {
 
 const Minstry = () => {
     const teamMembers = ministryOfficials
+    const { data, isFetching } = useFetchLeaders()
 
 return (
 
@@ -71,7 +74,7 @@ return (
         <Menu />
         <QuickNav />
 
-        <div className="container pad1 py-16 bg-gray-50">
+        <div className="container pad1 py-16 bg-gray-50 flex flex-col">
             <h2 className="text-4xl font-bold text-center mb-4">Ministry Officials</h2>
             <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
                 Meet our talented team of professionals who make the magic happen
@@ -82,16 +85,24 @@ return (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                {teamMembers.map((member, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
-                    >
-                        <TeamMember {...member} />
-                    </motion.div>
-                ))}
+                {
+                    isFetching ? (
+                        <div className="w-full flex items-center justify-center">
+                            <Spinner />
+                        </div>
+                    ) : (
+                        data?.map((member, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.1 }}
+                        >
+                            <TeamMember {...member} />
+                        </motion.div>
+                        ))
+                    )
+                }
             </motion.div>
         </div>
 

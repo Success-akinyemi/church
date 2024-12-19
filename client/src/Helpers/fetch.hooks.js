@@ -73,3 +73,72 @@ export function useFetchBranches(query){
 
     return branchesData
 }
+
+export function useFetchLeaders(query){
+    const [ leadersData, setLeadersData] = useState({ isFetching: true, data: null, status: null, serverError: null, })
+    useEffect(() => {
+        const fetchLeadersData = async () => {
+            try {
+                const { data, status} = !query ? await axios.get(`/about_us/hgfpmi_leaders`) : await axios.get(`/about_us/hgfpmi_leaders/${query}`)
+                //console.log('Data from Hooks>>>', data, 'STATUS', status)
+
+                if(status === 200){
+                    setLeadersData({ isFetching: false, data: data, status: status, serverError: null})
+                } else{
+                    setLeadersData({ isFetching: false, data: null, status: status, serverError: null})
+                }
+            } catch (error) {
+                setLeadersData({ isFetching: false, data: null, status: null, serverError: error})
+            }
+        }
+        fetchLeadersData()
+    }, [query])
+
+    return leadersData
+}
+
+export function useFetchProducts(query){
+    const [ productsData, setProductsData] = useState({ isFetching: true, data: null, status: null, serverError: null, })
+    useEffect(() => {
+        const fetchProductsData = async () => {
+            try {
+                const { data, status} = !query ? await axios.get(`/store/store`) : await axios.get(`/store/store/${query}`)
+                //console.log('Data from Hooks>>>', data, 'STATUS', status)
+
+                if(status === 200){
+                    setProductsData({ isFetching: false, data: data, status: status, serverError: null})
+                } else{
+                    setProductsData({ isFetching: false, data: null, status: status, serverError: null})
+                }
+            } catch (error) {
+                setProductsData({ isFetching: false, data: null, status: null, serverError: error})
+            }
+        }
+        fetchProductsData()
+    }, [query])
+
+    return productsData
+}
+
+export function useFetchMessages({ live }){
+    const [ messagesData, setMessagesData] = useState({ isFetching: true, data: null, status: null, serverError: null, })
+    useEffect(() => {
+        const fetchMessagesData = async () => {
+            try {
+                const { data, status} = live ? await axios.get(`/sermon/liveteachings`) : await axios.get(`/sermon/past_teachings`)
+                //console.log('Data from Hooks>>>', data, 'STATUS', status)
+
+                if(status === 200){
+                    setMessagesData({ isFetching: false, data: data, status: status, serverError: null})
+                } else{
+                    setMessagesData({ isFetching: false, data: null, status: status, serverError: null})
+                }
+            } catch (error) {
+                setMessagesData({ isFetching: false, data: null, status: null, serverError: error})
+            }
+        }
+        fetchMessagesData()
+    }, [live])
+
+    return messagesData
+}

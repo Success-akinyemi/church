@@ -1,9 +1,12 @@
 import { product } from "../data/store";
+import { useFetchProducts } from "../Helpers/fetch.hooks";
 import Products from "./Helpers/Products";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
 function FeatureProducts({data, setCatState}) {
-    const allProducts = product
+  const { data: productsData, isFetching } = useFetchProducts()
+
+    const allProducts = productsData || []
 
   return (
     <div className="flex flex-col w-full">
