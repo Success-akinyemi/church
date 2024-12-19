@@ -1,8 +1,8 @@
 import axios from "axios"
 
 //axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL
-//axios.defaults.baseURL = 'https://hgfapi.xyz'
-axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
+axios.defaults.baseURL = 'https://hgfapi.xyz'
+//axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
 
 //MASS REQUEST
 export async function register(formData) {

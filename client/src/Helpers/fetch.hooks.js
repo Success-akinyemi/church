@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import axios from 'axios'
 
 //axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL
-//axios.defaults.baseURL = 'https://hgfapi.xyz'
-axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
+axios.defaults.baseURL = 'https://hgfapi.xyz'
+//axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
 
 export function useFetchBlogs(query){
     const [ blogPost, setBlogPost] = useState({ isFetching: true, data: null, status: null, serverError: null, })
