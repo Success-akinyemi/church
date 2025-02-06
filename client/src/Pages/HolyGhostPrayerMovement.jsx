@@ -25,7 +25,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
   
         <div className="flex flex-col items-center justify-center gap-3">
           <img alt="logo" src={LogoImg} className="w-20" />
-          <h2 className="uppercase font-semibold text-main-color">
+          <h2 className="uppercase font-semibold text-center text-main-color">
               Holy Ghost Fraternity prayer movement international
           </h2>
           <p className="uppercase text-main-color font-light">
