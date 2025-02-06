@@ -41,6 +41,7 @@ import TiktokLive from './Components/SermonUi/TiktokLive';
 import NewTestimony from './Admin/Modal/NewTestimony';
 import OnlineGiving from './Components/Modals/OnlineGiving';
 import HolyGhostPrayerMovement from './Pages/HolyGhostPrayerMovement';
+import HolyGhostPrayerMovementAppreciation from './Pages/HolyGhostPrayerMovementAppreciation';
 
 
 
@@ -179,6 +180,7 @@ function App() {
           <Route path='/consultations' element={<Consultations setSelectedCard={setSelectedCard} />} />
           <Route path='/children-coner' element={<ChildrenConer setSelectedCard={setSelectedCard} />} />
           <Route path='/Holy-Ghost-prayer-movement' element={<HolyGhostPrayerMovement setSelectedCard={setSelectedCard} />} />
+          <Route path='/Holy-Ghost-prayer-movement-success' element={<HolyGhostPrayerMovementAppreciation setSelectedCard={setSelectedCard} />} />
 
 
 

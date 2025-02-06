@@ -1,17 +1,45 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import LogoImg from '../assests/HGFPMI-LOGO.png'
 import { FaHotel } from "react-icons/fa6";
+import toast from "react-hot-toast";
 
 function HolyGhostPrayerMovement({ setSelectedCard }) {
+    const navigate = useNavigate()
     const [ formData, setFormData ] = useState({})
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value })
     }
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        if(!formData?.fullName){
+            toast.error('Enter Full Name')
+            return
+        }
+        if(!formData?.telephone){
+            toast.error('Enter Telephone')
+            return
+        }
+        if(!formData?.email){
+            toast.error('Enter Email')
+            return
+        }
+        if(!formData?.gender){
+            toast.error('Enter Gender')
+            return
+        }
+        if(!formData?.profession){
+            toast.error('Enter Profession')
+            return
+        }
+        if(!formData?.location){
+            toast.error('Select convention a location')
+            return
+        }
+        
         try {
-            
+            navigate('/Holy-Ghost-prayer-movement-success')
         } catch (error) {
             
         }
@@ -36,7 +64,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
               JUNE - JULY
           </p>
   
-          <h3 className="text-main-color border-b-[2px] border-b-matext-main-color mt-8 font-semibold">Please fill the form below</h3>
+          <h3 className="text-main-color border-b-[2px] border-b-main-color mt-8 font-semibold text-center">Please fill the form below</h3>
           <form onSubmit={handleSubmit} className="w-[550px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
               <div className="flex items-center gap-2 justify-between w-full phone:flex-col phone:w-full ">
                   <div className="formCard">
@@ -67,7 +95,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                   </div>
                   <div className="formCard">
                       <label className="uppercase label" htmlFor="">profession</label>
-                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
+                      <input onChange={handleChange} type="text" name="profession" id="profession" className="input p-2" />
                   </div>
               </div>
   
