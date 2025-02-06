@@ -40,33 +40,33 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
               <div className="flex items-center gap-2 justify-between w-full phone:flex-col">
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">Full Name</label>
-                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input" />
+                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
                   </div>
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">Mailing Address</label>
-                      <input onChange={handleChange} type="text" name="mailingaddress" id="mailingaddress" className="input" />
+                      <input onChange={handleChange} type="text" name="mailingaddress" id="mailingaddress" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">TELEPHONE</label>
-                      <input onChange={handleChange} type="number" name="telephone" id="telephone" className="input" />
+                      <input onChange={handleChange} type="number" name="telephone" id="telephone" className="input p-2" />
                   </div>
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">volunteer</label>
-                      <input onChange={handleChange} type="text" name="volunteer" id="volunteer" className="input" />
+                      <input onChange={handleChange} type="text" name="volunteer" id="volunteer" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">email</label>
-                      <input onChange={handleChange} type="email" name="email" id="email" className="input" />
+                      <input onChange={handleChange} type="email" name="email" id="email" className="input p-2" />
                   </div>
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">profession</label>
-                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input" />
+                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
                   </div>
               </div>
   
@@ -81,14 +81,14 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                   </div>
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">convention center</label>
-                      <input onChange={handleChange} type="text" name="conventioncenter" id="conventioncenter" className="input" />
+                      <input onChange={handleChange} type="text" name="conventioncenter" id="conventioncenter" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
                   <div className="flex flex-col gap-1">
                       <label className="uppercase label" htmlFor="">Date of birth</label>
-                      <input onChange={handleChange} type="date" name="" id="dob" className="input" />
+                      <input onChange={handleChange} type="date" name="" id="dob" className="input p-2" />
                   </div>
                   <div className="flex flex-col gap-1">
   
