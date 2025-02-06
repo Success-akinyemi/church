@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import LogoImg from '../assests/HGFPMI-LOGO.png'
+import { FaHotel } from "react-icons/fa6";
 
 function HolyGhostPrayerMovement({ setSelectedCard }) {
     const [ formData, setFormData ] = useState({})
@@ -25,7 +26,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
   
         <div className="flex flex-col items-center justify-center gap-3">
           <img alt="logo" src={LogoImg} className="w-20" />
-          <h2 className="uppercase font-semibold text-center text-main-color">
+          <h2 className="uppercase font-semibold text-center text-main-color tablet:w-[98%]">
               Holy Ghost Fraternity prayer movement international
           </h2>
           <p className="uppercase text-main-color font-light">
@@ -36,42 +37,42 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
           </p>
   
           <h3 className="text-main-color border-b-[2px] border-b-matext-main-color mt-8 font-semibold">Please fill the form below</h3>
-          <form onSubmit={handleSubmit} className="w-[550px] border flex flex-col gap-5 p-5">
-              <div className="flex items-center gap-2 justify-between w-full phone:flex-col">
-                  <div className="flex flex-col gap-1">
+          <form onSubmit={handleSubmit} className="w-[550px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
+              <div className="flex items-center gap-2 justify-between w-full phone:flex-col phone:w-full ">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">Full Name</label>
                       <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">Mailing Address</label>
                       <input onChange={handleChange} type="text" name="mailingaddress" id="mailingaddress" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">TELEPHONE</label>
                       <input onChange={handleChange} type="number" name="telephone" id="telephone" className="input p-2" />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">volunteer</label>
                       <input onChange={handleChange} type="text" name="volunteer" id="volunteer" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">email</label>
                       <input onChange={handleChange} type="email" name="email" id="email" className="input p-2" />
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">profession</label>
                       <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">gender</label>
                       <select onChange={handleChange} name="gender" id="gender" className="input w-full">
                           <option value="">-- SELECT GENDER --</option>
@@ -79,25 +80,39 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                           <option value="female">Female</option>
                       </select>
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">convention center</label>
                       <input onChange={handleChange} type="text" name="conventioncenter" id="conventioncenter" className="input p-2" />
                   </div>
               </div>
   
               <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="flex flex-col gap-1">
+                  <div className="formCard">
                       <label className="uppercase label" htmlFor="">Date of birth</label>
                       <input onChange={handleChange} type="date" name="" id="dob" className="input p-2" />
                   </div>
-                  <div className="flex flex-col gap-1">
-  
+                  <div className="formCard">
+                      <label className="uppercase label" htmlFor="">Location</label>
+                      <select onChange={handleChange} name="location" id="location" className="input w-full">
+                          <option value="">-- SELECT LOCATION --</option>
+                          <option value="Huston">Huston</option>
+                          <option value="New York">New York</option>
+                      </select>
                   </div>
               </div>           
   
               <button onSubmit={handleSubmit} className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
                   Register
               </button>
+
+              <a
+                target="_blank"
+                href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738342446062&key=GRP&guestreslink2=true&app=resvlink" 
+                className="flex items-center justify-center w-full bg-color-1 text-main-color-dark font-semibold py-[10px] px-[15px] outline-none border-none rounded-2xl gap-[4px]"
+            >
+                  <FaHotel />
+                  Get Hotel Reservation
+              </a>
   
           </form>
   
