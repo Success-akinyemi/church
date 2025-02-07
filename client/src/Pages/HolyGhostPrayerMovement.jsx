@@ -109,8 +109,12 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                       </select>
                   </div>
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">convention center</label>
-                      <input onChange={handleChange} type="text" name="conventioncenter" id="conventioncenter" className="input p-2" />
+                      <label className="uppercase label" htmlFor="">Location</label>
+                      <select onChange={handleChange} name="location" id="location" className="input w-full">
+                          <option value="">-- SELECT LOCATION --</option>
+                          <option value="Houston">Houston</option>
+                          <option value="New York">New York</option>
+                      </select>
                   </div>
               </div>
   
@@ -119,14 +123,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                       <label className="uppercase label" htmlFor="">Date of birth</label>
                       <input onChange={handleChange} type="date" name="" id="dob" className="input p-2" />
                   </div>
-                  <div className="formCard">
-                      <label className="uppercase label" htmlFor="">Location</label>
-                      <select onChange={handleChange} name="location" id="location" className="input w-full">
-                          <option value="">-- SELECT LOCATION --</option>
-                          <option value="Huston">Huston</option>
-                          <option value="New York">New York</option>
-                      </select>
-                  </div>
+
               </div>           
   
               <button onSubmit={handleSubmit} className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
