@@ -2,7 +2,7 @@ import React from 'react'
 import Button from './Button'
 import { Link, useNavigate } from 'react-router-dom'
 
-function CommunityBanner() {
+function CommunityBanner({ setSelectedCard}) {
     const navigate = useNavigate()
 
     const handleNavigation = () => {
@@ -22,7 +22,7 @@ function CommunityBanner() {
             </p>
 
             <div>
-                <Link to='/community' className={`w-full p-4 rounded-[0px] font-font-2 text-[21px] phone:text-[17px] bg-color-1 cursor-pointer duration-500 text-main-color font-semibold flex items-center justify-center text-center `}>
+                <Link onClick={() => setSelectedCard('authenticate')} className={`w-full p-4 rounded-[0px] font-font-2 text-[21px] phone:text-[17px] bg-color-1 cursor-pointer duration-500 text-main-color font-semibold flex items-center justify-center text-center `}>
                     Join Our Online Community
                 </Link>
             </div>

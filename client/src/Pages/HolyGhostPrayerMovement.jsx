@@ -36,10 +36,13 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
             toast.error('Enter Gender')
             return
         }
-        if(!formData?.number_of_People){
+        if(!formData?.numbers_of_people_attending_with){
             toast.error('Enter number of people coming')
             return
-        }        
+        }     
+        if(!formData?.convention_location){
+            toast.error('Select you concention location')
+        }   
         try {
             setLoading(true)
             const res = await conventionRequest(formData)
@@ -106,7 +109,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
                   </div>
                   <div className="formCard">
                       <label className="uppercase label" htmlFor="">Convention Location</label>
-                      <select onChange={handleChange} name="location" id="location" className="input p-2 w-full">
+                      <select onChange={handleChange} name="convention_location" id="convention_location" className="input p-2 w-full">
                           <option value="">-- SELECT LOCATION --</option>
                           <option value="Houston">Houston</option>
                           <option value="New York">New York</option>
@@ -117,7 +120,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
               <div className="flex items-center gap-2 justify-between tablet:flex-col">
                   <div className="formCard">
                       <label className="uppercase label" htmlFor="">Number of people attending with</label>
-                      <input onChange={handleChange} type="number" name="number_of_People" id="number_of_People" className="input p-2" />
+                      <input onChange={handleChange} type="number" name="numbers_of_people_attending_with" id="numbers_of_people_attending_with" className="input p-2" />
                   </div>
                   <div className="formCard">
                       <label className="uppercase label" htmlFor="">Mailing address</label>

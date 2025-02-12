@@ -52,6 +52,15 @@ function HolyGhostPrayerMovementAppreciation({ setSelectedCard }) {
               <Link to='/' className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
                   Return Home
               </Link>
+
+              <a
+                target="_blank"
+                href="https://www.marriott.com/event-reservations/reservation-link.mi?id=1738342446062&key=GRP&guestreslink2=true&app=resvlink" 
+                className="flex items-center justify-center w-full bg-color-1 text-main-color-dark font-semibold py-[10px] px-[15px] outline-none border-none rounded-2xl gap-[4px]"
+            >
+                  <FaHotel />
+                  Get Hotel Reservation
+              </a>
   
           </div>
   

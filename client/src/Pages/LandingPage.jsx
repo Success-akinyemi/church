@@ -110,7 +110,7 @@ function LandingPage({ setSelectedCard }) {
          */}
 
       {/**COMMUNITY */}
-      <CommunityBanner />
+      <CommunityBanner setSelectedCard={setSelectedCard} />
 
       <div className="pad1">
         <hr className="mt-36 border-[2px] border-main-color" />
