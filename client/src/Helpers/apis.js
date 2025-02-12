@@ -63,7 +63,7 @@ export async function massRequest(formData) {
 //SUBMIT HOLYGHOST CONVENTION FORM
 export async function conventionRequest(formData) {
     try {
-        const res = await axios.post('/resources/hgfpmi-convention/', formData )
+        const res = await axios.post('/resources/hgfpmi-convention', formData )
         console.log('CONVENTIION REs', res)
         return res
     } catch (error) {
