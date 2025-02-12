@@ -126,7 +126,7 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
               </div>        
   
               <button onSubmit={handleSubmit} className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
-                  { loading ? 'Register' : 'Submitting...' }
+                  { !loading ? 'Register' : 'Submitting...' }
               </button>
 
               <a
