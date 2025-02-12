@@ -93,7 +93,7 @@ export const menuLinks = [
       link: '/shop' 
     },
     {
-      name: 'Children Coner',
+      name: 'Children Corner',
       link: '/children-coner',
       /**
        * 
