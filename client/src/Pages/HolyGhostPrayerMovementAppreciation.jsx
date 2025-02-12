@@ -33,7 +33,7 @@ function HolyGhostPrayerMovementAppreciation({ setSelectedCard }) {
               JUNE - JULY
           </p>
   
-          <form className="w-[550px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
+          <div className="w-[550px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
 
             <div className="flex items-center justify-center">
                 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -49,11 +49,11 @@ function HolyGhostPrayerMovementAppreciation({ setSelectedCard }) {
             </div>
             <h3 className="text-main-color mt-2 font-semibold text-center mb-8">Form submitted successfuly</h3>
   
-              <button onSubmit={returnHome} className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
+              <Link to='/' className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
                   Return Home
-              </button>
+              </Link>
   
-          </form>
+          </div>
   
         </div>
       </div>

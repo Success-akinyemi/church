@@ -59,3 +59,16 @@ export async function massRequest(formData) {
         return res?.data
     }
 }
+
+//SUBMIT HOLYGHOST CONVENTION FORM
+export async function conventionRequest(formData) {
+    try {
+        const res = await axios.post('/resources/hgfpmi-convention/', formData )
+        console.log('CONVENTIION REs', res)
+        return res
+    } catch (error) {
+        console.log('CONVENTION ERROR', error)
+        const res = error.response || 'Unable to submit convention request'
+        return res?.data
+    }
+}

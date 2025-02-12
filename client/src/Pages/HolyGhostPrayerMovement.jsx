@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom"
 import LogoImg from '../assests/HGFPMI-LOGO.png'
 import { FaHotel } from "react-icons/fa6";
 import toast from "react-hot-toast";
+import { conventionRequest } from "../Helpers/apis";
 
 function HolyGhostPrayerMovement({ setSelectedCard }) {
     const navigate = useNavigate()
@@ -11,10 +12,16 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
         setFormData({ ...formData, [e.target.id]: e.target.value })
     }
 
+    const [ loading, setLoading ] = useState(false)
+
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if(!formData?.fullName){
-            toast.error('Enter Full Name')
+        if(!formData?.first_name){
+            toast.error('Enter First Name')
+            return
+        }
+        if(!formData?.last_name){
+            toast.error('Enter Last Name')
             return
         }
         if(!formData?.telephone){
@@ -29,26 +36,26 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
             toast.error('Enter Gender')
             return
         }
-        if(!formData?.profession){
-            toast.error('Enter Profession')
+        if(!formData?.number_of_People){
+            toast.error('Enter number of people coming')
             return
-        }
-        if(!formData?.location){
-            toast.error('Select convention a location')
-            return
-        }
-        
+        }        
         try {
+            setLoading(true)
+            const res = await conventionRequest(formData)
             navigate('/Holy-Ghost-prayer-movement-success')
         } catch (error) {
-            
+            toast.error('Unable to submit convention form')
+            console.log('UNABLE TO SUBMIT CONVENTION FORM', error)
+        } finally {
+            setLoading(false)
         }
     }
     return (
       <div className="bg-white flex flex-col min-h-[100vh]">
         <div className="w-full p-3 mb-4">
             <Link to='/'>
-                <span className="text-main-color-dark">Return home</span>
+                <span className="text-main-color-dark font-semibold">Return home</span>
             </Link>
         </div>
   
@@ -65,69 +72,61 @@ function HolyGhostPrayerMovement({ setSelectedCard }) {
           </p>
   
           <h3 className="text-main-color border-b-[2px] border-b-main-color mt-8 font-semibold text-center">Please fill the form below</h3>
-          <form onSubmit={handleSubmit} className="w-[550px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
-              <div className="flex items-center gap-2 justify-between w-full phone:flex-col phone:w-full ">
+          <form onSubmit={handleSubmit} className="w-[650px] phone:w-full border flex flex-col gap-5 p-5 mb-9">
+              <div className="flex items-center gap-2 justify-between w-full tablet:flex-col phone:w-full ">
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">Full Name</label>
-                      <input onChange={handleChange} type="text" name="fullName" id="fullName" className="input p-2" />
+                      <label className="uppercase label" htmlFor="">First Name</label>
+                      <input onChange={handleChange} type="text" name="first_name" id="first_name" className="input p-2" />
                   </div>
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">Mailing Address</label>
-                      <input onChange={handleChange} type="text" name="mailingaddress" id="mailingaddress" className="input p-2" />
+                      <label className="uppercase label" htmlFor="">Last Name</label>
+                      <input onChange={handleChange} type="text" name="last_name" id="last_name" className="input p-2" />
                   </div>
               </div>
   
-              <div className="flex items-center gap-2 justify-between phone:flex-col">
+              <div className="flex items-center gap-2 justify-between tablet:flex-col">
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">TELEPHONE</label>
+                      <label className="uppercase label" htmlFor="">Telephone</label>
                       <input onChange={handleChange} type="number" name="telephone" id="telephone" className="input p-2" />
                   </div>
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">volunteer</label>
-                      <input onChange={handleChange} type="text" name="volunteer" id="volunteer" className="input p-2" />
-                  </div>
-              </div>
-  
-              <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="formCard">
-                      <label className="uppercase label" htmlFor="">email</label>
+                      <label className="uppercase label" htmlFor="">Email</label>
                       <input onChange={handleChange} type="email" name="email" id="email" className="input p-2" />
                   </div>
-                  <div className="formCard">
-                      <label className="uppercase label" htmlFor="">profession</label>
-                      <input onChange={handleChange} type="text" name="profession" id="profession" className="input p-2" />
-                  </div>
               </div>
   
-              <div className="flex items-center gap-2 justify-between phone:flex-col">
+              <div className="flex items-center gap-2 justify-between tablet:flex-col">
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">gender</label>
-                      <select onChange={handleChange} name="gender" id="gender" className="input w-full">
+                      <label className="uppercase label" htmlFor="">Gender</label>
+                      <select onChange={handleChange} name="gender" id="gender" className="input p-2 w-full">
                           <option value="">-- SELECT GENDER --</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
                       </select>
                   </div>
                   <div className="formCard">
-                      <label className="uppercase label" htmlFor="">Location</label>
-                      <select onChange={handleChange} name="location" id="location" className="input w-full">
+                      <label className="uppercase label" htmlFor="">Convention Location</label>
+                      <select onChange={handleChange} name="location" id="location" className="input p-2 w-full">
                           <option value="">-- SELECT LOCATION --</option>
                           <option value="Houston">Houston</option>
                           <option value="New York">New York</option>
                       </select>
                   </div>
               </div>
-  
-              <div className="flex items-center gap-2 justify-between phone:flex-col">
-                  <div className="formCard">
-                      <label className="uppercase label" htmlFor="">Date of birth</label>
-                      <input onChange={handleChange} type="date" name="" id="dob" className="input p-2" />
-                  </div>
 
-              </div>           
+              <div className="flex items-center gap-2 justify-between tablet:flex-col">
+                  <div className="formCard">
+                      <label className="uppercase label" htmlFor="">Number of people attending with</label>
+                      <input onChange={handleChange} type="number" name="number_of_People" id="number_of_People" className="input p-2" />
+                  </div>
+                  <div className="formCard">
+                      <label className="uppercase label" htmlFor="">Mailing address</label>
+                      <input onChange={handleChange} type="text" name="mailing_address" id="mailing_address" className="input p-2" />
+                  </div>
+              </div>        
   
               <button onSubmit={handleSubmit} className="flex items-center justify-center w-full bg-main-color hover:bg-main-color-dark text-white py-[10px] px-[15px] outline-none border-none rounded-2xl">
-                  Register
+                  { loading ? 'Register' : 'Submitting...' }
               </button>
 
               <a
