@@ -15,7 +15,7 @@ function Logo() {
              * 
              */
           }
-          <p className="text-white mt-[-4px] text-[10px]">Holy Ghost Adoration <br /> Prayer Movement International</p>
+          <p className="text-white mt-[-4px] text-[10px] medium-pc:text-[8px] small-pc:text-[6px]">Holy Ghost Fraternity <br /> Prayer Movement International</p>
         </div>
       </div>
 

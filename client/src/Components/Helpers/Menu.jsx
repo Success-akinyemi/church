@@ -38,7 +38,7 @@ const Menu = ({setSelectedCard}) => {
                 <Link
                   to={`${item.link}`}
                   onClick={ () => item.onclick ? handleClick(item?.clickValue) : null }
-                  className={`${item?.style ? item?.style : `text-slate-100 hover:text-color-1 font-medium  text-[14px] medium-pc:text-[12px] small-pc:text-[11px]  flex items-center uppercase` } uppercase`}
+                  className={`${item?.style ? item?.style : `text-slate-100 hover:text-color-1 font-medium  text-[14px] medium-pc:text-[8px] small-pc:text-[8px]  flex items-center uppercase` } uppercase`}
                 >
                   {item.name}
                 </Link>

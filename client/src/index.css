@@ -13,7 +13,7 @@
     @apply w-[100vw] overflow-x-hidden min-h-[100vh] flex flex-col
   }
   .pad1{
-    @apply px-16 small-pc:px-14 tablet:px-12 phone:px-8 
+    @apply px-16 medium-pc:px-10 tablet:px-12 phone:px-8 
   }
   .inputGroup {
     @apply flex w-full flex-col gap-3 phone:gap-2
