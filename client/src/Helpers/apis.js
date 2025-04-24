@@ -4,7 +4,7 @@ import axios from "axios"
 axios.defaults.baseURL = 'https://hgfapi.xyz'
 //axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
 
-//MASS REQUEST
+//REGISTER USER
 export async function register(formData) {
     try {
         const res = await axios.post('/membership/register/', formData )
@@ -15,7 +15,7 @@ export async function register(formData) {
     }
 }
 
-//MASS REQUEST
+//LOGIN USER
 export async function login(formData) {
     try {
         const res = await axios.post('/membership/login/', formData )
@@ -69,6 +69,18 @@ export async function conventionRequest(formData) {
     } catch (error) {
         console.log('CONVENTION ERROR', error)
         const res = error.response || 'Unable to submit convention request'
+        return res?.data
+    }
+}
+
+//DONATION
+export async function donation(formData) {
+    try {
+        const res = await axios.post('/donate/create-payment-intent/', formData )
+        return res
+    } catch (error) {
+        console.log('DONATION ERROR', error)
+        const res = error.response || 'Unable to login user'
         return res?.data
     }
 }

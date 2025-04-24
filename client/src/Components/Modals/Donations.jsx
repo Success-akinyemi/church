@@ -2,6 +2,10 @@ import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import Button from '../Helpers/Button'
 import { donationCourse } from '../../data/donationCourse'
+import { donation } from '../../Helpers/apis'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe('pk_test_YOUR_PUBLISHABLE_KEY') // Replace with your Stripe publishable key
 
 function Donations({setSelectedCard}) {
     const { currentUser } = useSelector(state => state.user)
@@ -51,7 +55,8 @@ function Donations({setSelectedCard}) {
       }
     }, [donationPurposes]);
 
-    const handleDonation = () => {
+    const [ loading, setLoading ] = useState(false)
+    const handleDonation = async () => {
         if(!formData?.email){
             setError('Email Address is Required')
             setTimeout(() => {
@@ -83,6 +88,22 @@ function Donations({setSelectedCard}) {
                 setError()
             }, 2000)
             return
+        }
+
+        try {
+            setLoading(true)
+            const res = await donation(formData)
+            if(res?.status === 200 && res?.data){
+                const paymentIntent = res.data.clientSecret
+                console.log('paymentIntent', paymentIntent)
+                //const stripe = await stripePromise
+                //await stripe.redirectToCheckout({ sessionId: res.data.sessionId })
+            }
+        } catch (error) {
+            setError('Unable to process donation')
+            setTimeout(() => { setError() }, 2500)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -140,7 +161,7 @@ function Donations({setSelectedCard}) {
                     
                     <p className='errorText text-center mt-6'>{error}</p>
 
-                    <Button onClick={handleDonation} text={'Proceed to Giving'} style={'p-1 mt-8'} />
+                    <Button disabled={loading} onClick={handleDonation} text={loading ? 'Please wait..' :'Proceed to Giving'} style={'p-1 mt-8'} />
                 </div>
             )
         }
