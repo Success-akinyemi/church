@@ -20,6 +20,8 @@ import { testimonialData } from "../data/testimonies";
 import { useEffect } from "react";
 import QuickBanner from "../Components/Helpers/QuickBanner";
 import CommunityBanner from "../Components/Helpers/CommunityBanner";
+import { useFetchTestimonies } from "../Helpers/fetch.hooks";
+import Spinner from "../Components/Helpers/Spinner";
 
 function LandingPage({ setSelectedCard }) {
   useEffect(() => {
@@ -35,7 +37,8 @@ function LandingPage({ setSelectedCard }) {
 
   const blogData = blogs.slice(0, 3);
 
-  const testimonies = testimonialData.splice(0, 3);
+  const { data: testimoniesData, isFetching: loading } = useFetchTestimonies()
+  const testimonies = testimoniesData?.splice(0, 3);
 
   return (
     <div className="page">
@@ -81,7 +84,15 @@ function LandingPage({ setSelectedCard }) {
          */}
 
       <div className="mb-8 bg-gray-100">
-        <TestimonialsSection data={testimonies} showMore={false} />
+        {
+            loading ? (
+                <div className="w-full flex items-center justify-center">
+                    <Spinner />
+                </div>
+            ) : (
+                <TestimonialsSection data={testimonies} showMore={false} />
+            )
+        }
 
         <div className="text-center mt-6 mb-12">
           <Link
