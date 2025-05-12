@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import OrderForm from "../Modals/OrderForm";
 
 function Product({data}) {
-    console.log('object darata', data)
+    //console.log('object darata', data)
     const dispatch = useDispatch()
     const [ productquantity, setProductQuantity ] = useState(1)
 
@@ -120,10 +120,12 @@ function Product({data}) {
                     <MdAddShoppingCart />
                     Add To Cart
                 </div>
-
+                {/**
+                 * 
                 <div onClick={() => handleOrderForm(data?.id)} className="w-full p-2 rounded-[0px] font-font-2 text-[19px] phone:text-[16px] bg-main-color cursor-pointer duration-500 hover:bg-main-color-dark text-white font-semibold flex gap-1 items-center justify-center text-center">
                     Order within Nigeria
                 </div>
+                 */}
             </div>
         
         </div>

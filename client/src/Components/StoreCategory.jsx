@@ -18,7 +18,7 @@ function StoreCategory() {
     }
 
     const allProducts = data || []
-    console.log('datares', allProducts)
+    //console.log('datares', allProducts)
     const sortedProducts = allProducts.filter((productItem) => productItem.slug === catState);
 
 
@@ -44,6 +44,26 @@ function StoreCategory() {
                 )
             }
             {
+                catState === 'oil' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+            {
+                catState === 'sticker' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+            {
+                catState === 'adoration-songs' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+            {
+                catState === 'gospelandsongs' && (
+                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
+                )
+            }
+            {
                 catState === 'ministry-wraper' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
@@ -54,11 +74,6 @@ function StoreCategory() {
                 )
             }
             {
-                catState === 'sacramentals' && (
-                    <Products data={sortedProducts} pagination={true} noPerPage={2} />
-                )
-            }
-                        {
                 catState === 'paraclet-water' && (
                     <Products data={sortedProducts} pagination={true} noPerPage={2} />
                 )
