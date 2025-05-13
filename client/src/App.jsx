@@ -42,6 +42,7 @@ import NewTestimony from './Admin/Modal/NewTestimony';
 import OnlineGiving from './Components/Modals/OnlineGiving';
 import HolyGhostPrayerMovement from './Pages/HolyGhostPrayerMovement';
 import HolyGhostPrayerMovementAppreciation from './Pages/HolyGhostPrayerMovementAppreciation';
+import AllProduct from './Pages/AllProduct';
 
 
 
@@ -181,6 +182,7 @@ function App() {
           <Route path='/children-coner' element={<ChildrenConer setSelectedCard={setSelectedCard} />} />
           <Route path='/Holy-Ghost-prayer-movement' element={<HolyGhostPrayerMovement setSelectedCard={setSelectedCard} />} />
           <Route path='/Holy-Ghost-prayer-movement-success' element={<HolyGhostPrayerMovementAppreciation setSelectedCard={setSelectedCard} />} />
+          <Route path='/all-product' element={<AllProduct setSelectedCard={setSelectedCard} />} />
 
 
 
