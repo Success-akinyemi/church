@@ -92,7 +92,7 @@ function ShoppingCart() {
                   </div>
 
                   <span className="amount">
-                    NGN {item?.price * item?.quantity}
+                    $ {item?.price * item?.quantity}
                   </span>
 
                   <button
