@@ -5,7 +5,7 @@ import { donationCourse } from '../../data/donationCourse'
 import { donation } from '../../Helpers/apis'
 import { loadStripe } from '@stripe/stripe-js'
 
-const stripePromise = loadStripe('pk_test_YOUR_PUBLISHABLE_KEY') // Replace with your Stripe publishable key
+const stripePromise = loadStripe('pk_live_51P2cbNHw86RH5XOFq3nK5XceBIBgDBKh8nw1P1jg77ogQs17QjbTnMDUYXPZHOFGSzHtQ30VEjFLW7c8GwUEAz3J00f9FWYeMa') // Replace with your Stripe publishable key
 
 function Donations({setSelectedCard}) {
     const { currentUser } = useSelector(state => state.user)

@@ -4,11 +4,11 @@ import { removeFromCart, updateQuantity } from "../../redux/cart/cartSlice";
 import { MdOutlineRemoveShoppingCart } from "react-icons/md";
 import { CgRemove, CgAdd } from "react-icons/cg";
 
-function ShoppingCart() {
+function ShoppingCart({ setSelectedCard }) {
   const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
-  console.log("CART", cart.products);
+  //console.log("CART", cart.products);
 
   const handleQuantity = (type, productId) => {
     const productIndex = cart.products.findIndex(
@@ -28,6 +28,10 @@ function ShoppingCart() {
   const handleRemoveFromCart = (idx) => {
     dispatch(removeFromCart(idx));
   };
+
+  const proceedToCheckout = () => {
+    setSelectedCard("checkout");
+  }
 
   return (
     <div className="relative w-full flex flex-col items-center max-h-[85vh] overflow-y-auto">
@@ -118,7 +122,7 @@ function ShoppingCart() {
           Continue Shopping
         </a>
         {cart.products.length > 0 && (
-          <div className="text-center border-2 b border-main-color text-color-1 bg-main-color hover:bg-transparent hover:text-main-color duration-500 rounded-[4px] p-3 cursor-pointer">
+          <div onClick={proceedToCheckout} className="text-center border-2 b border-main-color text-color-1 bg-main-color hover:bg-transparent hover:text-main-color duration-500 rounded-[4px] p-3 cursor-pointer">
             Proceed to Checkout
           </div>
         )}

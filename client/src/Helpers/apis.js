@@ -4,6 +4,9 @@ import axios from "axios"
 axios.defaults.baseURL = 'https://hgfapi.xyz'
 //axios.defaults.baseURL = 'https://cors-anywhere.herokuapp.com/https://hgfapi.xyz'
 
+const token = localStorage.getItem('HGFPMIACCESS')
+const refreshToken = localStorage.getItem('HGFPMIREFRESH')
+
 //REGISTER USER
 export async function register(formData) {
     try {
@@ -41,7 +44,15 @@ export async function newsletterSubscription(formData) {
 //SUBMIT PRAYER REQUEST
 export async function prayerRequest(formData) {
     try {
-        const res = await axios.post('/consultation/prayer_request/', formData )
+        const res = await axios.post('/consultation/prayer_request/',
+            formData, 
+            // Include the token in the headers if available
+            {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Refresh-Token': refreshToken
+            },
+        )
         return res
     } catch (error) {
         const res = error.response || 'Unable to submit prayer request'
@@ -52,7 +63,15 @@ export async function prayerRequest(formData) {
 //MASS REQUEST
 export async function massRequest(formData) {
     try {
-        const res = await axios.post('/consultation/mass-request/', formData )
+        const res = await axios.post('/consultation/mass-request/', 
+            formData,
+            // Include the token in the headers if available
+            {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Refresh-Token': refreshToken
+            },
+        )
         return res
     } catch (error) {
         const res = error.response || 'Unable to submit mass request'
@@ -63,7 +82,15 @@ export async function massRequest(formData) {
 //SUBMIT HOLYGHOST CONVENTION FORM
 export async function conventionRequest(formData) {
     try {
-        const res = await axios.post('/resources/hgfpmi-convention', formData )
+        const res = await axios.post('/resources/hgfpmi-convention',
+            formData, 
+            // Include the token in the headers if available
+            {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Refresh-Token': refreshToken
+            },
+        )
         console.log('CONVENTIION REs', res)
         return res
     } catch (error) {
@@ -76,11 +103,39 @@ export async function conventionRequest(formData) {
 //DONATION
 export async function donation(formData) {
     try {
-        const res = await axios.post('/donate/create-payment-intent/', formData )
+        const res = await axios.post('/donate/create-payment-intent', 
+            formData,
+            // Include the token in the headers if available
+            {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Refresh-Token': refreshToken
+            },
+        )
         return res
     } catch (error) {
         console.log('DONATION ERROR', error)
         const res = error.response || 'Unable to login user'
+        return res?.data
+    }
+}
+
+//CHECKOUT
+export async function checkout(formData) {
+    try {
+        const res = await axios.post('/store/checkout/', 
+            formData,
+            // Include the token in the headers if available
+            {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                'X-Refresh-Token': refreshToken
+            },
+        )
+        return res
+    } catch (error) {
+        console.log('CHECKOUT ERROR', error)
+        const res = error.response || 'Unable to process checkout'
         return res?.data
     }
 }

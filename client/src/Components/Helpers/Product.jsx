@@ -9,7 +9,6 @@ import toast from "react-hot-toast";
 import OrderForm from "../Modals/OrderForm";
 
 function Product({data}) {
-    console.log('object darata', data)
     const dispatch = useDispatch()
     const [ productquantity, setProductQuantity ] = useState(1)
 
@@ -50,7 +49,7 @@ function Product({data}) {
         //send product id to backend as well as token or userID
         console.log('productquantity', productquantity)
         dispatch(
-            addProduct({ ...data, id: data?.id, price: data?.discount_available ? Number(data?.discount_price) : Number(data?.price), quantity: productquantity, img: data?.image })
+            addProduct({ ...data, product_id: data?.id, price: data?.discount_available ? Number(data?.discount_price) : Number(data?.price), quantity: productquantity, img: data?.image })
         )
         toast.success('Item addded to cart')
     }
