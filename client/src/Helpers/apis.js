@@ -100,7 +100,7 @@ export async function conventionRequest(formData) {
     }
 }
 
-//DONATION
+//MAKE DONATION
 export async function donation(formData) {
     try {
         const res = await axios.post('/donate/create-payment-intent', 
@@ -120,7 +120,7 @@ export async function donation(formData) {
     }
 }
 
-//CHECKOUT
+//HANDLE CHECKOUT
 export async function checkout(formData) {
     try {
         const res = await axios.post('/store/checkout/', 
