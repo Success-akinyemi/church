@@ -120,7 +120,7 @@ export async function donation(formData) {
     }
 }
 
-//HANDLE CHECKOUT
+//HANDLE CHECKOUT API
 export async function checkout(formData) {
     try {
         const res = await axios.post('/store/checkout/', 
