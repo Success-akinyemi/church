@@ -3,6 +3,9 @@ import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { checkout } from "../../Helpers/apis";
 import { clearCart } from "../../redux/cart/cartSlice";
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe('pk_live_51P2cbNHw86RH5XOFq3nK5XceBIBgDBKh8nw1P1jg77ogQs17QjbTnMDUYXPZHOFGSzHtQ30VEjFLW7c8GwUEAz3J00f9FWYeMa') // Replace with your Stripe publishable key
 
 function Checkout({ setSelectedCard }) {
   const cart = useSelector((state) => state.cart);
@@ -48,6 +51,9 @@ function Checkout({ setSelectedCard }) {
                 toast.success('Checkout Successful');
                 dispatch(clearCart());
                 setSelectedCard(null);
+                const paymentIntent = res.data.clientSecret
+                const stripe = await stripePromise
+                await stripe.redirectToCheckout({ sessionId: paymentIntent })
             } else {
                 toast.error(res?.detail || 'Unable to checkout');
             }
