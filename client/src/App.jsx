@@ -45,6 +45,7 @@ import HolyGhostPrayerMovementAppreciation from './Pages/HolyGhostPrayerMovement
 import AllProduct from './Pages/AllProduct';
 import Checkout from './Components/Modals/Checkout';
 import MinistryPolicy from './Pages/MinistryPolicy';
+import AboutUsApp from './Pages/AboutUsApp';
 
 
 
@@ -178,6 +179,7 @@ function App() {
           <Route path='/' element={<LandingPage setSelectedCard={setSelectedCard} />} />
           <Route path='/shop' element={<Store setSelectedCard={setSelectedCard} />} />
           <Route path='/about-us' element={<AboutUs setSelectedCard={setSelectedCard} />} />
+          <Route path='/about-us-app' element={<AboutUsApp setSelectedCard={setSelectedCard} />} />
           <Route path='/blogs' element={<Blogs setSelectedCard={setSelectedCard} />} />
           <Route path='/blog/:id' element={<Blog setSelectedCard={setSelectedCard} />} />
           <Route path='/resources' element={<Resources setSelectedCard={setSelectedCard} />} />

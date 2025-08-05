@@ -1,7 +1,7 @@
 import Footer from "../Helpers/Footer"
 import OurCampaign from '../Helpers/OurCampaign'
 
-function AboutHGFPMI() {
+function AboutHGFPMI({ hideFooter }) {
   return (
     <div className="">
         <div className="pad1 mb-8">
@@ -16,7 +16,11 @@ function AboutHGFPMI() {
          <OurCampaign />
         </div>
 
-      <Footer />
+    {
+        !hideFooter && (
+            <Footer />
+        )
+    }
     </div>
   )
 }

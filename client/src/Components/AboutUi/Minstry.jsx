@@ -64,7 +64,7 @@ const TeamMember = ({ name_in_full: name, photo }) => {
     );
 };
 
-const Minstry = () => {
+const Minstry = ({ hideFooter }) => {
     const teamMembers = ministryOfficials
     const { data, isFetching } = useFetchLeaders()
 
@@ -106,7 +106,11 @@ return (
             </motion.div>
         </div>
 
-        <Footer />
+    {
+        !hideFooter && (
+            <Footer />
+        )
+    }
 
     </>
 );

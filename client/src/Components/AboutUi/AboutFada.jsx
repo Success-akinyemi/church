@@ -6,7 +6,7 @@ import Footer from '../Helpers/Footer';
 import { FaChurch, FaHeart, FaStar, FaBookOpen, FaPray, FaHandsHelping, FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const AboutFada = () => {
+const AboutFada = ({ hideFooter }) => {
   const photoPlaceholder = "https://hgfpmi.org/wp-content/uploads/2024/07/Rev.-Fr.-Emmanuel-Obimma-1-768x924-1.png";
 
   const sections = [
@@ -181,7 +181,11 @@ const AboutFada = () => {
         </div>
       </div>
 
-      <Footer />
+    {
+        !hideFooter && (
+            <Footer />
+        )
+    }
     </div>
   );
 };

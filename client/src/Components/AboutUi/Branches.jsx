@@ -4,7 +4,7 @@ import BranchesSection from '../Helpers/BranchesCard'
 import Footer from '../Helpers/Footer'
 import Spinner from '../Helpers/Spinner'
 
-function Branches() {
+function Branches({ hideFooter }) {
   const { data, isFetching } = useFetchBranches()
   const branchesData = data || []
   return (
@@ -17,7 +17,11 @@ function Branches() {
         )
       }
 
-      <Footer />
+    {
+        !hideFooter && (
+            <Footer />
+        )
+    }
     </div>
   )
 }
