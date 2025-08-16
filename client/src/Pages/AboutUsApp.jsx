@@ -59,12 +59,12 @@ function AboutUsApp({ setSelectedCard }) {
           }
           {
             activeCard === 'fada' && (
-              <AboutFada hideFooter={true} />
+              <AboutFada hideNavbar={true} hideFooter={true} />
             )
           }
           {
             activeCard === 'ministry' && (
-              <Minstry hideFooter={true} />
+              <Minstry hideNavbar={true} hideFooter={true} />
             )
           }
           {

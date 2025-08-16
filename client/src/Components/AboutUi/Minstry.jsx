@@ -64,15 +64,22 @@ const TeamMember = ({ name_in_full: name, photo }) => {
     );
 };
 
-const Minstry = ({ hideFooter }) => {
+const Minstry = ({ hideFooter, hideNavbar }) => {
     const teamMembers = ministryOfficials
     const { data, isFetching } = useFetchLeaders()
 
 return (
 
     <>
-        <Menu />
-        <QuickNav />
+
+        {
+            !hideNavbar && (
+                <>
+                    <Menu />
+                    <QuickNav />
+                </>
+            ) 
+        }
 
         <div className="container pad1 py-16 bg-gray-50 flex flex-col">
             <h2 className="text-4xl font-bold text-center mb-4">Ministry Officials</h2>

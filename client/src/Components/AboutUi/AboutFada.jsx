@@ -6,7 +6,7 @@ import Footer from '../Helpers/Footer';
 import { FaChurch, FaHeart, FaStar, FaBookOpen, FaPray, FaHandsHelping, FaArrowRight, FaQuoteLeft } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 
-const AboutFada = ({ hideFooter }) => {
+const AboutFada = ({ hideFooter, hideNavbar }) => {
   const photoPlaceholder = "https://hgfpmi.org/wp-content/uploads/2024/07/Rev.-Fr.-Emmanuel-Obimma-1-768x924-1.png";
 
   const sections = [
@@ -43,8 +43,14 @@ const AboutFada = ({ hideFooter }) => {
 
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
-      <Menu />
-      <QuickNav />
+        {
+            !hideNavbar && (
+                <>
+                    <Menu />
+                    <QuickNav />
+                </>
+            ) 
+        }
 
       <div className="min-h-screen pad1">
         {/* Enhanced Hero Section */}
