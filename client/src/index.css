@@ -27,7 +27,7 @@
   .focusText{
     @apply text-main-color cursor-pointer text-[21px] phone:text-[18px] font-semibold border-b-[2px] border-b-main-color
   }
-  .errorText{
+  .errorText{ 
     @apply font-bold text-main-color-dark
   }
   .card{
