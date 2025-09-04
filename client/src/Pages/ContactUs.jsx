@@ -36,7 +36,7 @@ function ContactUs({setSelectedCard}) {
 
         const res = await feedback(formData)
         if(res.status === 201) {
-            res.success(res.data.message || 'Message submitted successful')
+            toast.success(res.data.message || 'Message submitted successful')
             setFormData({})
         } else {
             toast.error('Unable to send message')
@@ -63,16 +63,16 @@ function ContactUs({setSelectedCard}) {
             />
         </div>
 
-        <div className="w-full mt-[2rem] mb-[2rem] pad1 flex flex-col items-center justify-center gap-[2px] flex-wrap tablet:text-[14px]">
+        <div className="page pad1">
             <div className="text-center mb-2">
                 <h2 className="text-5xl phone:text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
                 <div className="w-56 h-1 bg-yellow-500 mx-auto rounded-full"></div>
             </div>
-            <div className="text-color-1 shadow-xl border-none text-[16px] max-phone:text-[14px] font-semibold">We Love to hear from you</div>
+            <div className="text-center text-color-1 shadow-xl border-none text-[16px] max-phone:text-[14px] font-semibold">We Love to hear from you</div>
 
             {/**FORM */}
-            <div className="mt-[2rem]">
-                <div className="border-[1px] rounded-[10px] p-[10px] border-main-color flex flex-col gap-3 border-[2px] w-[450px] max-phone:w-[90%]">
+            <div className="mt-[2rem] w-full w-[450px] max-phone:w-[95%] ">
+                <div className="border-[1px] rounded-[10px] p-[10px] border-main-color flex flex-col gap-3 border-[2px]">
                     <div className="inputGroup">
                         <label className="label">Full Name</label>
                         <input type="text" id='full_name' defaultValue={formData?.full_name} onChange={handleChange} className="input p-[4px] border-[1px]" />
