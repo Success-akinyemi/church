@@ -80,7 +80,7 @@ const AboutFada = ({ hideFooter, hideNavbar }) => {
                   REV. FR. EMMANUEL OBIMMA
                 </h2>
                 <p className="text-xl text-red-800 font-semibold">
-                  (PADA EBUBE MUONSO)
+                  (FADA EBUBE MUONSO)
                 </p>
                 <p className="text-gray-600 leading-relaxed">
                   Rev. Fr. Emmanuel Obimma is an ordained Catholic Priest hailing from the esteemed Onitsha Archdiocese. Born into the family of Mr. (Late) and Mrs. Obimma of Nkwelle-Ezunaka in Anambra state, he spent his formative years in the same town. As the youngest son among seven siblings, he was ordained a priest on August 6, 2011.
